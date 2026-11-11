@@ -118,24 +118,13 @@ export function SiteHeader({ locale }: SiteHeaderProps) {
   return (
     <header ref={headerRef} className="sticky top-0 z-50 w-full">
       <div className="relative z-10 border-b border-gsy-navy/10 bg-white transition-colors dark:border-gsy-gold-light/15 dark:bg-gsy-navy-deep">
-        {/* Top Corporate Utility & Demo Notice Bar */}
+        {/* Top Corporate Utility Bar */}
       <div className="bg-gsy-navy text-xs text-white/90 dark:bg-[#040c18]">
-        <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-2 px-4 py-1.5 sm:px-6 lg:px-8">
-          <div className="flex items-center gap-2">
-            <span className="inline-flex items-center rounded bg-gsy-gold-bright/20 px-1.5 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-gsy-gold-light">
-              {copy.demoPlaceholderTag}
-            </span>
-            <span className="hidden truncate text-[11px] text-white/80 md:inline">
-              {copy.demoBanner}
-            </span>
-            <span className="text-[11px] text-white/85 md:hidden">
-              {locale === "ar" ? "نموذج عرض جي إس واي • موجز الإدارة v4" : "GSY Management Brief v4 Demo"}
-            </span>
-          </div>
-
+        <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-end gap-2 px-4 py-1.5 sm:px-6 lg:px-8">
           <div className="flex items-center gap-3">
             <Link
               href={localePath(locale, "/about/gsy-family")}
+              onClick={closeAllMenus}
               className="hidden items-center gap-1 text-[11px] font-medium text-gsy-gold-light transition hover:text-white sm:inline-flex"
             >
               <Building2 className="h-3 w-3" />
