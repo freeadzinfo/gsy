@@ -217,14 +217,16 @@ export function BrandHierarchyTree({ locale }: { locale: Locale }) {
               </span>
             </div>
 
-            <div className="relative mx-auto mt-3 h-32 w-32 overflow-hidden rounded-full border-4 border-gsy-gold bg-white p-1.5 shadow-lg sm:h-40 sm:w-40 dark:border-gsy-gold-light">
-              <Image
-                src="/images/brands/gsy-international.jpg"
-                alt="GSY International Group of Companies Official Crest"
-                fill
-                sizes="160px"
-                className="rounded-full object-contain"
-              />
+            <div className="mx-auto mt-3 h-32 w-32 rounded-2xl border-2 border-gsy-gold bg-white p-2 shadow-lg sm:h-40 sm:w-40 dark:border-gsy-gold-light">
+              <div className="relative h-full w-full overflow-hidden rounded-xl">
+                <Image
+                  src="/images/gsy-logo.jpg"
+                  alt="GSY International Group Official Logo"
+                  fill
+                  sizes="160px"
+                  className="object-contain"
+                />
+              </div>
             </div>
 
             <div className="mt-4 flex justify-center">
