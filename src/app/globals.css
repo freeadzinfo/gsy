@@ -1,0 +1,96 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light dark;
+  --surface-bg: #f8f7f3;
+  --surface-card: #ffffff;
+  --surface-elevated: #f1efe8;
+  --ink-primary: #0b1f3a;
+  --ink-secondary: #435266;
+  --border-subtle: rgba(11, 31, 58, 0.1);
+  --brand-gold: #9a6a28;
+  --brand-gold-accent: #c8943a;
+}
+
+.dark {
+  --surface-bg: #071324;
+  --surface-card: #0e1f38;
+  --surface-elevated: #142a4a;
+  --ink-primary: #f4f6f9;
+  --ink-secondary: #b7c3d4;
+  --border-subtle: rgba(223, 206, 157, 0.14);
+  --brand-gold: #d4a353;
+  --brand-gold-accent: #e6c67e;
+}
+
+html {
+  scroll-behavior: smooth;
+  scrollbar-gutter: stable;
+}
+
+body {
+  background-color: var(--surface-bg);
+  color: var(--ink-primary);
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  overflow-x: clip;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+p,
+li,
+blockquote {
+  text-wrap: pretty;
+}
+
+:focus-visible {
+  outline: 3px solid var(--brand-gold);
+  outline-offset: 2px;
+}
+
+@keyframes tradeFlowDash {
+  from {
+    stroke-dashoffset: 36;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.animate-trade-flow {
+  stroke-dasharray: 8 6;
+  animation: tradeFlowDash 1.6s linear infinite;
+}
+
+@keyframes dottedFlow {
+  from {
+    stroke-dashoffset: 24;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.animate-dotted-flow {
+  animation: dottedFlow 1.2s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-trade-flow,
+  .animate-dotted-flow {
+    animation: none;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}
+
