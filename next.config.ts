@@ -41,6 +41,46 @@ const nextConfig: NextConfig = {
         destination: "/:locale/investors/halal-investment",
         permanent: true,
       },
+      {
+        source: "/news",
+        destination: "/en/blog",
+        permanent: true,
+      },
+      {
+        source: "/news/:slug",
+        destination: "/en/blog/:slug",
+        permanent: true,
+      },
+      {
+        source: "/:locale(en|ar)/news",
+        destination: "/:locale/blog",
+        permanent: true,
+      },
+      {
+        source: "/:locale(en|ar)/news/:slug",
+        destination: "/:locale/blog/:slug",
+        permanent: true,
+      },
+      {
+        source: "/gallery",
+        destination: "/en/about/gallery",
+        permanent: true,
+      },
+      {
+        source: "/:locale(en|ar)/gallery",
+        destination: "/:locale/about/gallery",
+        permanent: true,
+      },
+      {
+        source: "/events",
+        destination: "/en/blog?category=event",
+        permanent: false,
+      },
+      {
+        source: "/:locale(en|ar)/events",
+        destination: "/:locale/blog?category=event",
+        permanent: false,
+      },
     ];
   },
 };

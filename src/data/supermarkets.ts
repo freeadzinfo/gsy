@@ -304,6 +304,7 @@ export const WEEKLY_OFFERS: OfferRecord[] = [
       ],
     },
     flyerCode: "GSY-UAE-W46",
+    image: "/images/offers/gsy-supermarket-offer.jpg",
   },
   {
     id: "offer-elite-gourmet",
@@ -333,6 +334,7 @@ export const WEEKLY_OFFERS: OfferRecord[] = [
       ],
     },
     flyerCode: "ELITE-UAE-W46",
+    image: "/images/offers/elite-baskets-offer.jpg",
   },
   {
     id: "offer-malaysia-festival",
@@ -362,5 +364,6 @@ export const WEEKLY_OFFERS: OfferRecord[] = [
       ],
     },
     flyerCode: "MY-KL-W46",
+    image: "/images/offers/supermarket-malaysia-offer.jpg",
   },
 ];

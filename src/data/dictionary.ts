@@ -63,8 +63,8 @@ export const UI_COPY = {
       trustHeading: "Quality, Compliance & Institutional Trust",
       trustSub:
         "UAE holding company governance, Big-4 external audit standards, certified food safety and bank-grade trade compliance.",
-      newsEyebrow: "09 • News & Milestones",
-      newsHeading: "Latest updates",
+      newsEyebrow: "09 • Blog & Milestones",
+      newsHeading: "Latest blog updates",
       careersTitle: "Grow with us across 25+ countries",
       careersBody:
         "Join 350+ professionals across commodity trading, voyage chartering, food processing, logistics and retail operations.",
@@ -173,8 +173,8 @@ export const UI_COPY = {
       trustHeading: "الجودة والامتثال والثقة المؤسسية",
       trustSub:
         "حوكمة شركة قابضة في الإمارات، وتدقيق مالي وفق المعايير العالمية، وشهادات سلامة غذائية وامتثال مصرفي صارم.",
-      newsEyebrow: "09 • الأخبار والمحطات",
-      newsHeading: "أحدث الأخبار والتطورات",
+      newsEyebrow: "09 • المدونة والمحطات",
+      newsHeading: "أحدث مقالات وتطورات المدونة",
       careersTitle: "انمو معنا عبر أكثر من 25 دولة",
       careersBody:
         "انضم إلى أكثر من 350 متخصصاً في تداول السلع والشحن البحري والتصنيع الغذائي واللوجستيات والتجزئة.",

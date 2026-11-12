@@ -253,10 +253,10 @@ export function GlobalPresenceMap({
       {/* Main Interactive Map & Selected Country Panel */}
       <div className="grid gap-6 lg:grid-cols-12">
         <div className="relative overflow-hidden rounded-2xl border border-gsy-navy/10 bg-[#071830] p-3 text-white shadow-card lg:col-span-8 sm:p-5">
-          <div className="relative">
+          <div dir="ltr" className="relative overflow-hidden rounded-xl border border-gsy-navy/25">
             <svg
-              viewBox="0 0 1000 500"
-              className="h-auto w-full text-gsy-gold-light"
+              viewBox="82 -10 850 425"
+              className="block h-auto w-full select-none bg-[#C8E4F6]"
               role="img"
               aria-label={
                 locale === "ar"
@@ -264,7 +264,7 @@ export function GlobalPresenceMap({
                   : "GSY International Group Global Presence Interactive Map"
               }
             >
-              <WorldMapBackdrop showGrid />
+              <WorldMapBackdrop showGrid showLabels={false} />
 
               {/* Layer 3: Key Ports */}
               {showPorts &&
@@ -272,15 +272,15 @@ export function GlobalPresenceMap({
                   const x = port.mapX * 10;
                   const y = port.mapY * 5;
                   return (
-                    <g key={port.name} opacity="0.85">
+                    <g key={port.name} opacity="0.92">
                       <rect
                         x={x - 3}
                         y={y - 3}
                         width="6"
                         height="6"
                         transform={`rotate(45 ${x} ${y})`}
-                        fill="#38BDF8"
-                        stroke="#071830"
+                        fill="#0284C7"
+                        stroke="#FFFFFF"
                         strokeWidth="1"
                       />
                       <title>{`Port: ${port.name}`}</title>
@@ -297,8 +297,8 @@ export function GlobalPresenceMap({
                     <g key={office.city}>
                       <polygon
                         points={`${x},${y - 5} ${x + 4.5},${y + 4} ${x - 4.5},${y + 4}`}
-                        fill="#FDE68A"
-                        stroke="#071830"
+                        fill="#B45309"
+                        stroke="#FFFFFF"
                         strokeWidth="1"
                       />
                       <title>{`Trading Office: ${office.city} (${office.year})`}</title>
@@ -317,9 +317,9 @@ export function GlobalPresenceMap({
                         cx={x}
                         cy={y}
                         r="4"
-                        fill="#FB7185"
+                        fill="#E11D48"
                         stroke="#FFFFFF"
-                        strokeWidth="1"
+                        strokeWidth="1.2"
                       />
                       <title>{`Store: ${store.store_name}`}</title>
                     </g>
@@ -336,19 +336,21 @@ export function GlobalPresenceMap({
 
                   const fill =
                     country.status === "live"
-                      ? "#22C55E"
+                      ? "#16A34A"
                       : country.status === "sourcing"
-                        ? "#06B6D4"
+                        ? "#0891B2"
                         : country.status === "launching"
-                          ? "#F59E0B"
-                          : "transparent";
+                          ? "#D97706"
+                          : "rgba(255, 255, 255, 0.85)";
 
                   const stroke =
                     country.status === "planned"
-                      ? "#CBD5E1"
+                      ? isSelected
+                        ? "#0B1F3A"
+                        : "#334155"
                       : isSelected
-                        ? "#FFFFFF"
-                        : "#071830";
+                        ? "#0B1F3A"
+                        : "#FFFFFF";
 
                   return (
                     <g
@@ -362,8 +364,8 @@ export function GlobalPresenceMap({
                           cy={y}
                           r="13"
                           fill="none"
-                          stroke="#DFCE9D"
-                          strokeWidth="1.5"
+                          stroke="#0B1F3A"
+                          strokeWidth="1.8"
                           strokeDasharray="3 2"
                         />
                       )}
@@ -373,7 +375,7 @@ export function GlobalPresenceMap({
                         r={isSelected ? 7.5 : isPlanned ? 5 : 6.2}
                         fill={fill}
                         stroke={stroke}
-                        strokeWidth={isPlanned ? 1.8 : 1.5}
+                        strokeWidth={isSelected ? 2 : isPlanned ? 1.8 : 1.5}
                       />
                       <title>
                         {`${country.name} — ${country.status.toUpperCase()} (${country.entry_year})`}

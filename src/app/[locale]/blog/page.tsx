@@ -4,7 +4,7 @@ import { isValidLocale } from "@/lib/i18n";
 import { PageHero } from "@/components/shared/PageHero";
 import { NewsClient } from "@/components/news/NewsClient";
 
-export default async function NewsPage({
+export default async function BlogPage({
   params,
 }: {
   params: Promise<{ locale: string }>;
@@ -16,11 +16,11 @@ export default async function NewsPage({
     <div className="bg-gsy-ivory dark:bg-gsy-navy-deep">
       <PageHero
         locale={locale}
-        eyebrow={locale === "ar" ? "المركز الإعلامي" : "News • Milestones & Press"}
-        title={locale === "ar" ? "الأخبار ومحطات التوسع" : "Milestones & Press Releases"}
+        eyebrow={locale === "ar" ? "المدونة والمركز الإعلامي" : "Blog • Insights & Milestones"}
+        title={locale === "ar" ? "المدونة ومحطات التوسع" : "Blog & Group Updates"}
         subtitle={
           locale === "ar"
-            ? "أخبار توسع المجموعة وإعلانات الممرات التجارية والأسواق المركزية (بيانات تجريبية متوافقة مع موجز الإدارة)."
+            ? "مقالات توسع المجموعة وتحديثات الممرات التجارية والأسواق المركزية (بيانات تجريبية متوافقة مع موجز الإدارة)."
             : "Group milestones, corridor launches and retail updates (illustrative demo entries derived strictly from Management Brief v4)."
         }
         backgroundImage="/images/hero-port.jpg"
@@ -32,7 +32,7 @@ export default async function NewsPage({
           label: locale === "ar" ? "رؤية 2030" : "Explore Vision 2030",
           href: "/about/vision-2030",
         }}
-        breadcrumbs={[{ label: locale === "ar" ? "الأخبار" : "News" }]}
+        breadcrumbs={[{ label: locale === "ar" ? "المدونة" : "Blog" }]}
       />
       <section className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
         <NewsClient locale={locale} />

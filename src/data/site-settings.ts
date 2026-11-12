@@ -202,6 +202,11 @@ export const MAIN_NAVIGATION: NavItemConfig[] = [
         href: "/about/gsy-family",
         badge: { en: "Interactive", ar: "تفاعلي" },
       },
+      {
+        label: { en: "Media Gallery", ar: "معرض الصور" },
+        description: { en: "Visual showcase of ports, processing units, stores & events", ar: "عرض مرئي للموانئ ومرافق التعبئة والمتاجر والفعاليات" },
+        href: "/about/gallery",
+      },
     ],
   },
   {
@@ -405,12 +410,12 @@ export const MAIN_NAVIGATION: NavItemConfig[] = [
     },
   },
   {
-    id: "news",
-    label: { en: "News", ar: "الأخبار" },
-    href: "/news",
+    id: "blog",
+    label: { en: "Blog", ar: "المدونة" },
+    href: "/blog",
     description: {
-      en: "Group expansion milestones and corporate press releases across Asia, the Gulf and Africa.",
-      ar: "محطات التوسع والبيانات الصحفية الرسمية عبر آسيا والخليج وأفريقيا.",
+      en: "Group blog articles, events, trade expos and expansion updates across Asia, the Gulf and Africa.",
+      ar: "مقالات المدونة والفعاليات والمعارض ومحطات التوسع عبر آسيا والخليج وأفريقيا.",
     },
   },
   {

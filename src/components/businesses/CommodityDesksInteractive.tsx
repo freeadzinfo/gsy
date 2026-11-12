@@ -1,20 +1,11 @@
 "use client";
 
 import React, { useState } from "react";
-import Image from "next/image";
 import { Locale } from "@/types/cms";
 import { COMMODITY_DESKS } from "@/data/businesses";
 import { DeskCorridorMiniMap } from "@/components/shared/TradeCorridorsMap";
-import { CheckCircle2 } from "lucide-react";
+import { ArrowDownLeft, ArrowUpRight, CheckCircle2 } from "lucide-react";
 import { t } from "@/lib/i18n";
-
-const DESK_IMAGES: Record<string, string> = {
-  fmcg: "/images/commodity-trading.jpg",
-  fertilizer: "/images/fertilizer-agri.jpg",
-  "frozen-foods": "/images/cold-chain-warehouse.jpg",
-  minerals: "/images/minerals-metals.jpg",
-  metals: "/images/minerals-metals.jpg",
-};
 
 export function CommodityDesksInteractive({ locale }: { locale: Locale }) {
   const [activeId, setActiveId] = useState<string>(COMMODITY_DESKS[0].id);
@@ -33,7 +24,7 @@ export function CommodityDesksInteractive({ locale }: { locale: Locale }) {
         <p className="mt-1.5 text-sm text-gsy-slate dark:text-white/75">
           {locale === "ar"
             ? "اختر مكتباً لعرض المنتجات ومناطق الشراء والبيع وخريطة المسار التفاعلية."
-            : "Select a trading desk below to inspect its product basket, origin sources, buyer corridors and dynamic mini-map."}
+            : "Select a trading desk below to inspect its product basket, inward origin flows, outward destination markets and interactive political corridor map."}
         </p>
 
         {/* Desk Tabs */}
@@ -59,10 +50,10 @@ export function CommodityDesksInteractive({ locale }: { locale: Locale }) {
           })}
         </div>
 
-        {/* Active Desk Panel + Dynamic Corridor Mini-Map */}
+        {/* Active Desk Panel + Expanded Political Corridor Map */}
         <div
           role="tabpanel"
-          className="mt-5 grid gap-6 rounded-2xl border border-gsy-navy/10 bg-white p-6 shadow-card lg:grid-cols-12 dark:border-gsy-gold-light/15 dark:bg-gsy-navy"
+          className="mt-5 grid items-center gap-6 rounded-2xl border border-gsy-navy/10 bg-white p-6 shadow-card lg:grid-cols-12 dark:border-gsy-gold-light/15 dark:bg-gsy-navy"
         >
           <div className="space-y-4 lg:col-span-5">
             <span className="inline-block rounded-full bg-gsy-gold/15 px-3 py-1 text-xs font-bold text-gsy-gold dark:bg-gsy-gold-bright/20 dark:text-gsy-gold-light">
@@ -82,17 +73,19 @@ export function CommodityDesksInteractive({ locale }: { locale: Locale }) {
             </div>
 
             <div className="grid gap-3 sm:grid-cols-2">
-              <div className="rounded-xl bg-gsy-ivory p-3 dark:bg-white/5">
-                <p className="text-[11px] font-bold uppercase text-gsy-gold dark:text-gsy-gold-light">
-                  {locale === "ar" ? "نشتري من" : "Buy from"}
+              <div className="rounded-xl border border-amber-500/25 bg-gsy-ivory p-3 dark:border-gsy-gold-light/20 dark:bg-white/5">
+                <p className="inline-flex items-center gap-1.5 text-[11px] font-bold uppercase text-amber-700 dark:text-gsy-gold-light">
+                  <ArrowDownLeft className="h-3.5 w-3.5 shrink-0" />
+                  <span>{locale === "ar" ? "نشتري من (وارد)" : "Buy from"}</span>
                 </p>
                 <p className="mt-1 text-xs font-medium text-gsy-navy dark:text-white/85">
                   {t(activeDesk.buyFromLabel, locale)}
                 </p>
               </div>
-              <div className="rounded-xl bg-gsy-ivory p-3 dark:bg-white/5">
-                <p className="text-[11px] font-bold uppercase text-emerald-700 dark:text-emerald-400">
-                  {locale === "ar" ? "نبيع إلى" : "Sell to"}
+              <div className="rounded-xl border border-emerald-600/25 bg-gsy-ivory p-3 dark:border-emerald-400/20 dark:bg-white/5">
+                <p className="inline-flex items-center gap-1.5 text-[11px] font-bold uppercase text-emerald-700 dark:text-emerald-400">
+                  <ArrowUpRight className="h-3.5 w-3.5 shrink-0" />
+                  <span>{locale === "ar" ? "نبيع إلى (صادر)" : "Sell to"}</span>
                 </p>
                 <p className="mt-1 text-xs font-medium text-gsy-navy dark:text-white/85">
                   {t(activeDesk.sellToLabel, locale)}
@@ -112,20 +105,7 @@ export function CommodityDesksInteractive({ locale }: { locale: Locale }) {
             </ul>
           </div>
 
-          <div className="space-y-4 lg:col-span-7">
-            <div className="relative h-44 overflow-hidden rounded-xl border border-gsy-navy/10 dark:border-white/10">
-              <Image
-                src={DESK_IMAGES[activeDesk.id] ?? "/images/commodity-trading.jpg"}
-                alt={t(activeDesk.name, locale)}
-                fill
-                sizes="(max-width: 1024px) 100vw, 600px"
-                className="object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-gsy-navy/80 via-gsy-navy/20 to-transparent" />
-              <span className="absolute bottom-3 start-3 rounded-full bg-white/90 px-3 py-1 text-xs font-extrabold text-gsy-navy">
-                {t(activeDesk.name, locale)}
-              </span>
-            </div>
+          <div className="lg:col-span-7">
             <DeskCorridorMiniMap
               locale={locale}
               buyFrom={activeDesk.buyFrom}
@@ -147,8 +127,18 @@ export function CommodityDesksInteractive({ locale }: { locale: Locale }) {
               <tr className="bg-gsy-navy text-xs font-bold uppercase tracking-wider text-white dark:bg-[#050f1e]">
                 <th className="px-4 py-3 text-start">{locale === "ar" ? "المكتب" : "Desk"}</th>
                 <th className="px-4 py-3 text-start">{locale === "ar" ? "المنتجات" : "Products"}</th>
-                <th className="px-4 py-3 text-start">{locale === "ar" ? "الشراء من" : "Buy from"}</th>
-                <th className="px-4 py-3 text-start">{locale === "ar" ? "البيع إلى" : "Sell to"}</th>
+                <th className="px-4 py-3 text-start">
+                  <span className="inline-flex items-center gap-1.5">
+                    <ArrowDownLeft className="h-3.5 w-3.5 text-gsy-gold-light" />
+                    {locale === "ar" ? "الشراء من" : "Buy from"}
+                  </span>
+                </th>
+                <th className="px-4 py-3 text-start">
+                  <span className="inline-flex items-center gap-1.5">
+                    <ArrowUpRight className="h-3.5 w-3.5 text-emerald-400" />
+                    {locale === "ar" ? "البيع إلى" : "Sell to"}
+                  </span>
+                </th>
               </tr>
             </thead>
             <tbody className="divide-y divide-gsy-navy/10 dark:divide-white/10">
@@ -183,4 +173,3 @@ export function CommodityDesksInteractive({ locale }: { locale: Locale }) {
     </section>
   );
 }
-

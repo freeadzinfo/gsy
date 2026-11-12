@@ -610,7 +610,7 @@ export default async function HomePage({
             </h2>
           </div>
           <Link
-            href={localePath(locale, "/news")}
+            href={localePath(locale, "/blog")}
             className="inline-flex items-center gap-1.5 text-sm font-bold text-gsy-gold hover:underline dark:text-gsy-gold-light"
           >
             <span>{copy.viewAll}</span>
@@ -622,7 +622,7 @@ export default async function HomePage({
           {latestNews.map((article) => (
             <Link
               key={article.slug}
-              href={localePath(locale, `/news/${article.slug}`)}
+              href={localePath(locale, `/blog/${article.slug}`)}
               className="group flex flex-col overflow-hidden rounded-2xl border border-gsy-navy/10 bg-white shadow-card transition hover:-translate-y-0.5 hover:border-gsy-gold/40 dark:border-white/10 dark:bg-gsy-navy"
             >
               <div className="relative h-44 w-full">

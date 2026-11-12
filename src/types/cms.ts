@@ -60,6 +60,7 @@ export interface FamilyFlow {
   fromId: string;
   toId: string;
   label: LocalizedString;
+  curveOffset?: { x: number; y: number };
 }
 
 export interface SupplyLoopCard {
@@ -172,6 +173,7 @@ export interface OfferRecord {
   storesIncluded: LocalizedString;
   highlights: LocalizedList;
   flyerCode: string;
+  image: string;
 }
 
 export interface CountryRecord {
@@ -252,12 +254,34 @@ export interface JobOpening {
 
 export interface NewsArticle {
   slug: string;
-  category: "milestone" | "press-release";
+  category: "milestone" | "press-release" | "event";
   date: string;
   title: LocalizedString;
   excerpt: LocalizedString;
   body: LocalizedList;
   tag: LocalizedString;
+  image: string;
+  eventMeta?: {
+    venue: LocalizedString;
+    statusLabel: LocalizedString;
+  };
+  isDemoPlaceholder?: boolean;
+}
+
+export type GalleryCategory =
+  | "events"
+  | "operations"
+  | "supermarkets"
+  | "leadership"
+  | "brands";
+
+export interface GalleryItem {
+  id: string;
+  category: GalleryCategory;
+  title: LocalizedString;
+  caption: LocalizedString;
+  location: LocalizedString;
+  year: string;
   image: string;
   isDemoPlaceholder?: boolean;
 }

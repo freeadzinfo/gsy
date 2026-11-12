@@ -7,8 +7,29 @@ import { Locale } from "@/types/cms";
 import { GSY_FAMILY_FLOWS, GSY_FAMILY_MEMBERS } from "@/data/family";
 import { localePath, t } from "@/lib/i18n";
 
+function buildSplitFlowPath(
+  x0: number,
+  y0: number,
+  cx: number,
+  cy: number,
+  x2: number,
+  y2: number,
+  t = 0.52
+) {
+  const c0x = x0 + t * (cx - x0);
+  const c0y = y0 + t * (cy - y0);
+  const c1x = cx + t * (x2 - cx);
+  const c1y = cy + t * (y2 - cy);
+  const mx = (1 - t) * c0x + t * c1x;
+  const my = (1 - t) * c0y + t * c1y;
+  return `M ${x0.toFixed(1)} ${y0.toFixed(1)} Q ${c0x.toFixed(1)} ${c0y.toFixed(1)} ${mx.toFixed(1)} ${my.toFixed(1)} Q ${c1x.toFixed(1)} ${c1y.toFixed(1)} ${x2.toFixed(1)} ${y2.toFixed(1)}`;
+}
+
 export function FamilyNetworkDiagram({ locale }: { locale: Locale }) {
-  const [selectedId, setSelectedId] = useState<string>("gsy-trading");
+  const [selectedId, setSelectedId] = useState<string>("gsy-group");
+  const uid = React.useId().replace(/:/g, "");
+  const activeArrowId = `gsy-arrow-${uid}`;
+  const dimArrowId = `gsy-arrow-dim-${uid}`;
   const isRtl = locale === "ar";
   const ArrowIcon = isRtl ? ArrowLeft : ArrowRight;
 
@@ -20,6 +41,13 @@ export function FamilyNetworkDiagram({ locale }: { locale: Locale }) {
   );
 
   const memberById = (id: string) => GSY_FAMILY_MEMBERS.find((m) => m.id === id);
+
+  const orderedFlows = [
+    ...GSY_FAMILY_FLOWS.filter(
+      (f) => f.fromId !== selectedId && f.toId !== selectedId
+    ),
+    ...connectedFlows,
+  ];
 
   return (
     <div className="grid gap-6 lg:grid-cols-12">
@@ -49,29 +77,40 @@ export function FamilyNetworkDiagram({ locale }: { locale: Locale }) {
           >
             <defs>
               <marker
-                id="gsy-arrow"
+                id={activeArrowId}
                 viewBox="0 0 10 10"
-                refX="8"
+                refX="5"
                 refY="5"
-                markerWidth="6"
-                markerHeight="6"
-                orient="auto-start-reverse"
+                markerWidth="12"
+                markerHeight="12"
+                markerUnits="userSpaceOnUse"
+                orient="auto"
               >
-                <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#DFCE9D" />
+                <path
+                  d="M 1 1.5 L 8.5 5 L 1 8.5 L 3 5 Z"
+                  fill="#F3C669"
+                  stroke="#081931"
+                  strokeWidth="0.9"
+                  strokeLinejoin="round"
+                />
               </marker>
               <marker
-                id="gsy-arrow-dim"
+                id={dimArrowId}
                 viewBox="0 0 10 10"
-                refX="8"
+                refX="5"
                 refY="5"
-                markerWidth="5"
-                markerHeight="5"
-                orient="auto-start-reverse"
+                markerWidth="7"
+                markerHeight="7"
+                markerUnits="userSpaceOnUse"
+                orient="auto"
               >
-                <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="rgba(223,206,157,0.48)" />
+                <path
+                  d="M 1 1.5 L 8.5 5 L 1 8.5 L 3 5 Z"
+                  fill="rgba(223,206,157,0.45)"
+                />
               </marker>
             </defs>
-            {GSY_FAMILY_FLOWS.map((flow) => {
+            {orderedFlows.map((flow) => {
               const from = memberById(flow.fromId);
               const to = memberById(flow.toId);
               if (!from || !to) return null;
@@ -84,20 +123,24 @@ export function FamilyNetworkDiagram({ locale }: { locale: Locale }) {
               const isConnected =
                 flow.fromId === selectedId || flow.toId === selectedId;
 
-              // Curve offset so parallel/bidirectional flows stay clearly separated
-              const midX = (x1 + x2) / 2;
-              const midY = (y1 + y2) / 2 - (flow.id.includes("countries-trading") ? -28 : 22);
+              const offsetX = flow.curveOffset?.x ?? 0;
+              const offsetY = flow.curveOffset?.y ?? -20;
+              const ctrlX = (x1 + x2) / 2 + offsetX;
+              const ctrlY = (y1 + y2) / 2 + offsetY;
+              const pathD = buildSplitFlowPath(x1, y1, ctrlX, ctrlY, x2, y2, 0.52);
 
               return (
                 <path
                   key={flow.id}
-                  d={`M ${x1} ${y1} Q ${midX} ${midY} ${x2} ${y2}`}
+                  d={pathD}
                   fill="none"
-                  stroke={isConnected ? "#DFCE9D" : "rgba(223,206,157,0.34)"}
-                  strokeWidth={isConnected ? 3.2 : 2}
+                  stroke={isConnected ? "#DFCE9D" : "rgba(223,206,157,0.28)"}
+                  strokeWidth={isConnected ? 2.8 : 1.7}
                   strokeLinecap="round"
-                  strokeDasharray={isConnected ? "3 9" : "2 10"}
-                  markerEnd={isConnected ? "url(#gsy-arrow)" : "url(#gsy-arrow-dim)"}
+                  strokeDasharray={isConnected ? "3 8" : "2 10"}
+                  markerMid={
+                    isConnected ? `url(#${activeArrowId})` : `url(#${dimArrowId})`
+                  }
                   className="animate-dotted-flow"
                 />
               );
@@ -107,6 +150,7 @@ export function FamilyNetworkDiagram({ locale }: { locale: Locale }) {
           {/* Interactive Node Pills */}
           {GSY_FAMILY_MEMBERS.map((member) => {
             const isSelected = member.id === selectedId;
+            const isCenterHub = member.id === "gsy-group";
             const isLinked = connectedFlows.some(
               (f) => f.fromId === member.id || f.toId === member.id
             );
@@ -127,7 +171,7 @@ export function FamilyNetworkDiagram({ locale }: { locale: Locale }) {
                     : isLinked
                       ? "z-10 border-gsy-gold-light/60 bg-gsy-navy-soft text-white hover:border-gsy-gold-light"
                       : "z-10 border-white/15 bg-gsy-navy/90 text-white/80 hover:border-white/40 hover:text-white"
-                }`}
+                } ${isCenterHub ? "ring-2 ring-gsy-gold-light/45 shadow-xl sm:px-4 sm:py-2.5" : ""}`}
               >
                 <span className="block whitespace-nowrap text-[10px] font-extrabold sm:text-xs">
                   {t(member.name, locale)}

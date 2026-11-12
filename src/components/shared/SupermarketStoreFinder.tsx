@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useMemo, useState } from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import {
@@ -9,9 +9,7 @@ import {
   Navigation,
   Phone,
   Search,
-  Tag,
-  CheckCircle2,
-  Calendar,
+  X,
 } from "lucide-react";
 import { BrandSlug, Locale } from "@/types/cms";
 import { STORES_DATA, SUPERMARKET_BRANDS, WEEKLY_OFFERS } from "@/data/supermarkets";
@@ -363,6 +361,18 @@ export function WeeklyOffersGrid({
   brandFilter?: BrandSlug;
 }) {
   const [selectedBrand, setSelectedBrand] = useState<string>(brandFilter ?? "all");
+  const [lightboxImage, setLightboxImage] = useState<{ src: string; alt: string } | null>(null);
+  const dialogRef = useRef<HTMLDialogElement>(null);
+
+  useEffect(() => {
+    const dialog = dialogRef.current;
+    if (!dialog) return;
+    if (lightboxImage && !dialog.open) {
+      dialog.showModal();
+    } else if (!lightboxImage && dialog.open) {
+      dialog.close();
+    }
+  }, [lightboxImage]);
 
   // Auto-filter active offers (Page 10 rule: offers disappear automatically after end date)
   const offers = WEEKLY_OFFERS.filter((o) => {
@@ -404,76 +414,55 @@ export function WeeklyOffersGrid({
 
       <div className="grid gap-5 md:grid-cols-3">
         {offers.map((offer) => {
-          const brand = SUPERMARKET_BRANDS.find((b) => b.slug === offer.brand);
-          const offerPhoto =
-            offer.brand === "elite-baskets"
-              ? "/images/elite-baskets-fresh.jpg"
-              : offer.brand === "supermarket-malaysia"
-                ? "/images/noor-al-arab.jpg"
-                : "/images/supermarket-store.jpg";
+          const altText = t(offer.title, locale);
           return (
-            <div
+            <button
               key={offer.id}
-              className="flex flex-col overflow-hidden rounded-2xl border border-gsy-navy/10 bg-white shadow-card dark:border-gsy-gold-light/15 dark:bg-gsy-navy"
+              type="button"
+              onClick={() => setLightboxImage({ src: offer.image, alt: altText })}
+              aria-label={altText}
+              className="group relative aspect-[4/3] w-full overflow-hidden rounded-2xl border border-gsy-navy/10 bg-gsy-navy-deep shadow-card transition hover:-translate-y-0.5 hover:border-gsy-gold/40 focus:outline-none focus:ring-2 focus:ring-gsy-gold dark:border-gsy-gold-light/15"
             >
-              <div className="relative h-36 w-full">
-                <Image
-                  src={offerPhoto}
-                  alt={t(offer.title, locale)}
-                  fill
-                  sizes="(max-width: 768px) 100vw, 33vw"
-                  className="object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-gsy-navy/80 via-gsy-navy/20 to-transparent" />
-                <span className="absolute bottom-2.5 start-3 inline-flex items-center gap-1 rounded-full bg-gsy-gold-bright px-2.5 py-0.5 text-[10px] font-extrabold text-gsy-navy-deep">
-                  <Tag className="h-3 w-3" />
-                  {brand ? t(brand.name, locale) : offer.brand}
-                </span>
-                <span className="absolute bottom-2.5 end-3 rounded bg-black/50 px-2 py-0.5 text-[10px] font-bold text-white backdrop-blur-sm">
-                  {offer.flyerCode}
-                </span>
-              </div>
-
-              <div className="flex flex-1 flex-col justify-between p-5">
-                <div>
-                  <div className="flex items-center justify-between gap-2 text-[11px] font-semibold text-gsy-slate dark:text-white/65">
-                    <span>{offer.country}</span>
-                    <span>{locale === "ar" ? "نشرة أسبوعية" : "Weekly Flyer"}</span>
-                  </div>
-
-                  <h3 className="mt-2 text-base font-extrabold text-gsy-navy dark:text-white">
-                    {t(offer.title, locale)}
-                  </h3>
-                  <p className="mt-1.5 text-xs leading-relaxed text-gsy-slate dark:text-white/75">
-                    {t(offer.subtitle, locale)}
-                  </p>
-
-                  <ul className="mt-4 space-y-1.5 text-xs text-gsy-navy dark:text-white/85">
-                    {(locale === "ar" ? offer.highlights.ar : offer.highlights.en).map(
-                      (item, i) => (
-                        <li key={i} className="flex items-start gap-2">
-                          <CheckCircle2 className="mt-0.5 h-3.5 w-3.5 shrink-0 text-emerald-600 dark:text-emerald-400" />
-                          <span>{item}</span>
-                        </li>
-                      )
-                    )}
-                  </ul>
-                </div>
-
-                <div className="mt-5 border-t border-gsy-navy/10 pt-3 text-[11px] text-gsy-slate dark:border-white/10 dark:text-white/70">
-                  <p className="flex items-center gap-1.5 font-semibold">
-                    <Calendar className="h-3.5 w-3.5 text-gsy-gold" />
-                    <span>
-                      {locale === "ar" ? "ساري حتى:" : "Valid:"} {offer.validFrom} → {offer.validTo}
-                    </span>
-                  </p>
-                  <p className="mt-1">{t(offer.storesIncluded, locale)}</p>
-                </div>
-              </div>
-            </div>
+              <Image
+                src={offer.image}
+                alt={altText}
+                fill
+                sizes="(max-width: 768px) 100vw, 33vw"
+                className="object-cover transition duration-500 group-hover:scale-105"
+              />
+            </button>
           );
         })}
       </div>
+
+      <dialog
+        ref={dialogRef}
+        onClose={() => setLightboxImage(null)}
+        onClick={(e) => {
+          if (e.target === dialogRef.current) setLightboxImage(null);
+        }}
+        className="m-auto w-full max-w-4xl overflow-hidden rounded-2xl border border-gsy-gold-light/25 bg-[#040c18] p-0 shadow-2xl backdrop:bg-black/80 backdrop:backdrop-blur-sm"
+      >
+        {lightboxImage && (
+          <div className="relative aspect-[4/3] w-full">
+            <button
+              type="button"
+              onClick={() => setLightboxImage(null)}
+              aria-label={locale === "ar" ? "إغلاق" : "Close preview"}
+              className="absolute end-3 top-3 z-10 inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/20 bg-black/60 text-white backdrop-blur transition hover:bg-gsy-gold hover:text-gsy-navy-deep"
+            >
+              <X className="h-4 w-4" />
+            </button>
+            <Image
+              src={lightboxImage.src}
+              alt={lightboxImage.alt}
+              fill
+              sizes="(max-width: 1024px) 100vw, 900px"
+              className="object-contain"
+            />
+          </div>
+        )}
+      </dialog>
     </div>
   );
 }

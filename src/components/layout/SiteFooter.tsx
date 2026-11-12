@@ -27,6 +27,8 @@ export function SiteFooter({ locale }: { locale: Locale }) {
     { label: { en: "Global Presence Map", ar: "خريطة الانتشار العالمي" }, href: "/presence" },
     { label: { en: "GSY in Africa", ar: "جي إس واي في أفريقيا" }, href: "/presence/africa" },
     { label: { en: "Halal Investment Program", ar: "برنامج الاستثمار الحلال" }, href: "/investors/halal-investment" },
+    { label: { en: "Media Gallery", ar: "معرض الصور" }, href: "/about/gallery" },
+    { label: { en: "Blog & Events", ar: "المدونة والفعاليات" }, href: "/blog" },
     { label: { en: "Careers", ar: "الوظائف" }, href: "/careers" },
     { label: { en: "Contact", ar: "اتصل بنا" }, href: "/contact" },
   ];
