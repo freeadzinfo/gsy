@@ -40,7 +40,7 @@ export const UI_COPY = {
       visionSub:
         "We are working towards building a US$2.5 billion international group with a presence in more than 25 countries by 2030. Our growth ambition is driven by expanding our trading activities, strengthening shipping and distribution capabilities, developing food brands and growing our retail network.",
       businessesEyebrow: "03 • Integrated Divisions",
-      businessesHeading: "Connected Businesses Across the Trade Value Chain",
+      businessesHeading: "Connected Businesses",
       businessesSub:
         "From sourcing and international trade to shipping, food distribution and retail, our businesses work together to serve customers across multiple markets.",
       corridorsEyebrow: "04 • Trade Corridors",
@@ -155,7 +155,7 @@ export const UI_COPY = {
       visionSub:
         "نعمل على بناء مجموعة دولية بقيمة 2.5 مليار دولار مع التواجد في أكثر من 25 دولة بحلول عام 2030. ويندفع طموحنا للنمو من خلال توسيع أنشطتنا التجارية، وتعزيز قدرات الشحن والتوزيع، وتطوير العلامات الغذائية، وتوسيع شبكة التجزئة.",
       businessesEyebrow: "03 • القطاعات المتكاملة",
-      businessesHeading: "أعمال مترابطة عبر سلسلة القيمة التجارية",
+      businessesHeading: "أعمال مترابطة",
       businessesSub:
         "من التوريد والتجارة الدولية إلى الشحن البحري وتوزيع الأغذية والتجزئة، تعمل أعمالنا بتناغم لخدمة العملاء عبر أسواق متعددة.",
       corridorsEyebrow: "04 • الممرات التجارية",

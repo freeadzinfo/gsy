@@ -201,21 +201,18 @@ export default async function HomePage({
 
       {/* 3. THE GSY FAMILY + 5-STEP GROUP MODEL STRIP */}
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-        <div className="flex flex-wrap items-end justify-between gap-4">
-          <div className="max-w-2xl">
+        <div className="flex flex-wrap items-center justify-between gap-4">
+          <div>
             <p className="text-xs font-bold uppercase tracking-[0.18em] text-gsy-gold dark:text-gsy-gold-light">
               {copy.homeSections.familyEyebrow}
             </p>
-            <h2 className="mt-2 text-2xl font-extrabold tracking-tight text-gsy-navy sm:text-3xl dark:text-white">
+            <h2 className="mt-2 text-2xl font-extrabold tracking-tight text-gsy-navy sm:text-3xl sm:whitespace-nowrap dark:text-white">
               {copy.homeSections.familyHeading}
             </h2>
-            <p className="mt-2 text-sm leading-relaxed text-gsy-slate sm:text-base dark:text-white/80">
-              {copy.homeSections.familyBody}
-            </p>
           </div>
           <Link
             href={localePath(locale, "/about/gsy-family")}
-            className="inline-flex items-center gap-2 rounded-lg border border-gsy-navy/20 bg-white px-4 py-2.5 text-xs font-bold text-gsy-navy shadow-sm transition hover:border-gsy-gold hover:text-gsy-gold dark:border-white/20 dark:bg-gsy-navy dark:text-white dark:hover:text-gsy-gold-light"
+            className="inline-flex shrink-0 items-center gap-2 rounded-lg border border-gsy-navy/20 bg-white px-4 py-2.5 text-xs font-bold text-gsy-navy shadow-sm transition hover:border-gsy-gold hover:text-gsy-gold dark:border-white/20 dark:bg-gsy-navy dark:text-white dark:hover:text-gsy-gold-light"
           >
             <span>{copy.homeSections.familyCta}</span>
             <ArrowIcon className="h-3.5 w-3.5" />

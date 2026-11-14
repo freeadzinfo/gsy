@@ -5,6 +5,7 @@ import Link from "next/link";
 import { ArrowRight, ArrowLeft, Network, MapPin } from "lucide-react";
 import { Locale } from "@/types/cms";
 import { GSY_FAMILY_FLOWS, GSY_FAMILY_MEMBERS } from "@/data/family";
+import { getUiCopy } from "@/data/dictionary";
 import { localePath, t } from "@/lib/i18n";
 
 function buildSplitFlowPath(
@@ -25,8 +26,14 @@ function buildSplitFlowPath(
   return `M ${x0.toFixed(1)} ${y0.toFixed(1)} Q ${c0x.toFixed(1)} ${c0y.toFixed(1)} ${mx.toFixed(1)} ${my.toFixed(1)} Q ${c1x.toFixed(1)} ${c1y.toFixed(1)} ${x2.toFixed(1)} ${y2.toFixed(1)}`;
 }
 
-export function FamilyNetworkDiagram({ locale }: { locale: Locale }) {
+interface FamilyNetworkDiagramProps {
+  locale: Locale;
+  description?: string;
+}
+
+export function FamilyNetworkDiagram({ locale, description }: FamilyNetworkDiagramProps) {
   const [selectedId, setSelectedId] = useState<string>("gsy-group");
+  const copy = getUiCopy(locale);
   const uid = React.useId().replace(/:/g, "");
   const activeArrowId = `gsy-arrow-${uid}`;
   const dimArrowId = `gsy-arrow-dim-${uid}`;
@@ -55,7 +62,7 @@ export function FamilyNetworkDiagram({ locale }: { locale: Locale }) {
       <div className="relative overflow-hidden rounded-2xl border border-gsy-navy/10 bg-gsy-navy p-4 text-white shadow-card lg:col-span-8 sm:p-6 dark:border-gsy-gold-light/20 dark:bg-[#050f1e]">
         <div className="mb-3 flex flex-wrap items-center justify-between gap-2">
           <div className="flex items-center gap-2 text-xs font-semibold text-gsy-gold-light">
-            <Network className="h-4 w-4" />
+            <Network className="h-4 w-4 shrink-0" />
             <span>
               {locale === "ar"
                 ? "اضغط على أي كيان لاستعراض تدفقات الإمداد البينية"
@@ -187,6 +194,10 @@ export function FamilyNetworkDiagram({ locale }: { locale: Locale }) {
             );
           })}
         </div>
+
+        <p className="mt-3.5 text-xs leading-relaxed text-white/80 sm:text-sm">
+          {description ?? copy.homeSections.familyBody}
+        </p>
       </div>
 
       {/* Selected Entity Details Card */}
