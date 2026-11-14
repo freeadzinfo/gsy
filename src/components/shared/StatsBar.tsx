@@ -75,42 +75,45 @@ export function StatsBar({ locale }: { locale: Locale }) {
     {
       key: "founded",
       value: <AnimatedNumber target={SITE_SETTINGS.foundedYear} />,
-      label: copy.stats.founded,
+      label: locale === "ar" ? "سنة التأسيس" : "Founded",
     },
     {
       key: "today",
       value: <AnimatedNumber target={SITE_SETTINGS.countriesToday} />,
-      label: copy.stats.countriesToday,
+      label: locale === "ar" ? "دول ننشط فيها اليوم" : "Countries today",
     },
     {
       key: "target-countries",
       value: <AnimatedNumber target={25} suffix="+" />,
-      label: copy.stats.countriesBy2030,
+      label: locale === "ar" ? "دولة بحلول 2030" : "Countries by 2030",
     },
     {
       key: "people",
       value: <AnimatedNumber target={350} suffix="+" />,
-      label: copy.stats.people,
+      label: locale === "ar" ? "فريق العمل" : "People",
     },
     {
       key: "goal",
       value: <AnimatedNumber target={2.5} prefix="US$" suffix="B" decimals={1} />,
-      label: copy.stats.groupGoal2030,
+      label: locale === "ar" ? "هدف المجموعة 2030" : "Group goal 2030",
     },
   ];
 
   return (
     <section
-      aria-label={locale === "ar" ? "أرقام المجموعة الرئيسية" : "Key Group Figures"}
+      aria-label={copy.stats.sectionHeading || (locale === "ar" ? "أرقام المجموعة الرئيسية" : "A Legacy of Trade. A Vision for Growth.")}
       className="border-b border-gsy-navy/10 bg-white dark:border-gsy-gold-light/15 dark:bg-gsy-navy"
     >
+      <h2 className="sr-only">
+        {copy.stats.sectionHeading || "A Legacy of Trade. A Vision for Growth."}
+      </h2>
       <div className="mx-auto grid max-w-7xl grid-cols-2 divide-y divide-gsy-navy/10 px-4 sm:grid-cols-3 sm:px-6 lg:grid-cols-5 lg:divide-x lg:divide-y-0 rtl:lg:divide-x-reverse lg:px-8 dark:divide-white/10">
         {items.map((item) => (
           <div key={item.key} className="px-4 py-6 text-center sm:py-7">
             <div className="text-2xl font-extrabold tracking-tight text-gsy-navy sm:text-3xl dark:text-gsy-gold-light">
               {item.value}
             </div>
-            <p className="mt-1 text-xs font-semibold uppercase tracking-wider text-gsy-slate dark:text-white/75">
+            <p className="mt-1 text-xs font-bold text-gsy-slate sm:text-sm dark:text-white/75">
               {item.label}
             </p>
           </div>

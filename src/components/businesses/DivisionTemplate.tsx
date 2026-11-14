@@ -14,9 +14,24 @@ interface DivisionTemplateProps {
   division: BusinessDivision;
   formVariant: FormVariant;
   formTitle: string;
+  formSubtitle?: string;
+  formSubmitLabel?: string;
+  formSecondaryAction?: { label: string; href: string };
   heroAction?: React.ReactNode;
   customSection?: React.ReactNode;
   afterHeroSection?: React.ReactNode;
+  heroEyebrow?: string;
+  heroTitle?: string;
+  heroSubtitle?: string;
+  primaryCta?: { label: string; href: string };
+  secondaryCta?: { label: string; href: string };
+  whatWeDoTitle?: string;
+  whatWeDoIntro?: string;
+  howWeWorkTitle?: string;
+  whoWeServeTitle?: string;
+  complianceTitle?: string;
+  complianceSubtitle?: string;
+  finalCtaSection?: React.ReactNode;
 }
 
 export function DivisionTemplate({
@@ -24,9 +39,24 @@ export function DivisionTemplate({
   division,
   formVariant,
   formTitle,
+  formSubtitle,
+  formSubmitLabel,
+  formSecondaryAction,
   heroAction,
   customSection,
   afterHeroSection,
+  heroEyebrow,
+  heroTitle,
+  heroSubtitle,
+  primaryCta,
+  secondaryCta,
+  whatWeDoTitle,
+  whatWeDoIntro,
+  howWeWorkTitle,
+  whoWeServeTitle,
+  complianceTitle,
+  complianceSubtitle,
+  finalCtaSection,
 }: DivisionTemplateProps) {
   const ArrowIcon = locale === "ar" ? ArrowLeft : ArrowRight;
 
@@ -67,7 +97,11 @@ export function DivisionTemplate({
     },
     logistics: {
       mainImage: "/images/cold-chain-warehouse.jpg",
-      badge: { en: "Ports & Cold Chain", ar: "الموانئ والتبريد" },
+      badge: { en: "Coordinated Logistics", ar: "لوجستيات منسقة" },
+    },
+    "pets-pantry": {
+      mainImage: "/images/brands/pets-pantry.jpg",
+      badge: { en: "Pet Food & Supplies (UAE)", ar: "أغذية ومستلزمات الحيوانات (الإمارات)" },
     },
   };
 
@@ -77,37 +111,39 @@ export function DivisionTemplate({
     <div className="bg-gsy-ivory dark:bg-gsy-navy-deep">
       <PageHero
         locale={locale}
-        eyebrow={locale === "ar" ? "قطاعات أعمال جي إس واي" : "GSY Business Division"}
-        title={t(division.name, locale)}
-        subtitle={t(division.heroPromise, locale)}
+        eyebrow={heroEyebrow ?? (locale === "ar" ? "قطاعات أعمال جي إس واي" : "GSY Business Division")}
+        title={heroTitle ?? t(division.name, locale)}
+        subtitle={heroSubtitle ?? t(division.heroPromise, locale)}
         showFamilyBadge={division.isFamilyBrand}
         backgroundImage={division.image}
         sideGallery={{
           mainImage: visual.mainImage,
-          mainCaption: t(division.name, locale),
+          mainCaption: heroTitle ?? t(division.name, locale),
           badgeText: t(visual.badge, locale),
         }}
         primaryCta={
-          !heroAction
+          primaryCta ??
+          (!heroAction
             ? {
                 label:
                   locale === "ar" ? "أرسل استفساراً لهذا القطاع" : "Send Division Enquiry",
                 href: "#enquiry-form",
               }
-            : undefined
+            : undefined)
         }
         secondaryCta={
-          !heroAction
+          secondaryCta ??
+          (!heroAction
             ? {
                 label:
                   locale === "ar" ? "تصفح المنتجات" : "View Product Catalogue",
                 href: "/products",
               }
-            : undefined
+            : undefined)
         }
         breadcrumbs={[
           { label: locale === "ar" ? "الأعمال" : "Businesses", href: "/businesses" },
-          { label: t(division.name, locale) },
+          { label: heroTitle ?? t(division.name, locale) },
         ]}
         actions={heroAction}
       />
@@ -118,12 +154,16 @@ export function DivisionTemplate({
         {/* What We Do (3-4 Blocks) */}
         <section>
           <h2 className="text-2xl font-extrabold text-gsy-navy dark:text-white">
-            {locale === "ar" ? "ماذا نقدم" : "What We Do"}
+            {whatWeDoTitle ?? (locale === "ar" ? "ماذا نقدم" : "What We Do")}
           </h2>
-          <p className="mt-2 max-w-3xl text-sm text-gsy-slate dark:text-white/80">
-            {t(division.summary, locale)}
+          <p className="mt-2 max-w-3xl text-sm leading-relaxed text-gsy-slate dark:text-white/80">
+            {whatWeDoIntro ?? t(division.summary, locale)}
           </p>
-          <div className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          <div
+            className={`mt-6 grid gap-5 sm:grid-cols-2 ${
+              division.whatWeDo.length > 4 ? "lg:grid-cols-3" : "lg:grid-cols-4"
+            }`}
+          >
             {division.whatWeDo.map((block, idx) => (
               <div
                 key={idx}
@@ -149,7 +189,7 @@ export function DivisionTemplate({
         {/* How We Work (Process Strip) */}
         <section className="rounded-2xl border border-gsy-navy/10 bg-white p-6 shadow-card sm:p-8 dark:border-gsy-gold-light/15 dark:bg-gsy-navy">
           <h2 className="text-xl font-extrabold text-gsy-navy dark:text-white">
-            {locale === "ar" ? "آلية العمل" : "How We Work"}
+            {howWeWorkTitle ?? (locale === "ar" ? "آلية العمل" : "How We Work")}
           </h2>
           <div
             className={`mt-6 grid gap-4 ${
@@ -179,7 +219,7 @@ export function DivisionTemplate({
         <section className="grid gap-6 md:grid-cols-2">
           <div className="rounded-2xl border border-gsy-navy/10 bg-white p-6 shadow-card dark:border-gsy-gold-light/15 dark:bg-gsy-navy">
             <h2 className="text-lg font-extrabold text-gsy-navy dark:text-white">
-              {locale === "ar" ? "الجهات التي نخدمها" : "Who We Serve"}
+              {whoWeServeTitle ?? (locale === "ar" ? "الجهات التي نخدمها" : "Who We Serve")}
             </h2>
             <ul className="mt-4 space-y-2.5 text-sm text-gsy-slate dark:text-white/80">
               {(locale === "ar" ? division.whoWeServe.ar : division.whoWeServe.en).map(
@@ -196,8 +236,13 @@ export function DivisionTemplate({
           <div className="rounded-2xl border border-gsy-navy/10 bg-white p-6 shadow-card dark:border-gsy-gold-light/15 dark:bg-gsy-navy">
             <h2 className="flex items-center gap-2 text-lg font-extrabold text-gsy-navy dark:text-white">
               <ShieldCheck className="h-5 w-5 text-gsy-gold dark:text-gsy-gold-light" />
-              <span>{locale === "ar" ? "الامتثال وضوابط المخاطر" : "Compliance & Risk Discipline"}</span>
+              <span>{complianceTitle ?? (locale === "ar" ? "الامتثال وضوابط المخاطر" : "Compliance & Risk Discipline")}</span>
             </h2>
+            {complianceSubtitle && (
+              <p className="mt-2 text-xs leading-relaxed text-gsy-slate dark:text-white/75">
+                {complianceSubtitle}
+              </p>
+            )}
             <ul className="mt-4 space-y-2.5 text-sm text-gsy-slate dark:text-white/80">
               {(locale === "ar" ? division.complianceNotes.ar : division.complianceNotes.en).map(
                 (item, i) => (
@@ -261,9 +306,15 @@ export function DivisionTemplate({
             locale={locale}
             variant={formVariant}
             title={formTitle}
+            subtitle={formSubtitle}
+            submitLabel={formSubmitLabel}
+            secondaryAction={formSecondaryAction}
             routeTarget={t(division.enquiryRouteLabel, locale)}
           />
         </section>
+
+        {/* Final CTA Banner */}
+        {finalCtaSection}
 
         {/* Related Open Roles */}
         {relatedJobs.length > 0 && (

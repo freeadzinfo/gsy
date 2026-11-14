@@ -89,7 +89,8 @@ export interface BusinessDivision {
     | "noor-al-arab"
     | "government-tenders"
     | "distribution"
-    | "logistics";
+    | "logistics"
+    | "pets-pantry";
   name: LocalizedString;
   shortTitle: LocalizedString;
   heroPromise: LocalizedString;
@@ -220,13 +221,25 @@ export interface ProductItem {
     | "Frozen Foods"
     | "Minerals"
     | "Metals"
-    | "Noor Al Arab";
+    | "Noor Al Arab"
+    | "Rice"
+    | "Sugar"
+    | "Edible Oils"
+    | "Pulses & Spices"
+    | "Packaged Foods"
+    | "Minerals & Metals"
+    | string;
   divisionSlug: string;
   origins: string[];
   destinations: LocalizedString;
   packaging: LocalizedString;
   certifications: string[];
   isNoorAlArab?: boolean;
+  description?: LocalizedString;
+  specifications?: LocalizedString;
+  brandOrDivision?: LocalizedString;
+  image?: string;
+  enquiryRoute?: string;
 }
 
 export interface JobOpening {
@@ -240,12 +253,24 @@ export interface JobOpening {
     | "Distribution & HORECA"
     | "Logistics & Supply Chain"
     | "Government & Tenders"
-    | "Corporate & Finance";
+    | "Corporate & Finance"
+    | "Trade Finance & Treasury"
+    | "Risk & Compliance"
+    | "Operations & Documentation"
+    | "Distribution & Sales"
+    | "Processing & Quality"
+    | "Technology"
+    | "HR & Administration"
+    | string;
   divisionSlug: string;
   countrySlug: string;
   location: LocalizedString;
+  country?: LocalizedString;
+  city?: LocalizedString;
   employmentType: LocalizedString;
   experience: LocalizedString;
+  seniorityLevel?: LocalizedString;
+  closingDate?: LocalizedString;
   summary: LocalizedString;
   responsibilities: LocalizedList;
   requirements: LocalizedList;

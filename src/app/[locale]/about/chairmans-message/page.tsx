@@ -18,22 +18,23 @@ export default async function ChairmansMessagePage({
 
   return (
     <div className="bg-gsy-ivory dark:bg-gsy-navy-deep">
+      {/* 1. Page Introduction */}
       <PageHero
         locale={locale}
-        eyebrow={locale === "ar" ? "كلمة القيادة" : "Chairman's Message"}
-        title={
+        eyebrow={
           locale === "ar"
-            ? "نحو بناء مجموعة بقيمة 2.5 مليار دولار بحلول 2030"
-            : "Building a US$2.5 billion group across 25+ countries by 2030"
+            ? "نبني على إرثنا. نتحرك للأمام بهدف واضح."
+            : "Building on Our Legacy. Moving Forward with Purpose."
         }
+        title={locale === "ar" ? "رسالة رئيس مجلس الإدارة" : "Chairman's Message"}
         subtitle={
           locale === "ar"
-            ? "رؤية مجموعة جي إس واي للانتقال من 7 دول إلى أكثر من 25 دولة عبر نموذج التداول والغذاء والأسواق المركزية."
-            : "Strategic direction from our Dubai headquarters on disciplined cross-border trade, food security and 2030 retail growth."
+            ? "منذ عام 1974، واصلت مجموعة جي إس واي الدولية نموها من خلال العلاقات التجارية، والتجارة الدولية، والالتزام بالتنمية طويلة الأجل.\n\nتعكس مسيرتنا أهمية الثقة والتعاون والفرص الناتجة عن ربط الأسواق عبر الحدود."
+            : "Since 1974, GSY International Group has continued to grow through business relationships, international trade and a commitment to long-term development.\n\nOur journey reflects the importance of trust, collaboration and the opportunities created by connecting markets across borders."
         }
         backgroundImage="/images/dubai-hq.jpg"
         primaryCta={{
-          label: locale === "ar" ? "استكشف رؤية 2030" : "Explore Vision 2030",
+          label: locale === "ar" ? "استكشف رؤيتنا 2030" : "Explore Our Vision 2030",
           href: "/about/vision-2030",
         }}
         secondaryCta={{
@@ -74,34 +75,67 @@ export default async function ChairmansMessagePage({
             </div>
           </div>
 
-          <div className="space-y-4 text-sm leading-relaxed text-gsy-slate md:col-span-8 sm:text-base dark:text-white/85">
-            <blockquote className="border-s-4 border-gsy-gold ps-4 text-lg font-bold text-gsy-navy dark:text-white">
-              {copy.homeSections.chairmanQuote}
-            </blockquote>
+          <div className="space-y-6 text-sm leading-relaxed text-gsy-slate md:col-span-8 sm:text-base dark:text-white/85">
+            {/* 2. Chairman's Message */}
+            <div>
+              <h2 className="text-xl font-extrabold text-gsy-navy dark:text-white">
+                {locale === "ar" ? "رسالة من رئيس مجلس الإدارة" : "A Message from the Chairman"}
+              </h2>
 
-            <p>
-              {locale === "ar"
-                ? "منذ انطلاق أعمالنا في عام 1974، ارتكزت مسيرة مجموعة جي إس واي على التجارة الحقيقية الموثوقة، وخدمة الموزعين وتجار التجزئة والمؤسسات الحكومية بانضباط تشغيلي ومالي صارم."
-                : "Since our beginnings in 1974, GSY has been built on dependable physical trade, deep supplier relationships, and disciplined service to distributors, retailers and institutional buyers."}
-            </p>
-            <p>
-              {locale === "ar"
-                ? "نعمل اليوم كمحركين متكاملين من مقرنا الرئيسي في دبي: منصة غذائية متكاملة تمتد من التوريد والتصنيع إلى علامة نور العرب وأسواقنا المركزية، وبيت تداول سلع مرن الأصول عبر ممر أفريقيا والخليج وآسيا."
-                : "From our corporate headquarters in Dubai, we bring together two complementary engines: an integrated food platform connecting origin sourcing to Noor Al Arab and our own supermarkets, alongside an asset-light commodity trading house on the Africa–GCC–Asia corridor."}
-            </p>
-            <p>
-              {locale === "ar"
-                ? "يرتكز نمونا نحو عام 2030 على مبادئ واضحة: التداول أولاً قبل الاستثمار في الأصول، وبناء العلامات المملوكة، وتطوير شبكة التوزيع كميزة تنافسية، والتوسع المنضبط دون مديونية مفرطة تحت حوكمة مؤسسية راسخة."
-                : "Our expansion toward 2030 follows clear discipline: trade before we build, own the brand, make distribution our moat, and grow without excess debt — underpinned by independent board oversight, Big-4 external audit standards and bank-grade compliance."}
-            </p>
+              <div className="mt-3 rounded-xl border border-dashed border-gsy-gold/40 bg-gsy-gold/5 p-4 text-xs text-gsy-slate dark:border-gsy-gold-light/30 dark:bg-gsy-gold-bright/10 dark:text-white/80">
+                <p className="font-bold text-gsy-navy dark:text-gsy-gold-light">
+                  {locale === "ar"
+                    ? "[محتوى الرسالة — في انتظار البيان المعتمد من رئيس مجلس الإدارة]"
+                    : "[Message Content — Awaiting Chairman's approved statement]"}
+                </p>
+                <p className="mt-1 leading-relaxed">
+                  {locale === "ar"
+                    ? "سيتم إدراج البيان الرسمي المعتمد لرئيس مجلس الإدارة هنا ليعكس المنظور الشخصي حول تاريخ المجموعة وفلسفتها وأولوياتها ورؤيتها المستقبلية."
+                    : "The Chairman's original, approved message will be inserted here to reflect his personal perspective on the group's history, business philosophy, current priorities and future vision."}
+                </p>
+              </div>
 
-            <div className="pt-4">
-              <Link
-                href={localePath(locale, "/about/vision-2030")}
-                className="inline-flex items-center rounded-lg bg-gsy-navy px-5 py-2.5 text-xs font-bold text-white hover:bg-gsy-navy-mid dark:bg-gsy-gold-bright dark:text-gsy-navy-deep"
-              >
-                {locale === "ar" ? "اقرأ خطة رؤية 2030" : "Explore Vision 2030 Roadmap"}
-              </Link>
+              <blockquote className="mt-4 border-s-4 border-gsy-gold ps-4 text-base font-medium italic text-gsy-navy sm:text-lg dark:text-white">
+                &ldquo;{copy.homeSections.chairmanQuote}&rdquo;
+              </blockquote>
+            </div>
+
+            {/* 3. Our Direction */}
+            <div className="border-t border-gsy-navy/10 pt-5 dark:border-white/10">
+              <h3 className="text-lg font-extrabold text-gsy-navy dark:text-white">
+                {locale === "ar" ? "نتطلع إلى عام 2030" : "Looking Ahead to 2030"}
+              </h3>
+              <p className="mt-2 text-sm leading-relaxed text-gsy-slate sm:text-base dark:text-white/85">
+                {locale === "ar"
+                  ? "مع مواصلة مجموعة جي إس واي الدولية مسيرتها، يتمثل طموحنا في بناء مجموعة بقيمة 2.5 مليار دولار مع التواجد في أكثر من 25 دولة بحلول عام 2030."
+                  : "As GSY International Group continues its journey, our ambition is to build a US$2.5 billion group with a presence in more than 25 countries by 2030."}
+              </p>
+              <p className="mt-2 text-sm leading-relaxed text-gsy-slate sm:text-base dark:text-white/85">
+                {locale === "ar"
+                  ? "ونهدف إلى تحقيق هذه الرؤية من خلال تطوير أعمالنا في تجارة السلع، والشحن، والعلامات الغذائية، والتوزيع، ومتاجر السوبرماركت."
+                  : "We aim to pursue this vision through the development of our commodity trading, shipping, food brands, distribution and supermarket businesses."}
+              </p>
+            </div>
+
+            {/* 4. Closing Section */}
+            <div className="border-t border-gsy-navy/10 pt-5 dark:border-white/10">
+              <h3 className="text-base font-extrabold text-gsy-navy dark:text-white">
+                {locale === "ar" ? "مواصلة مسيرة جي إس واي" : "Continuing the GSY Journey"}
+              </h3>
+              <p className="mt-2 text-sm leading-relaxed text-gsy-slate sm:text-base dark:text-white/85">
+                {locale === "ar"
+                  ? "يوفر تاريخنا الأساس الراسخ لطموحاتنا المستقبلية. ونظل ملتزمين بتطوير أعمالنا، وتعزيز العلاقات، وربط الفرص عبر الأسواق الدولية."
+                  : "Our history provides the foundation for our future ambitions. We remain focused on developing our businesses, strengthening relationships and connecting opportunities across international markets."}
+              </p>
+
+              <div className="pt-4">
+                <Link
+                  href={localePath(locale, "/about/vision-2030")}
+                  className="inline-flex items-center rounded-lg bg-gsy-navy px-5 py-2.5 text-xs font-bold text-white transition hover:bg-gsy-gold hover:text-gsy-navy dark:bg-gsy-gold-bright dark:text-gsy-navy-deep dark:hover:bg-gsy-gold-light"
+                >
+                  {locale === "ar" ? "استكشف رؤيتنا 2030" : "Explore Our Vision 2030"}
+                </Link>
+              </div>
             </div>
           </div>
         </div>

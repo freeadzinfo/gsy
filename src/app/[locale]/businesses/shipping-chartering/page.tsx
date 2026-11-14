@@ -22,7 +22,7 @@ export default async function ShippingCharteringPage({
     >
       <Ship className="h-4 w-4" />
       <span>
-        {locale === "ar" ? "اطلب عرض سعر شحن" : "Request a Freight Quote"}
+        {locale === "ar" ? "طلب عرض سعر شحن" : "Request a Freight Quote"}
       </span>
     </a>
   );
@@ -36,44 +36,44 @@ export default async function ShippingCharteringPage({
           <div>
             <h2 className="text-base font-extrabold text-gsy-navy dark:text-white">
               {locale === "ar"
-                ? "نموذج تشغيلي مرن وخفيف الأصول: نستأجر السفينة المناسبة لكل شحنة"
-                : "Fleet-Flexible & Asset-Light: We charter the right vessel for every cargo"}
+                ? "السفينة المناسبة لكل شحنة • نموذج تشغيلي خفيف الأصول"
+                : "The Right Vessel for Every Cargo • Asset-Light Operating Model"}
             </h2>
             <p className="mt-1.5 text-xs leading-relaxed text-gsy-slate sm:text-sm dark:text-white/80">
               {locale === "ar"
-                ? "يعمل مكتب التأجير البحري المشترك في دبي على استئجار السفن بالرحلة (Handysize إلى Supramax) وحجز مساحات الحاويات بأسعار الكميات. *ملاحظة: يتم تفعيل خدمات التأجير لأطراف ثالثة بعد تأكيد نطاق الرخصة التجارية في الإمارات."
-                : "Our shared chartering desk fixes dry bulk voyages (Handysize to Supramax) and volume container allocations per cargo rather than owning vessels. *Third-party cargo chartering is displayed subject to formal confirmation of UAE trade licence scope."}
+                ? "تتولى جي إس واي للشحن والتأجير البحري تنسيق تأجير السفن ومتطلبات الشحن لبضائع مختارة. ويقوم نموذجنا التشغيلي على أساس خفيف الأصول وقائم على استئجار السفن بالرحلة، حيث تُستأجر السفن وفق متطلبات الشحنة (دون ادعاء ملكية أي سفن). *خدمات تأجير السفن لأطراف ثالثة مشروطة بتأكيد توفر الخدمة والتراخيص اللازمة."
+                : "GSY Shipping & Chartering coordinates vessel chartering and freight requirements for selected cargoes. Our operating model is asset-light and voyage-based, with vessels chartered according to cargo requirements (no owned vessels claimed). *Third-party cargo chartering is supported subject to confirmation of service availability and applicable licensing."}
             </p>
           </div>
         </div>
       </div>
 
-      {/* Cargoes & Key Ports */}
+      {/* Cargo Categories & Port Network */}
       <div className="grid gap-6 lg:grid-cols-12">
         <div className="rounded-2xl border border-gsy-navy/10 bg-white p-6 shadow-card lg:col-span-5 dark:border-gsy-gold-light/15 dark:bg-gsy-navy">
           <h3 className="text-lg font-extrabold text-gsy-navy dark:text-white">
-            {locale === "ar" ? "البضائع التي نشحنها" : "Cargoes Handled"}
+            {locale === "ar" ? "فئات البضائع" : "Cargo Categories"}
           </h3>
           <p className="mt-2 text-sm leading-relaxed text-gsy-slate dark:text-white/80">
             {locale === "ar"
-              ? "الأرز، السكر، زيوت الطعام، الأسمدة، المعادن والخامات، الصلب والفلزات، والسلع الاستهلاكية المعبأة في حاويات."
-              : "Rice, sugar, edible oils, fertilizer, minerals and ores, steel and metals, and containerised FMCG."}
+              ? "تدعم أنشطة الشحن والتأجير لدينا فئات بضائع مختارة، تشمل:"
+              : "Our shipping and chartering activities support selected cargo categories, including:"}
           </p>
           <div className="mt-5 flex flex-wrap gap-2">
             {[
-              "Rice",
-              "Sugar",
-              "Edible oils",
-              "Fertilizer",
-              "Minerals & ores",
-              "Steel & metals",
-              "Containerised FMCG",
+              { en: "Rice", ar: "الأرز" },
+              { en: "Sugar", ar: "السكر" },
+              { en: "Edible oils", ar: "زيوت الطعام" },
+              { en: "Fertilizer", ar: "الأسمدة" },
+              { en: "Minerals and ores", ar: "المعادن والخامات" },
+              { en: "Steel and metals", ar: "الصلب والفلزات" },
+              { en: "Containerised FMCG", ar: "السلع الاستهلاكية المعبأة في حاويات" },
             ].map((cargo) => (
               <span
-                key={cargo}
+                key={cargo.en}
                 className="rounded-lg bg-gsy-ivory px-3 py-1.5 text-xs font-bold text-gsy-navy dark:bg-white/10 dark:text-white"
               >
-                {cargo}
+                {locale === "ar" ? cargo.ar : cargo.en}
               </span>
             ))}
           </div>
@@ -82,8 +82,13 @@ export default async function ShippingCharteringPage({
         <div className="rounded-2xl border border-gsy-navy/10 bg-white p-6 shadow-card lg:col-span-7 dark:border-gsy-gold-light/15 dark:bg-gsy-navy">
           <h3 className="flex items-center gap-2 text-lg font-extrabold text-gsy-navy dark:text-white">
             <Anchor className="h-5 w-5 text-gsy-gold" />
-            <span>{locale === "ar" ? "الموانئ الرئيسية (8 بوابات بحرية)" : "Key Ports (8 Core Maritime Gateways)"}</span>
+            <span>{locale === "ar" ? "شبكة الموانئ" : "Port Network"}</span>
           </h3>
+          <p className="mt-2 text-xs leading-relaxed text-gsy-slate dark:text-white/75">
+            {locale === "ar"
+              ? "تشير مذكرة الإدارة إلى الموانئ التالية ضمن شبكة الشحن:"
+              : "The management brief references the following ports within the shipping network:"}
+          </p>
           <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-4">
             {SHIPPING_KEY_PORTS.map((port) => (
               <div
@@ -99,6 +104,11 @@ export default async function ShippingCharteringPage({
               </div>
             ))}
           </div>
+          <p className="mt-3 text-[11px] text-gsy-slate/80 dark:text-white/60">
+            {locale === "ar"
+              ? "تعتمد تغطية الخدمة وتوافرها على الشحنة المحددة والمسار والترتيبات التشغيلية."
+              : "Service coverage and availability depend on the specific cargo, route and operational arrangements."}
+          </p>
         </div>
       </div>
 
@@ -111,7 +121,7 @@ export default async function ShippingCharteringPage({
           <div>
             <p className="text-sm font-extrabold text-gsy-navy dark:text-white">
               {locale === "ar"
-                ? "بوابة تتبع السفن الحية للعملاء المسجلين (اختياري للمرحلة القادمة)"
+                ? "بوابة تتبع السفن للعملاء المسجلين (اختياري للمرحلة القادمة)"
                 : "Client Vessel-Tracking Widget Slot (Future Logged-In Enhancement)"}
             </p>
             <p className="text-xs text-gsy-slate dark:text-white/75">
@@ -132,11 +142,60 @@ export default async function ShippingCharteringPage({
     <DivisionTemplate
       locale={locale}
       division={division}
+      heroEyebrow={
+        locale === "ar"
+          ? "السفينة المناسبة لكل شحنة"
+          : "The Right Vessel for Every Cargo"
+      }
+      heroTitle={locale === "ar" ? "الشحن والتأجير البحري" : "Shipping & Chartering"}
+      heroSubtitle={
+        locale === "ar"
+          ? "تنسيق حركة البضائع من المنشأ حتى التفريغ عبر تأجير السفن بالرحلة وحلول الشحن البحري."
+          : "Coordinating cargo movement from origin to discharge through voyage chartering and freight solutions."
+      }
+      primaryCta={{
+        label: locale === "ar" ? "طلب عرض سعر شحن" : "Request a Freight Quote",
+        href: "#enquiry-form",
+      }}
+      whatWeDoTitle={
+        locale === "ar"
+          ? "خدمات الشحن والتأجير البحري"
+          : "Our Shipping & Chartering Services"
+      }
+      whatWeDoIntro={
+        locale === "ar"
+          ? "تتولى جي إس واي للشحن والتأجير البحري تنسيق تأجير السفن ومتطلبات الشحن لبضائع مختارة. ويقوم نموذجنا التشغيلي على أساس خفيف الأصول وقائم على استئجار السفن بالرحلة، حيث تُستأجر السفن وفق متطلبات الشحنة. ينصب تركيزنا على تنسيق مسار الشحنة بالكامل، بدءاً من اختيار السفينة وعمليات التحميل وصولاً إلى متابعة سير الرحلة والتفريغ."
+          : "GSY Shipping & Chartering coordinates vessel chartering and freight requirements for selected cargoes. Our operating model is asset-light and voyage-based, with vessels chartered according to cargo requirements. We focus on coordinating the cargo journey, from vessel selection and loading to voyage progress and discharge."
+      }
+      howWeWorkTitle={locale === "ar" ? "عملية الشحن لدينا" : "Our Shipping Process"}
+      whoWeServeTitle={
+        locale === "ar"
+          ? "لماذا جي إس واي للشحن والتأجير"
+          : "Why GSY Shipping & Chartering"
+      }
+      complianceTitle={
+        locale === "ar"
+          ? "الامتثال والمعايير التشغيلية"
+          : "Operational Compliance & Standards"
+      }
+      complianceSubtitle={
+        locale === "ar"
+          ? "يلتزم مكتب التأجير البحري بمعايير فحص وامتثال وانضباط تشغيلي صارمة عبر كافة مسارات الشحن:"
+          : "Our shipping and chartering operations maintain strict compliance and operational discipline across all corridors:"
+      }
       formVariant="shipping"
       formTitle={
         locale === "ar"
-          ? "نموذج طلب عرض سعر شحن بحري"
+          ? "طلب عرض سعر شحن"
           : "Request a Freight Quote"
+      }
+      formSubtitle={
+        locale === "ar"
+          ? "شارك متطلبات الشحن الخاصة بك مع فريقنا. يُرجى تقديم نوع الشحنة، الكمية، موانئ التحميل والتفريغ، وتواريخ فترة الجاهزية المتوقعة لمراجعة الطلب."
+          : "Share your cargo and shipping requirements with our team. Provide the cargo type, quantity, loading and discharge ports, and expected laycan dates so that the requirement can be reviewed."
+      }
+      formSubmitLabel={
+        locale === "ar" ? "طلب عرض سعر شحن" : "Request a Freight Quote"
       }
       heroAction={heroAction}
       customSection={customSection}

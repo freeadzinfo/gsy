@@ -30,133 +30,133 @@ export default async function OurStoryPage({
   const milestones = [
     {
       year: "1974",
-      title: { en: "Foundation & Physical Trade Roots", ar: "التأسيس وجذور التجارة الفعلية" },
+      title: { en: "Where Our Journey Began", ar: "حيث بدأت مسيرتنا" },
       body: {
-        en: "Founded in 1974, building lasting relationships with agricultural producers, origin mills and wholesale buyers.",
-        ar: "تأسست المجموعة عام 1974، وبنت علاقات مستدامة مع المنتجين الزراعيين والمصانع وتجار الجملة.",
+        en: "GSY's journey began in 1974 with a foundation in trade and a vision to build lasting business relationships across markets.",
+        ar: "بدأت مسيرة جي إس واي في عام 1974 على أسس متينة في التجارة ورؤية واضحة لبناء علاقات تجارية دائمة عبر الأسواق.",
       },
     },
     {
-      year: "2000s–2025",
-      title: { en: "Multi-Continent Corridor & Brand Development", ar: "التوسع عبر القارات وتأسيس العلامات" },
+      year: "Evolution",
+      title: { en: "Growing Beyond Traditional Trade", ar: "النمو إلى ما هو أبعد من التجارة التقليدية" },
       body: {
-        en: "Expanding origin export operations in India (Chennai), ASEAN hubs in Malaysia and Singapore, UAE headquarters, and consumer retail stores.",
-        ar: "التوسع في مراكز التصدير في الهند (تشيناي)، ومراكز آسيان في ماليزيا وسنغافورة، والمقر الرئيسي في دبي، والأسواق المركزية.",
+        en: "Over the years, the business has continued to evolve, developing connections across markets and expanding its activities into complementary areas of international trade and commerce.",
+        ar: "على مر السنين، واصلت الأعمال تطورها، حيث قامت بتوسيع الروابط عبر الأسواق وتوسيع أنشطتها إلى مجالات متكاملة من التجارة الدولية والأعمال.",
       },
     },
     {
-      year: "2026",
-      title: { en: "One GSY Family — Dubai Holding Structure", ar: "عائلة جي إس واي الواحدة — الشركة القابضة في دبي" },
+      year: "International",
+      title: { en: "Connecting Markets Across Borders", ar: "ربط الأسواق عبر الحدود" },
       body: {
-        en: "Uniting 350+ professionals across 7 active jurisdictions under a single governance and supply architecture linking Asia, the Gulf and Africa.",
-        ar: "توحيد أكثر من 350 موظفاً في 7 أسواق نشطة تحت هيكل حوكمة وإمداد موحد يربط آسيا والخليج وأفريقيا.",
+        en: "Headquartered in Dubai, GSY International Group works across international trade corridors connecting Asia, the Gulf and Africa, bringing together sourcing markets, shipping activities, distribution channels and retail operations.",
+        ar: "انطلاقاً من مقرها الرئيسي في دبي، تعمل مجموعة جي إس واي الدولية عبر ممرات التجارة الدولية التي تربط آسيا والخليج وأفريقيا، جامعةً بين أسواق المنشأ وأنشطة الشحن وقنوات التوزيع وعمليات التجزئة.",
       },
     },
     {
       year: "2030",
-      title: { en: "US$2.5B Group Across 25+ Countries", ar: "مجموعة بقيمة 2.5 مليار دولار في أكثر من 25 دولة" },
+      title: { en: "The Next Chapter – Vision 2030", ar: "الفصل التالي – رؤية 2030" },
       body: {
-        en: "Scaling systematically from 7 active countries today to 25+ markets, 50 supermarkets and hypermarkets, and Noor Al Arab's AED 1B regional food target.",
-        ar: "التوسع المنظم من 7 أسواق نشطة اليوم إلى أكثر من 25 دولة، و50 سوبرماركت وهايبرماركت، ومستهدف علامة نور العرب البالغ مليار درهم.",
+        en: "Our journey continues with an ambitious vision for the future. By 2030, GSY aims to build a US$2.5 billion group and expand its presence to more than 25 countries.",
+        ar: "تتواصل مسيرتنا برؤية طموحة للمستقبل. بحلول عام 2030، تهدف جي إس واي إلى بناء مجموعة بقيمة 2.5 مليار دولار وتوسيع تواجدها إلى أكثر من 25 دولة.",
       },
     },
   ];
 
   const brandArchitecture = [
     {
-      tier: { en: "Parent Holding Enterprise", ar: "الشركة القابضة الأم" },
-      name: { en: "GSY International Group of Companies", ar: "مجموعة شركات جي إس واي الدولية" },
-      domain: "gsyinternationalgroup.com",
-      href: "/about/governance",
-      icon: Building2,
+      tier: { en: "Business Area 1", ar: "مجال الأعمال 1" },
+      name: { en: "Commodity Trading", ar: "تجارة السلع" },
+      domain: "commodity-trading",
+      href: "/businesses/commodity-trading",
+      icon: Globe2,
       summary: {
-        en: "Dubai-headquartered holding group uniting international trade governance, multi-origin agricultural sourcing, and disciplined expansion across 7 active countries today toward 25+ markets by 2030.",
-        ar: "مجموعة قابضة مقرها دبي توحد حوكمة التجارة الدولية، وتوريد المحاصيل من عدة مصادر منشأ، والتوسع المنظم من 7 أسواق نشطة اليوم نحو أكثر من 25 دولة بحلول 2030.",
+        en: "Connecting suppliers and buyers across food, agricultural and industrial commodity markets.",
+        ar: "ربط الموردين والمشترين عبر أسواق السلع الغذائية والزراعية والصناعية.",
       },
       tags: [
-        { en: "Holding Governance", ar: "حوكمة القابضة" },
-        { en: "7 Countries → 25+ (2030)", ar: "7 دول ← 25+ (2030)" },
-        { en: "Dubai HQ", ar: "المقر الرئيسي دبي" },
+        { en: "Food Commodities", ar: "السلع الغذائية" },
+        { en: "Agricultural Products", ar: "المنتجات الزراعية" },
+        { en: "Industrial Trade", ar: "التجارة الصناعية" },
       ],
     },
     {
-      tier: { en: "Primary Operating Subsidiary (Flagship Brand)", ar: "الذراع التجاري التشغيلي الرئيسي" },
-      name: { en: "Noor Al Arab For Foodstuff Trading Co LLC", ar: "شركة نور العرب لتجارة المواد الغذائية ذ.م.م" },
+      tier: { en: "Business Area 2", ar: "مجال الأعمال 2" },
+      name: { en: "Shipping & Chartering", ar: "الشحن والتأجير البحري" },
+      domain: "shipping-chartering",
+      href: "/businesses/shipping-chartering",
+      icon: Building2,
+      summary: {
+        en: "Supporting international cargo movements through voyage chartering and shipping coordination.",
+        ar: "دعم حركة البضائع الدولية من خلال تأجير السفن بالرحلة والتنسيق الملاحي.",
+      },
+      tags: [
+        { en: "Voyage Chartering", ar: "تأجير السفن بالرحلة" },
+        { en: "Cargo Coordination", ar: "تنسيق حركة الشحن" },
+        { en: "Trade Corridors", ar: "الممرات التجارية" },
+      ],
+    },
+    {
+      tier: { en: "Business Area 3", ar: "مجال الأعمال 3" },
+      name: { en: "Food Brands — Noor Al Arab", ar: "العلامات الغذائية — نور العرب" },
       domain: "nooralarabfoodstuff.com",
       href: "/businesses/noor-al-arab",
       icon: ShieldCheck,
       summary: {
-        en: "Flagship Dubai foodstuff and commodity operating arm supplying Basmati rice, refined cane sugar, Malaysian palm olein, pulses, and spices across UAE & GCC retail, wholesale, and HORECA channels.",
-        ar: "الذراع الغذائي والتجاري الرائد في دبي لتوريد أرز البسمتي، والسكر المكرر، وزيت النخيل الماليزي، والبقوليات والتوابل لقطاعات التجزئة والجملة والضيافة في الإمارات والخليج.",
+        en: "Developing food product offerings through our regional food brand Noor Al Arab.",
+        ar: "تطوير عروض المنتجات الغذائية من خلال علامتنا الغذائية الإقليمية نور العرب.",
       },
       tags: [
-        { en: "Jebel Ali Bonded Hub", ar: "مركز جبل علي الجمركي" },
-        { en: "ISO 22000 & HACCP", ar: "أيزو 22000 والهاسب" },
-        { en: "Dubai Zad Registered", ar: "مسجل في منصة زاد دبي" },
+        { en: "Food Brand", ar: "علامة غذائية" },
+        { en: "Quality Products", ar: "منتجات عالية الجودة" },
+        { en: "Consumer & Trade", ar: "المستهلك والتجارة" },
       ],
     },
     {
-      tier: { en: "Origin Export & Freight Link", ar: "بوابة التصدير والشحن البحري" },
-      name: { en: "GSY International Trade (Working Title)", ar: "جي إس واي للتجارة الدولية (مسمى عمل)" },
-      domain: "gsyinternationaltrade.in",
-      href: "/businesses/commodity-trading",
-      icon: Globe2,
-      summary: {
-        en: "Physical origin-export portal connecting farms and mills across India and Southeast Asia with GCC and African markets, chartering the right vessel on demand under GSY's asset-light shipping model.",
-        ar: "بوابة التصدير الفعلي التي تربط مصادر الإنتاج الزراعي والمصانع في الهند وجنوب شرق آسيا بأسواق الخليج وأفريقيا عبر تأجير السفن بالرحلة وفق نموذج الشحن المرن.",
-      },
-      tags: [
-        { en: "Origin Sourcing", ar: "التوريد من المنشأ" },
-        { en: "Bulk & Container Exports", ar: "تصدير السائب والحاويات" },
-        { en: "Asset-Light Chartering", ar: "تأجير بحري مرن" },
-      ],
-    },
-    {
-      tier: { en: "Capital & Asset Stewardship", ar: "الاستثمار والأصول" },
-      name: { en: "GSY Investment Groups (Working Title)", ar: "مجموعات جي إس واي للاستثمار (مسمى عمل)" },
-      domain: "gsyinvestmentgroups.com",
-      href: "/investors",
-      icon: Landmark,
-      summary: {
-        en: "Strategic capital stewardship supporting group commercial infrastructure, warehousing hubs, supply-chain assets, and Sharia-aligned partner growth programs under holding governance.",
-        ar: "ذراع الحوكمة الرأسمالية الداعم للبنية التحتية التجارية ومراكز التخزين وسلاسل الإمداد وبرامج الشراكة المتوافقة مع الشريعة تحت مظلة المجموعة.",
-      },
-      tags: [
-        { en: "Asset Stewardship", ar: "إدارة الأصول" },
-        { en: "Supply Infrastructure", ar: "البنية التحتية للإمداد" },
-        { en: "Trade Growth Capital", ar: "رأس مال النمو التجاري" },
-      ],
-    },
-    {
-      tier: { en: "Operating Branch • Co-Packing", ar: "فرع التعبئة والعلامات الخاصة" },
-      name: { en: "Noor Private Label (OEM)", ar: "تعبئة نور للعلامات الخاصة (OEM)" },
-      domain: "nooralarabfoodstuff.com",
-      href: "/businesses/noor-al-arab",
+      tier: { en: "Business Area 4", ar: "مجال الأعمال 4" },
+      name: { en: "Exports & Distribution", ar: "التصدير والتوزيع" },
+      domain: "distribution-horeca",
+      href: "/businesses/distribution",
       icon: PackageCheck,
       summary: {
-        en: "Contract packing and private-label solutions producing tailored retail BOPP pouches and sacks, tinning, and food-grade jerry cans for regional distributors and GSY's own supermarket chains.",
-        ar: "خدمات التعبئة التعاقدية والعلامات الخاصة لإنتاج أكياس BOPP والعبوات الصفيح والعبوات الغذائية لسلاسل التجزئة والموزعين ومجموعة الأسواق المركزية.",
+        en: "Connecting products with wholesale buyers, distributors and HORECA customers.",
+        ar: "ربط المنتجات بمشتري الجملة والموزعين وعملاء قطاع الضيافة والمطاعم والفنادق.",
       },
       tags: [
-        { en: "OEM Co-Packing", ar: "التعبئة التعاقدية OEM" },
-        { en: "BOPP Sacks & Pouches", ar: "أكياس وعبوات BOPP" },
-        { en: "Supermarket Supply", ar: "توريد الأسواق المركزية" },
+        { en: "Wholesale Buyers", ar: "مشتري الجملة" },
+        { en: "Commercial Distributors", ar: "الموزعون التجاريون" },
+        { en: "HORECA Channels", ar: "قطاع الضيافة والمطاعم" },
       ],
     },
     {
-      tier: { en: "Consumer Division", ar: "قطاع المستهلك المتخصص" },
-      name: { en: "Pets' Pantry — Food & Accessories", ar: "بيتس بانتري — أغذية ومستلزمات الحيوانات الأليفة" },
-      domain: "petspantry.ae",
-      href: "/about/gsy-family",
+      tier: { en: "Business Area 5", ar: "مجال الأعمال 5" },
+      name: { en: "Supermarkets", ar: "الأسواق المركزية (السوبرماركت)" },
+      domain: "supermarkets",
+      href: "/businesses/supermarkets",
       icon: ShoppingBag,
       summary: {
-        en: "Dedicated UAE consumer brand offering wholesome pet nutrition, premium dry foods, specialty treats, and quality accessories across specialty retail and group distribution.",
-        ar: "علامة استهلاكية متخصصة في الإمارات تقدم أغذية الحيوانات الأليفة المتوازنة والأطعمة الجافة والمكافآت ومستلزمات العناية عالية الجودة.",
+        en: "Expanding into consumer retail through our supermarket brands serving customers in the UAE and Malaysia.",
+        ar: "التوسع في تجارة التجزئة الاستهلاكية من خلال علاماتنا التجارية للسوبرماركت التي تخدم العملاء في الإمارات وماليزيا.",
       },
       tags: [
-        { en: "Pet Nutrition", ar: "تغذية الحيوانات الأليفة" },
-        { en: "Treats & Accessories", ar: "المكافآت والمستلزمات" },
-        { en: "UAE Consumer Retail", ar: "التجزئة في الإمارات" },
+        { en: "Consumer Retail", ar: "تجزئة المستهلك" },
+        { en: "Everyday Groceries", ar: "البقالة اليومية" },
+        { en: "UAE & Malaysia", ar: "الإمارات وماليزيا" },
+      ],
+    },
+    {
+      tier: { en: "Group Stewardship", ar: "القيادة المؤسسية" },
+      name: { en: "GSY International Group", ar: "مجموعة جي إس واي الدولية" },
+      domain: "gsyinternationalgroup.com",
+      href: "/about/gsy-family",
+      icon: Landmark,
+      summary: {
+        en: "Together, these businesses represent the continuing evolution of the GSY Group across international markets.",
+        ar: "تمثل هذه الأنشطة مجتمعة التطور المستمر لمجموعة جي إس واي عبر الأسواق الدولية.",
+      },
+      tags: [
+        { en: "Corporate Governance", ar: "الحوكمة المؤسسية" },
+        { en: "International Network", ar: "شبكة دولية" },
+        { en: "Vision 2030", ar: "رؤية 2030" },
       ],
     },
   ];
@@ -188,7 +188,7 @@ export default async function OurStoryPage({
       />
 
       <section className="mx-auto max-w-7xl space-y-16 px-4 py-14 sm:px-6 lg:px-8">
-        {/* Historical Milestones (Brief v4) */}
+        {/* 2. Our Beginnings, 4. International Journey & 5. Vision 2030 Milestones */}
         <div className="grid gap-6 md:grid-cols-2">
           {milestones.map((m) => (
             <div
@@ -208,32 +208,30 @@ export default async function OurStoryPage({
           ))}
         </div>
 
-        {/* Corporate Brand Hierarchy & Operating Ecosystem */}
+        {/* 3. Our Evolution — Connected Business Areas */}
         <div>
           <div className="flex flex-wrap items-end justify-between gap-4">
             <div className="max-w-3xl">
               <p className="text-xs font-bold uppercase tracking-[0.18em] text-gsy-gold dark:text-gsy-gold-light">
-                {locale === "ar"
-                  ? "الهيكل المؤسسي ومنظومة العلامات"
-                  : "Corporate Structure & Brand Architecture"}
+                {locale === "ar" ? "تطور أعمالنا" : "Our Evolution"}
               </p>
               <h2 className="mt-2 text-2xl font-extrabold tracking-tight text-gsy-navy sm:text-3xl dark:text-white">
                 {locale === "ar"
-                  ? "كيف تطورت العائلة التجارية من منشأ التوريد إلى التجزئة"
-                  : "From Origin Harvests to Specialized Brands Under Unified Governance"}
+                  ? "النمو إلى ما هو أبعد من التجارة التقليدية"
+                  : "Growing Beyond Traditional Trade"}
               </h2>
               <p className="mt-2 text-sm leading-relaxed text-gsy-slate dark:text-white/80">
                 {locale === "ar"
-                  ? "تتكامل الكيانات والمنصات التابعة لمجموعة جي إس واي بين الحوكمة في دبي، والتداول الفعلي من أسواق المنشأ، والتعبئة الصناعية، والعلامات الاستهلاكية."
-                  : "Connecting origin harvest cultivation, asset-light maritime logistics, Jebel Ali bonded distribution, OEM co-packing, and consumer divisions under GSY International Group."}
+                  ? "مع تطور الأسواق والفرص التجارية، تطورت مجموعة جي إس واي أيضاً. وتوسعت أنشطتنا عبر عدة مجالات أعمال مترابطة تمثل مجتمعة التطور المستمر لمجموعة جي إس واي."
+                  : "As markets and business opportunities evolved, so did GSY. Our activities developed across several connected business areas, representing the continuing evolution of the GSY Group."}
               </p>
             </div>
 
             <span className="inline-flex items-center gap-1.5 rounded-lg border border-gsy-navy/15 bg-white px-3 py-1.5 text-xs font-medium text-gsy-slate dark:border-white/15 dark:bg-gsy-navy dark:text-white/75">
               <Info className="h-3.5 w-3.5 shrink-0 text-gsy-gold dark:text-gsy-gold-light" />
               {locale === "ar"
-                ? "مسميات الكيانات غير العلامات المسجلة هي مسميات عمل قيد الاعتماد القانوني النهائي."
-                : "Non-brand entity titles remain working titles pending Chairman & legal sign-off."}
+                ? "ربط مصادر الإنتاج بالأسواق عبر آسيا والخليج وأفريقيا."
+                : "Connecting origins to markets across Asia, the Gulf and Africa."}
             </span>
           </div>
 
@@ -292,24 +290,20 @@ export default async function OurStoryPage({
           </div>
         </div>
 
-        {/* Integrated Trade Governance Summary */}
+        {/* 6. Closing Section — Our Story Continues */}
         <div className="rounded-2xl border border-gsy-gold/30 bg-gsy-navy p-7 text-white shadow-card sm:p-9 dark:border-gsy-gold-light/20 dark:bg-[#050f1e]">
           <div className="grid items-center gap-6 lg:grid-cols-12">
             <div className="lg:col-span-8">
               <p className="text-xs font-bold uppercase tracking-[0.18em] text-gsy-gold-light">
-                {locale === "ar"
-                  ? "الحوكمة المتكاملة وتوزيع العلامات"
-                  : "Integrated Trade Governance & Multi-Brand Distribution"}
+                {locale === "ar" ? "مسيرة متواصلة" : "Our Story Continues"}
               </p>
               <h2 className="mt-2 text-2xl font-extrabold text-white">
-                {locale === "ar"
-                  ? "شبكة مترابطة تخدم الجملة والضيافة والمستهلك النهائي"
-                  : "One Family Model Linking Dubai Execution With Origin Strength"}
+                {locale === "ar" ? "قصتنا مستمرة" : "Our Story Continues"}
               </h2>
               <p className="mt-3 text-sm leading-relaxed text-white/85">
                 {locale === "ar"
-                  ? "تتولى مجموعة جي إس واي الدولية الحوكمة والرقابة والتوجيه الاستراتيجي والتمويل المصرفي المنضبط، بينما تقود شركة نور العرب للتجارة الغذائية التداول الفعلي والتخليص الجمركي في ميناء جبل علي والتوريد عبر الخليج، وتوسع علامات المستهلك مثل بيتس بانتري ومجموعة أسواق جي إس واي حضورنا المباشر حتى رف المستهلك."
-                  : "GSY International Group provides capital stewardship, bank-grade KYC/compliance discipline, and multi-corridor trade linkages across 7 active markets today. Noor Al Arab Foodstuff Trading Co LLC drives commercial commodity trading, Jebel Ali Port import clearance, and GCC distribution, while Noor Private Label OEM, Pets' Pantry, and the GSY Supermarket Group extend our reach cleanly into consumer retail."}
+                  ? "من بداياتنا في عام 1974 إلى طموحاتنا لعام 2030، تظل مجموعة جي إس واي الدولية ملتزمة ببناء العلاقات وربط الأسواق وخلق الفرص من خلال الأعمال الدولية."
+                  : "From our beginnings in 1974 to our ambitions for 2030, GSY International Group remains focused on building relationships, connecting markets and creating opportunities through international business."}
               </p>
             </div>
             <div className="flex flex-wrap gap-3 lg:col-span-4 lg:justify-end">
@@ -317,14 +311,14 @@ export default async function OurStoryPage({
                 href={localePath(locale, "/about/gsy-family")}
                 className="inline-flex items-center gap-2 rounded-lg bg-gsy-gold-bright px-5 py-3 text-xs font-extrabold text-gsy-navy-deep transition hover:bg-gsy-gold-light"
               >
-                <span>{locale === "ar" ? "شبكة عائلة جي إس واي" : "Explore GSY Family Network"}</span>
+                <span>{locale === "ar" ? "استكشف عائلة جي إس واي" : "Explore the GSY Family"}</span>
                 <ArrowIcon className="h-3.5 w-3.5" />
               </Link>
               <Link
-                href={localePath(locale, "/investors/company-profile")}
+                href={localePath(locale, "/about/vision-2030")}
                 className="inline-flex items-center gap-2 rounded-lg border border-white/25 bg-white/10 px-5 py-3 text-xs font-bold text-white transition hover:bg-white/20"
               >
-                <span>{locale === "ar" ? "ملف المجموعة التعريفي" : "Company Profile"}</span>
+                <span>{locale === "ar" ? "استكشف رؤيتنا 2030" : "Explore Our Vision 2030"}</span>
               </Link>
             </div>
           </div>
@@ -333,7 +327,9 @@ export default async function OurStoryPage({
         {/* 5-Step Operating Model Strip */}
         <div>
           <h2 className="mb-4 text-xl font-extrabold text-gsy-navy dark:text-white">
-            {locale === "ar" ? "نموذجنا المتكامل" : "How GSY Operates Across Five Integrated Steps"}
+            {locale === "ar"
+              ? "ربط الأسواق عبر خمس خطوات متكاملة"
+              : "Connecting Markets Across Five Integrated Steps"}
           </h2>
           <GroupModelStrip locale={locale} />
         </div>

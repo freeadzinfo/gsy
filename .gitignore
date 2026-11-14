@@ -19,6 +19,7 @@
 .DS_Store
 Thumbs.db
 *.pem
+scratch/
 
 # debug
 npm-debug.log*

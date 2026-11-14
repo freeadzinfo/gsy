@@ -17,6 +17,7 @@ export function SiteFooter({ locale }: { locale: Locale }) {
     { label: { en: "Government & Tenders", ar: "الحكومات والمناقصات" }, href: "/businesses/government-tenders" },
     { label: { en: "Distribution & HORECA", ar: "التوزيع والضيافة" }, href: "/businesses/distribution" },
     { label: { en: "Logistics & Supply Chain", ar: "اللوجستيات وسلاسل الإمداد" }, href: "/businesses/logistics" },
+    { label: { en: "Pets Pantry", ar: "بيتس بانتري" }, href: "/businesses/pets-pantry" },
     { label: { en: "GSY Supermarket Group", ar: "مجموعة الأسواق المركزية" }, href: "/supermarkets" },
   ];
 

@@ -1,8 +1,10 @@
 "use client";
 
 import React, { useState } from "react";
+import Link from "next/link";
 import { CheckCircle2, Route, Send, Upload } from "lucide-react";
 import { Locale } from "@/types/cms";
+import { localePath } from "@/lib/i18n";
 
 export type FormVariant =
   | "division"
@@ -13,7 +15,8 @@ export type FormVariant =
   | "store-partner"
   | "investor"
   | "africa"
-  | "country";
+  | "country"
+  | "product";
 
 interface DivisionEnquiryFormProps {
   locale: Locale;
@@ -21,6 +24,9 @@ interface DivisionEnquiryFormProps {
   title: string;
   routeTarget: string;
   subtitle?: string;
+  submitLabel?: string;
+  secondaryAction?: { label: string; href: string };
+  initialValues?: Record<string, string>;
 }
 
 export function DivisionEnquiryForm({
@@ -29,6 +35,9 @@ export function DivisionEnquiryForm({
   title,
   routeTarget,
   subtitle,
+  submitLabel,
+  secondaryAction,
+  initialValues,
 }: DivisionEnquiryFormProps) {
   const [submitted, setSubmitted] = useState(false);
   const [formState, setFormState] = useState<Record<string, string>>({
@@ -36,6 +45,8 @@ export function DivisionEnquiryForm({
     salesTeam: "UAE",
     partnerType: "Store Investor",
     unit: "MT",
+    productCategory: "Rice",
+    ...initialValues,
   });
   const [catalogueName, setCatalogueName] = useState<string>("");
 
@@ -47,7 +58,27 @@ export function DivisionEnquiryForm({
       ? locale === "ar"
         ? `فريق مبيعات نور العرب — ${formState.salesTeam || "UAE"}`
         : `Noor Al Arab Sales Team (${formState.salesTeam || "UAE"})`
-      : routeTarget;
+      : variant === "investor"
+        ? formState.enquiryType === "Halal Investment Programme"
+          ? locale === "ar"
+            ? "مكتب الاستثمار الحلال — دبي"
+            : "Halal Investment Desk"
+          : formState.enquiryType === "Retail / Store Partnership"
+            ? locale === "ar"
+              ? "فريق تطوير التجزئة والمتاجر"
+              : "Retail Development Team"
+            : formState.enquiryType === "Banking / Financial Institution"
+              ? locale === "ar"
+                ? "مكتب الخزينة والعلاقات المصرفية"
+                : "Treasury & Institutional Banking Desk"
+              : formState.enquiryType === "Supplier / Producer"
+                ? locale === "ar"
+                  ? "فريق التوريد وسلاسل الإمداد"
+                  : "Sourcing & Supply Chain Team"
+                : locale === "ar"
+                  ? "فريق الشراكات الاستراتيجية"
+                  : "Strategic Partnerships Team"
+        : routeTarget;
 
   if (submitted) {
     return (
@@ -266,7 +297,7 @@ export function DivisionEnquiryForm({
           </>
         )}
 
-        {/* Noor Al Arab Trade Account Fields (Page 11) */}
+        {/* Noor Al Arab Trade Account Fields */}
         {variant === "noor-al-arab" && (
           <>
             <div>
@@ -278,35 +309,59 @@ export function DivisionEnquiryForm({
                 onChange={(e) => update("businessType", e.target.value)}
                 className="mt-1.5 w-full rounded-lg border border-gsy-navy/20 bg-white px-3.5 py-2.5 text-sm text-gsy-navy dark:border-white/20 dark:bg-gsy-navy-deep dark:text-white"
               >
-                <option value="HORECA">HORECA (Hotel / Restaurant / Cafe)</option>
-                <option value="Caterer">Catering / Institutional Kitchen</option>
-                <option value="Wholesaler">Wholesaler / Distributor</option>
-                <option value="Supermarket">Supermarket / Retail Chain</option>
+                <option value="HORECA">
+                  {locale === "ar" ? "فنادق ومطاعم ومقاهي" : "Hotels, Restaurants and Cafes"}
+                </option>
+                <option value="Caterer">
+                  {locale === "ar" ? "شركات التموين والإعاشة" : "Caterers & Foodservice"}
+                </option>
+                <option value="Wholesaler">
+                  {locale === "ar" ? "تجار الجملة والتوزيع" : "Wholesalers & Distributors"}
+                </option>
+                <option value="Supermarket">
+                  {locale === "ar" ? "الأسواق المركزية وسلاسل المتاجر" : "Supermarkets & Retail Chains"}
+                </option>
+                <option value="Retailer">
+                  {locale === "ar" ? "متاجر التجزئة ومحلات البقالة" : "Retailers & Independent Grocers"}
+                </option>
+                <option value="Institution">
+                  {locale === "ar" ? "المؤسسات والمشتريات العامة" : "Institutions & Procurement Bodies"}
+                </option>
               </select>
             </div>
 
             <div>
               <label className="block text-xs font-bold text-gsy-navy dark:text-white">
-                {locale === "ar" ? "فريق المبيعات المستهدف (الدولة)" : "Sales Market (Country Routing)"} *
+                {locale === "ar" ? "الدولة (توجيه فريق المبيعات)" : "Country"} *
               </label>
               <select
                 value={formState.salesTeam}
                 onChange={(e) => update("salesTeam", e.target.value)}
                 className="mt-1.5 w-full rounded-lg border border-gsy-navy/20 bg-white px-3.5 py-2.5 text-sm text-gsy-navy dark:border-white/20 dark:bg-gsy-navy-deep dark:text-white"
               >
-                <option value="UAE">UAE & GCC Sales Team</option>
-                <option value="India">India Sales Team</option>
-                <option value="Malaysia">Malaysia Sales Team</option>
+                <option value="UAE">
+                  {locale === "ar" ? "الإمارات ودول الخليج (فريق دبي)" : "UAE & GCC (Dubai Sales Team)"}
+                </option>
+                <option value="India">
+                  {locale === "ar" ? "الهند (فريق مبيعات وتصدير الهند)" : "India (GSY Export Sales Team)"}
+                </option>
+                <option value="Malaysia">
+                  {locale === "ar" ? "ماليزيا (فريق مبيعات كوالالمبور)" : "Malaysia (Kuala Lumpur Sales Team)"}
+                </option>
               </select>
             </div>
 
             <div>
               <label className="block text-xs font-bold text-gsy-navy dark:text-white">
-                {locale === "ar" ? "الحجم الشهري المتوقع" : "Estimated Monthly Volume"}
+                {locale === "ar" ? "حجم الشراء الشهري" : "Monthly Purchase Volume"}
               </label>
               <input
                 type="text"
-                placeholder="e.g. 2 FCL / 50 MT / AED 100k"
+                placeholder={
+                  locale === "ar"
+                    ? "مثال: 50 طن متري / 2 حاوية / تقدير القيمة"
+                    : "e.g. 50 MT / 2 FCL / estimated value"
+                }
                 onChange={(e) => update("monthlyVolume", e.target.value)}
                 className="mt-1.5 w-full rounded-lg border border-gsy-navy/20 bg-white px-3.5 py-2.5 text-sm text-gsy-navy dark:border-white/20 dark:bg-gsy-navy-deep dark:text-white"
               />
@@ -314,11 +369,15 @@ export function DivisionEnquiryForm({
 
             <div>
               <label className="block text-xs font-bold text-gsy-navy dark:text-white">
-                {locale === "ar" ? "الفئات المطلوبة" : "Product Categories"}
+                {locale === "ar" ? "فئات المنتجات" : "Product Categories"}
               </label>
               <input
                 type="text"
-                placeholder="Rice, Spices, Edible Oils, Frozen, HORECA"
+                placeholder={
+                  locale === "ar"
+                    ? "أرز، سكر، زيوت طعام، أغذية معبأة، توابل، مجمدات..."
+                    : "Rice, Sugar, Edible Oils, Packaged Foods, Spices, Frozen Foods"
+                }
                 onChange={(e) => update("categories", e.target.value)}
                 className="mt-1.5 w-full rounded-lg border border-gsy-navy/20 bg-white px-3.5 py-2.5 text-sm text-gsy-navy dark:border-white/20 dark:bg-gsy-navy-deep dark:text-white"
               />
@@ -326,7 +385,7 @@ export function DivisionEnquiryForm({
           </>
         )}
 
-        {/* Government & Tenders Fields (Page 11) */}
+        {/* Government & Tenders Fields */}
         {variant === "tenders" && (
           <>
             <div>
@@ -336,40 +395,71 @@ export function DivisionEnquiryForm({
               <input
                 type="text"
                 required
+                placeholder={locale === "ar" ? "الدولة المعنية بالمناقصة" : "Country of procurement"}
                 onChange={(e) => update("country", e.target.value)}
                 className="mt-1.5 w-full rounded-lg border border-gsy-navy/20 bg-white px-3.5 py-2.5 text-sm text-gsy-navy dark:border-white/20 dark:bg-gsy-navy-deep dark:text-white"
               />
             </div>
             <div>
               <label className="block text-xs font-bold text-gsy-navy dark:text-white">
-                {locale === "ar" ? "الجهة / الوزارة / المنظمة" : "Agency / Ministry / NGO"} *
+                {locale === "ar" ? "الجهة الحكومية / المنظمة" : "Government Agency / Organisation"} *
               </label>
               <input
                 type="text"
                 required
+                placeholder={locale === "ar" ? "الوزارة، الهيئة، أو المنظمة" : "Ministry, agency or institution"}
                 onChange={(e) => update("agency", e.target.value)}
                 className="mt-1.5 w-full rounded-lg border border-gsy-navy/20 bg-white px-3.5 py-2.5 text-sm text-gsy-navy dark:border-white/20 dark:bg-gsy-navy-deep dark:text-white"
               />
             </div>
             <div>
               <label className="block text-xs font-bold text-gsy-navy dark:text-white">
-                {locale === "ar" ? "رقم المناقصة" : "Tender Reference Number"}
+                {locale === "ar" ? "رقم المناقصة" : "Tender Number"}
               </label>
               <input
                 type="text"
+                placeholder={locale === "ar" ? "الرقم المرجعي للمناقصة" : "Tender / RFQ reference number"}
                 onChange={(e) => update("tenderNumber", e.target.value)}
                 className="mt-1.5 w-full rounded-lg border border-gsy-navy/20 bg-white px-3.5 py-2.5 text-sm text-gsy-navy dark:border-white/20 dark:bg-gsy-navy-deep dark:text-white"
               />
             </div>
             <div>
               <label className="block text-xs font-bold text-gsy-navy dark:text-white">
-                {locale === "ar" ? "المنتج والكمية والموعد النهائي" : "Product, Quantity & Deadline"} *
+                {locale === "ar" ? "المنتج / المتطلب" : "Product / Requirement"} *
               </label>
               <input
                 type="text"
                 required
-                placeholder="e.g. 50,000 MT Urea • Deadline 30 Nov"
-                onChange={(e) => update("productDeadline", e.target.value)}
+                placeholder={
+                  locale === "ar"
+                    ? "أرز، أسمدة، حديد بناء، تموين مؤسسي..."
+                    : "e.g. Rice, Urea 46%, Construction Steel, Institutional Catering"
+                }
+                onChange={(e) => update("productRequirement", e.target.value)}
+                className="mt-1.5 w-full rounded-lg border border-gsy-navy/20 bg-white px-3.5 py-2.5 text-sm text-gsy-navy dark:border-white/20 dark:bg-gsy-navy-deep dark:text-white"
+              />
+            </div>
+            <div>
+              <label className="block text-xs font-bold text-gsy-navy dark:text-white">
+                {locale === "ar" ? "الكمية المطلوبة" : "Required Quantity"} *
+              </label>
+              <input
+                type="text"
+                required
+                placeholder={locale === "ar" ? "مثال: 50,000 طن متري" : "e.g. 50,000 MT"}
+                onChange={(e) => update("quantity", e.target.value)}
+                className="mt-1.5 w-full rounded-lg border border-gsy-navy/20 bg-white px-3.5 py-2.5 text-sm text-gsy-navy dark:border-white/20 dark:bg-gsy-navy-deep dark:text-white"
+              />
+            </div>
+            <div>
+              <label className="block text-xs font-bold text-gsy-navy dark:text-white">
+                {locale === "ar" ? "الموعد النهائي لتقديم المناقصة" : "Tender Submission Deadline"} *
+              </label>
+              <input
+                type="text"
+                required
+                placeholder={locale === "ar" ? "مثال: 30 نوفمبر 2026" : "e.g. 30 November 2026"}
+                onChange={(e) => update("deadline", e.target.value)}
                 className="mt-1.5 w-full rounded-lg border border-gsy-navy/20 bg-white px-3.5 py-2.5 text-sm text-gsy-navy dark:border-white/20 dark:bg-gsy-navy-deep dark:text-white"
               />
             </div>
@@ -381,11 +471,12 @@ export function DivisionEnquiryForm({
           <>
             <div>
               <label className="block text-xs font-bold text-gsy-navy dark:text-white">
-                {locale === "ar" ? "الدولة" : "Country"} *
+                {locale === "ar" ? "دولة التسجيل" : "Country of Registration"} *
               </label>
               <input
                 type="text"
                 required
+                placeholder={locale === "ar" ? "مثال: الإمارات، الهند، ماليزيا..." : "e.g. UAE, India, Malaysia..."}
                 onChange={(e) => update("country", e.target.value)}
                 className="mt-1.5 w-full rounded-lg border border-gsy-navy/20 bg-white px-3.5 py-2.5 text-sm text-gsy-navy dark:border-white/20 dark:bg-gsy-navy-deep dark:text-white"
               />
@@ -399,36 +490,36 @@ export function DivisionEnquiryForm({
                 onChange={(e) => update("productCategory", e.target.value)}
                 className="mt-1.5 w-full rounded-lg border border-gsy-navy/20 bg-white px-3.5 py-2.5 text-sm text-gsy-navy dark:border-white/20 dark:bg-gsy-navy-deep dark:text-white"
               >
-                <option value="Fresh Produce">Fresh Produce & Bakery</option>
-                <option value="Halal Butchery">Halal Meat & Poultry</option>
-                <option value="Dry FMCG">Dry Groceries & Staples</option>
-                <option value="Frozen & Dairy">Frozen & Dairy</option>
-                <option value="Household">Household & Non-Food</option>
+                <option value="Fresh Produce">{locale === "ar" ? "المنتجات الطازجة والمخبوزات" : "Fresh Produce & Bakery"}</option>
+                <option value="Halal Butchery">{locale === "ar" ? "اللحوم والدواجن الحلال" : "Halal Meat & Poultry"}</option>
+                <option value="Dry FMCG">{locale === "ar" ? "البقالة الجافة والسلع التموينية" : "Dry Groceries & Staples"}</option>
+                <option value="Frozen & Dairy">{locale === "ar" ? "الأغذية المجمدة والألبان" : "Frozen & Dairy"}</option>
+                <option value="Household">{locale === "ar" ? "المستلزمات المنزلية وغير الغذائية" : "Household & Non-Food"}</option>
               </select>
             </div>
             <div>
               <label className="block text-xs font-bold text-gsy-navy dark:text-white">
-                {locale === "ar" ? "الشهادات (حلال، الهاسب، الأيزو)" : "Certifications (Halal, HACCP, ISO)"}
+                {locale === "ar" ? "شهادات سلامة وجودة الأغذية (حلال، الهاسب، الأيزو)" : "Food Safety / Quality Certifications"}
               </label>
               <input
                 type="text"
-                placeholder="e.g. Halal, HACCP, ISO 22000"
+                placeholder={locale === "ar" ? "مثال: حلال، HACCP، ISO 22000" : "e.g. Halal, HACCP, ISO 22000"}
                 onChange={(e) => update("certifications", e.target.value)}
                 className="mt-1.5 w-full rounded-lg border border-gsy-navy/20 bg-white px-3.5 py-2.5 text-sm text-gsy-navy dark:border-white/20 dark:bg-gsy-navy-deep dark:text-white"
               />
             </div>
             <div>
               <label className="block text-xs font-bold text-gsy-navy dark:text-white">
-                {locale === "ar" ? "رفع الكتالوج (تجريبي)" : "Product Catalogue Upload (Demo)"}
+                {locale === "ar" ? "رفع الكتالوج / الملف التعريفي للشركة" : "Product Catalogue / Company Profile Upload"}
               </label>
               <label className="mt-1.5 flex cursor-pointer items-center gap-2 rounded-lg border border-dashed border-gsy-navy/30 bg-gsy-ivory/60 px-3.5 py-2.5 text-xs font-medium text-gsy-navy hover:border-gsy-gold dark:border-white/25 dark:bg-white/5 dark:text-white">
                 <Upload className="h-4 w-4 text-gsy-gold" />
                 <span className="truncate">
-                  {catalogueName || (locale === "ar" ? "اختر ملف PDF أو قائمة أسعار" : "Attach PDF / Price List")}
+                  {catalogueName || (locale === "ar" ? "إرفاق ملف PDF أو قائمة أسعار" : "Attach PDF / Catalogue / Profile")}
                 </span>
                 <input
                   type="file"
-                  accept=".pdf,.xlsx,.csv"
+                  accept=".pdf,.xlsx,.csv,.docx"
                   className="sr-only"
                   onChange={(e) => setCatalogueName(e.target.files?.[0]?.name || "")}
                 />
@@ -437,8 +528,73 @@ export function DivisionEnquiryForm({
           </>
         )}
 
-        {/* Store Partner / Investor Track */}
-        {(variant === "store-partner" || variant === "investor") && (
+        {/* Product Catalogue Enquiry Fields */}
+        {variant === "product" && (
+          <>
+            <div>
+              <label className="block text-xs font-bold text-gsy-navy dark:text-white">
+                {locale === "ar" ? "المنتج محل الاهتمام" : "Product of Interest"} *
+              </label>
+              <input
+                type="text"
+                required
+                value={formState.productName || ""}
+                placeholder={
+                  locale === "ar"
+                    ? "مثال: أرز بسمتي نور العرب الفاخر / سماد اليوريا 46%"
+                    : "e.g. Noor Al Arab Extra Long Basmati Rice / Urea 46%"
+                }
+                onChange={(e) => update("productName", e.target.value)}
+                className="mt-1.5 w-full rounded-lg border border-gsy-navy/20 bg-white px-3.5 py-2.5 text-sm text-gsy-navy dark:border-white/20 dark:bg-gsy-navy-deep dark:text-white"
+              />
+            </div>
+            <div>
+              <label className="block text-xs font-bold text-gsy-navy dark:text-white">
+                {locale === "ar" ? "فئة المنتج" : "Product Category"} *
+              </label>
+              <select
+                value={formState.productCategory || "Rice"}
+                onChange={(e) => update("productCategory", e.target.value)}
+                className="mt-1.5 w-full rounded-lg border border-gsy-navy/20 bg-white px-3.5 py-2.5 text-sm text-gsy-navy dark:border-white/20 dark:bg-gsy-navy-deep dark:text-white"
+              >
+                <option value="Rice">{locale === "ar" ? "الأرز" : "Rice"}</option>
+                <option value="Sugar">{locale === "ar" ? "السكر" : "Sugar"}</option>
+                <option value="Edible Oils">{locale === "ar" ? "زيوت الطعام" : "Edible Oils"}</option>
+                <option value="Pulses & Spices">{locale === "ar" ? "البقوليات والتوابل" : "Pulses & Spices"}</option>
+                <option value="Packaged Foods">{locale === "ar" ? "الأغذية المعبأة" : "Packaged Foods"}</option>
+                <option value="Frozen Foods">{locale === "ar" ? "الأغذية المجمدة" : "Frozen Foods"}</option>
+                <option value="Fertilizer">{locale === "ar" ? "الأسمدة" : "Fertilizer"}</option>
+                <option value="Minerals & Metals">{locale === "ar" ? "المعادن والفلزات" : "Minerals & Metals"}</option>
+              </select>
+            </div>
+            <div>
+              <label className="block text-xs font-bold text-gsy-navy dark:text-white">
+                {locale === "ar" ? "سوق الوجهة / الدولة" : "Destination Market / Country"} *
+              </label>
+              <input
+                type="text"
+                required
+                placeholder={locale === "ar" ? "الإمارات، دول الخليج، أفريقيا، آسيا..." : "e.g. UAE, GCC, East Africa, Malaysia..."}
+                onChange={(e) => update("destination", e.target.value)}
+                className="mt-1.5 w-full rounded-lg border border-gsy-navy/20 bg-white px-3.5 py-2.5 text-sm text-gsy-navy dark:border-white/20 dark:bg-gsy-navy-deep dark:text-white"
+              />
+            </div>
+            <div>
+              <label className="block text-xs font-bold text-gsy-navy dark:text-white">
+                {locale === "ar" ? "الكمية التقديرية المطلوبة" : "Estimated Required Volume"}
+              </label>
+              <input
+                type="text"
+                placeholder={locale === "ar" ? "مثال: 500 طن متري / 5 حاويات" : "e.g. 500 MT / 5 FCL containers"}
+                onChange={(e) => update("volume", e.target.value)}
+                className="mt-1.5 w-full rounded-lg border border-gsy-navy/20 bg-white px-3.5 py-2.5 text-sm text-gsy-navy dark:border-white/20 dark:bg-gsy-navy-deep dark:text-white"
+              />
+            </div>
+          </>
+        )}
+
+        {/* Store Partner Track */}
+        {variant === "store-partner" && (
           <div className="sm:col-span-2">
             <label className="block text-xs font-bold text-gsy-navy dark:text-white">
               {locale === "ar" ? "نوع الشراكة المطلوبة" : "Partnership Track"}
@@ -448,26 +604,70 @@ export function DivisionEnquiryForm({
               onChange={(e) => update("partnerType", e.target.value)}
               className="mt-1.5 w-full rounded-lg border border-gsy-navy/20 bg-white px-3.5 py-2.5 text-sm text-gsy-navy dark:border-white/20 dark:bg-gsy-navy-deep dark:text-white"
             >
-              {variant === "store-partner" ? (
-                <>
-                  <option value="New Store Site / Landlord">Landlord / Retail Site Proposal (UAE, GCC, Malaysia)</option>
-                  <option value="Store Investment Partner">Store Expansion Investment Partner (Private Terms Shared Directly)</option>
-                </>
-              ) : (
-                <>
-                  <option value="Store Investor">Store Expansion Partner</option>
-                  <option value="Bank / Trade Finance">Bank / Trade Finance Facility</option>
-                  <option value="Origin Producer">Origin Producer / Mill Offtake Partner</option>
-                  <option value="Halal Investment">Halal Investment Program Enquiry</option>
-                </>
-              )}
+              <option value="New Store Site / Landlord">
+                {locale === "ar" ? "مالك عقار / اقتراح موقع متجر تجزئة (الإمارات، ماليزيا، دول الخليج)" : "Landlord / Retail Site Proposal (UAE, Malaysia, GCC)"}
+              </option>
+              <option value="Store Investment Partner">
+                {locale === "ar" ? "شريك استثماري لتطوير وتوسيع المتاجر (تُناقش الشروط مباشرة)" : "Store Expansion Investment Partner (Terms Discussed Privately)"}
+              </option>
             </select>
           </div>
         )}
 
+        {/* Investor & Partnership Track */}
+        {variant === "investor" && (
+          <>
+            <div>
+              <label className="block text-xs font-bold text-gsy-navy dark:text-white">
+                {locale === "ar" ? "الدولة" : "Country"} *
+              </label>
+              <input
+                type="text"
+                required
+                placeholder={locale === "ar" ? "مثال: الإمارات، السعودية، ماليزيا، المملكة المتحدة..." : "e.g. UAE, Saudi Arabia, Malaysia, UK..."}
+                onChange={(e) => update("country", e.target.value)}
+                className="mt-1.5 w-full rounded-lg border border-gsy-navy/20 bg-white px-3.5 py-2.5 text-sm text-gsy-navy dark:border-white/20 dark:bg-gsy-navy-deep dark:text-white"
+              />
+            </div>
+            <div>
+              <label className="block text-xs font-bold text-gsy-navy dark:text-white">
+                {locale === "ar" ? "نوع الاستفسار" : "Enquiry Type"} *
+              </label>
+              <select
+                value={formState.enquiryType || "Halal Investment Programme"}
+                onChange={(e) => update("enquiryType", e.target.value)}
+                className="mt-1.5 w-full rounded-lg border border-gsy-navy/20 bg-white px-3.5 py-2.5 text-sm text-gsy-navy dark:border-white/20 dark:bg-gsy-navy-deep dark:text-white"
+              >
+                <option value="Halal Investment Programme">
+                  {locale === "ar" ? "برنامج الاستثمار الحلال" : "Halal Investment Programme"}
+                </option>
+                <option value="Business Partnership">
+                  {locale === "ar" ? "شراكة تجارية" : "Business Partnership"}
+                </option>
+                <option value="Retail / Store Partnership">
+                  {locale === "ar" ? "شراكة متاجر التجزئة" : "Retail / Store Partnership"}
+                </option>
+                <option value="Banking / Financial Institution">
+                  {locale === "ar" ? "بنوك ومؤسسات مالية" : "Banking / Financial Institution"}
+                </option>
+                <option value="Supplier / Producer">
+                  {locale === "ar" ? "موردون ومنتجون" : "Supplier / Producer"}
+                </option>
+                <option value="Other">
+                  {locale === "ar" ? "أخرى" : "Other"}
+                </option>
+              </select>
+            </div>
+          </>
+        )}
+
         <div className="sm:col-span-2">
           <label className="block text-xs font-bold text-gsy-navy dark:text-white">
-            {locale === "ar" ? "تفاصيل إضافية" : "Additional Notes / Requirements"}
+            {variant === "investor"
+              ? (locale === "ar" ? "الرسالة" : "Message")
+              : variant === "supplier"
+                ? (locale === "ar" ? "معلومات إضافية" : "Additional Information")
+                : (locale === "ar" ? "تفاصيل إضافية" : "Additional Notes / Requirements")}
           </label>
           <textarea
             rows={3}
@@ -483,13 +683,23 @@ export function DivisionEnquiryForm({
             ? "نموذج عرض تفاعلي — دون إرسال خارجي."
             : "Interactive demo validation — private terms are never displayed publicly."}
         </span>
-        <button
-          type="submit"
-          className="inline-flex items-center gap-2 rounded-lg bg-gsy-navy px-5 py-2.5 text-sm font-bold text-white transition hover:bg-gsy-navy-mid dark:bg-gsy-gold-bright dark:text-gsy-navy-deep dark:hover:bg-gsy-gold-light"
-        >
-          <Send className="h-4 w-4" />
-          <span>{locale === "ar" ? "إرسال الاستفسار" : "Submit Enquiry"}</span>
-        </button>
+        <div className="flex flex-wrap items-center gap-3">
+          {secondaryAction && (
+            <Link
+              href={localePath(locale, secondaryAction.href)}
+              className="rounded-lg border border-gsy-navy/20 px-4 py-2.5 text-xs font-bold text-gsy-navy transition hover:bg-gsy-navy/5 dark:border-white/20 dark:text-white dark:hover:bg-white/5"
+            >
+              {secondaryAction.label}
+            </Link>
+          )}
+          <button
+            type="submit"
+            className="inline-flex items-center gap-2 rounded-lg bg-gsy-navy px-5 py-2.5 text-sm font-bold text-white transition hover:bg-gsy-navy-mid dark:bg-gsy-gold-bright dark:text-gsy-navy-deep dark:hover:bg-gsy-gold-light"
+          >
+            <Send className="h-4 w-4" />
+            <span>{submitLabel ?? (locale === "ar" ? "إرسال الاستفسار" : "Submit Enquiry")}</span>
+          </button>
+        </div>
       </div>
     </form>
   );

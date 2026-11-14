@@ -63,7 +63,7 @@ export function FamilyNetworkDiagram({ locale }: { locale: Locale }) {
             </span>
           </div>
           <span className="rounded-full border border-white/15 bg-white/5 px-2.5 py-0.5 text-[11px] text-white/75">
-            {locale === "ar" ? "8 كيانات مترابطة" : "8 Interconnected Entities"}
+            {locale === "ar" ? `${GSY_FAMILY_MEMBERS.length} كيانات مترابطة` : `${GSY_FAMILY_MEMBERS.length} Interconnected Entities`}
           </span>
         </div>
 

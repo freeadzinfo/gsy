@@ -78,8 +78,9 @@ export function RoutedContactForm({
 
   return (
     <form
+      id="contact-form"
       onSubmit={handleSubmit}
-      className="rounded-2xl border border-gsy-navy/10 bg-white p-6 shadow-card sm:p-8 dark:border-gsy-gold-light/15 dark:bg-gsy-navy"
+      className="scroll-mt-24 rounded-2xl border border-gsy-navy/10 bg-white p-6 shadow-card sm:p-8 dark:border-gsy-gold-light/15 dark:bg-gsy-navy"
     >
       <fieldset>
         <legend className="text-sm font-bold text-gsy-navy dark:text-white">
@@ -258,4 +259,3 @@ export function RoutedContactForm({
     </form>
   );
 }
-

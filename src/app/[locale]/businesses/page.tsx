@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { ArrowRight, ArrowLeft, ShoppingBag } from "lucide-react";
+import { ArrowRight, ArrowLeft } from "lucide-react";
 import { isValidLocale, localePath, t } from "@/lib/i18n";
 import { BUSINESS_DIVISIONS } from "@/data/businesses";
 import { PageHero } from "@/components/shared/PageHero";
@@ -30,16 +30,16 @@ export default async function BusinessesOverviewPage({
         }
         subtitle={
           locale === "ar"
-            ? "ستة قطاعات تشغيلية مترابطة، إضافة إلى مجموعة أسواق جي إس واي المركزية، يجمعها مكتب التأجير البحري المشترك."
-            : "Six core B2B and brand divisions plus GSY Supermarket Group — connected end-to-end by Shipping & Chartering."
+            ? "سبعة قطاعات تشغيلية مترابطة، إضافة إلى مجموعة أسواق جي إس واي المركزية، يجمعها مكتب التأجير البحري المشترك."
+            : "Seven core B2B, consumer and brand divisions plus GSY Supermarket Group — connected end-to-end by Shipping & Chartering."
         }
         backgroundImage="/images/hero-port.jpg"
         sideGallery={{
           mainImage: "/images/hero-port.jpg",
           mainCaption:
             locale === "ar"
-              ? "من المنشأ إلى التجزئة — 6 قطاعات متكاملة"
-              : "Origin to Shelf — 6 Integrated Divisions",
+              ? "من المنشأ إلى التجزئة — 7 قطاعات متكاملة"
+              : "Origin to Shelf — 7 Integrated Divisions",
           badgeText: locale === "ar" ? "دبي • 25+ دولة" : "Dubai HQ • 25+ Markets",
         }}
         primaryCta={{
@@ -57,8 +57,8 @@ export default async function BusinessesOverviewPage({
         <div>
           <h2 className="text-xl font-extrabold text-gsy-navy dark:text-white">
             {locale === "ar"
-              ? "النموذج التشغيلي ذو الخمس مراحل"
-              : "The Group Model — Five Integrated Steps"}
+              ? "كيف يعمل نموذج أعمالنا"
+              : "How Our Business Model Works"}
           </h2>
           <div className="mt-5">
             <GroupModelStrip locale={locale} />
@@ -67,7 +67,7 @@ export default async function BusinessesOverviewPage({
 
         <div>
           <h2 className="text-2xl font-extrabold text-gsy-navy dark:text-white">
-            {locale === "ar" ? "قطاعات المجموعة" : "All Business Divisions"}
+            {locale === "ar" ? "قطاعات أعمالنا" : "Our Business Divisions"}
           </h2>
           <div className="mt-6 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {BUSINESS_DIVISIONS.map((div) => (
@@ -101,49 +101,45 @@ export default async function BusinessesOverviewPage({
                     </p>
                   </div>
                   <span className="mt-4 inline-flex items-center gap-1.5 text-xs font-bold text-gsy-gold dark:text-gsy-gold-light">
-                    <span>{locale === "ar" ? "استكشف القطاع" : "Explore division"}</span>
-                    <ArrowIcon className="h-3.5 w-3.5" />
+                    <span>
+                      {locale === "ar"
+                        ? `استكشف ${t(div.name, locale)}`
+                        : `Explore ${t(div.name, locale)}`}
+                    </span>
+                    <ArrowIcon className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5 rtl:group-hover:-translate-x-0.5" />
                   </span>
                 </div>
               </Link>
             ))}
+          </div>
+        </div>
 
-            {/* Dedicated Supermarkets Tile per Page 10 */}
-            <Link
-              href={localePath(locale, "/supermarkets")}
-              className="group flex flex-col overflow-hidden rounded-2xl border border-gsy-gold/40 bg-gsy-navy text-white shadow-card transition hover:-translate-y-0.5 dark:bg-[#050f1e]"
-            >
-              <div className="relative h-44 w-full">
-                <Image
-                  src="/images/supermarket-store.jpg"
-                  alt="GSY Supermarket Group"
-                  fill
-                  sizes="(max-width: 768px) 100vw, 33vw"
-                  className="object-cover opacity-80 transition duration-500 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-gsy-navy via-gsy-navy/35 to-transparent" />
-                <span className="absolute bottom-3 start-3 inline-flex items-center gap-1.5 rounded-full bg-white px-2.5 py-0.5 text-[10px] font-extrabold text-gsy-navy">
-                  <ShoppingBag className="h-3 w-3 text-gsy-gold" />
-                  {locale === "ar" ? "5 متاجر ← 50 بحلول 2030" : "5 Stores → 50 by 2030"}
-                </span>
-              </div>
-              <div className="flex flex-1 flex-col justify-between p-5">
-                <div>
-                  <h3 className="text-lg font-extrabold text-white">
-                    {locale === "ar" ? "مجموعة أسواق جي إس واي المركزية" : "GSY Supermarket Group"}
-                  </h3>
-                  <p className="mt-2 text-xs leading-relaxed text-white/80 sm:text-sm">
-                    {locale === "ar"
-                      ? "إيليت باسكتس، سوبرماركت جي إس واي، وسوبرماركت ماليزيا — واجهة التجزئة المباشرة للمجموعة."
-                      : "Elite Baskets, GSY Supermarket and Supermarket Malaysia — our consumer retail face across UAE, Malaysia and GCC."}
-                  </p>
-                </div>
-                <span className="mt-4 inline-flex items-center gap-1.5 text-xs font-bold text-gsy-gold-light">
-                  <span>{locale === "ar" ? "زيارة قسم التجزئة" : "Open Supermarkets hub"}</span>
-                  <ArrowIcon className="h-3.5 w-3.5" />
-                </span>
-              </div>
-            </Link>
+        {/* Closing Section: Connected Across Markets */}
+        <div className="relative overflow-hidden rounded-3xl bg-gsy-navy p-8 text-white shadow-xl dark:bg-gsy-navy-deep sm:p-12">
+          <div className="relative z-10 grid gap-8 lg:grid-cols-12 lg:items-center">
+            <div className="space-y-4 lg:col-span-8">
+              <span className="text-xs font-bold tracking-wider text-gsy-gold uppercase">
+                {locale === "ar" ? "الربط عبر الأسواق" : "Connected Across Markets"}
+              </span>
+              <h2 className="mt-1 text-2xl font-extrabold text-white sm:text-3xl">
+                {locale === "ar" ? "متصلون عبر الأسواق الدولية" : "Connected Across Markets"}
+              </h2>
+              <p className="mt-2 text-sm leading-relaxed text-white/85 sm:text-base">
+                {locale === "ar"
+                  ? "تربط أنشطة أعمالنا بين مصادر الإنتاج، الممرات التجارية، وأسواق العملاء في آسيا، الخليج، وأفريقيا. ومن خلال التعاون بين قطاعاتنا، نهدف إلى تعزيز الوصول إلى الأسواق، وتنسيق سلاسل الإمداد، وبناء علاقات تجارية طويلة الأمد."
+                  : "Our business activities connect sourcing origins, trade corridors and customer markets across Asia, the Gulf and Africa. Through collaboration between our divisions, we aim to strengthen market access, supply coordination and long-term business relationships."}
+              </p>
+            </div>
+
+            <div className="flex flex-col gap-3 sm:flex-row lg:col-span-4 lg:flex-col lg:justify-center">
+              <Link
+                href={localePath(locale, "/presence")}
+                className="inline-flex items-center justify-center gap-2 rounded-lg bg-gsy-gold-bright px-6 py-3 text-xs font-extrabold text-gsy-navy-deep transition hover:bg-gsy-gold-light"
+              >
+                <span>{locale === "ar" ? "استكشف حضورنا العالمي" : "Explore Our Global Presence"}</span>
+                <ArrowIcon className="h-4 w-4" />
+              </Link>
+            </div>
           </div>
         </div>
       </section>

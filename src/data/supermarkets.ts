@@ -5,7 +5,10 @@ export const SUPERMARKET_BRANDS: SupermarketBrand[] = [
     slug: "elite-baskets",
     name: { en: "Elite Baskets", ar: "إيليت باسكتس" },
     country: { en: "UAE", ar: "الإمارات العربية المتحدة" },
-    positioning: { en: "Premium supermarket", ar: "سوبرماركت فاخر" },
+    positioning: {
+      en: "Premium supermarket",
+      ar: "سوبرماركت فاخر",
+    },
     storesTodayText: { en: "Part of 3 in UAE", ar: "ضمن 3 متاجر في الإمارات" },
     storesTodayCount: 1,
     target2030Count: 10,
@@ -35,7 +38,10 @@ export const SUPERMARKET_BRANDS: SupermarketBrand[] = [
     slug: "gsy-supermarket",
     name: { en: "GSY Supermarket", ar: "سوبرماركت جي إس واي" },
     country: { en: "UAE", ar: "الإمارات العربية المتحدة" },
-    positioning: { en: "Value supermarket for everyday shopping", ar: "سوبرماركت القيمة للتسوق اليومي" },
+    positioning: {
+      en: "Value supermarket for everyday shopping",
+      ar: "سوبرماركت اقتصادي للتسوق اليومي",
+    },
     storesTodayText: { en: "Part of 3 in UAE", ar: "ضمن 3 متاجر في الإمارات" },
     storesTodayCount: 2,
     target2030Count: 15,
@@ -64,10 +70,10 @@ export const SUPERMARKET_BRANDS: SupermarketBrand[] = [
   {
     slug: "supermarket-malaysia",
     name: { en: "Supermarket Malaysia", ar: "سوبرماركت ماليزيا" },
-    country: { en: "Malaysia (Kuala Lumpur)", ar: "ماليزيا (كوالالمبور)" },
+    country: { en: "Kuala Lumpur, Malaysia", ar: "كوالالمبور، ماليزيا" },
     positioning: {
-      en: "Neighbourhood supermarket with halal, Indian and Middle Eastern ranges",
-      ar: "سوبرماركت الأحياء السكنية بتشكيلة حلال وهندية وشرق أوسطية",
+      en: "Neighbourhood supermarket featuring halal, Indian and Middle Eastern ranges",
+      ar: "سوبرماركت محلي يتميز بتشكيلة المنتجات الحلال والهندية والشرق أوسطية",
     },
     storesTodayText: { en: "2 live stores", ar: "متجران يعملان حالياً" },
     storesTodayCount: 2,
@@ -97,22 +103,25 @@ export const SUPERMARKET_BRANDS: SupermarketBrand[] = [
 
 export const SUPERMARKET_GROWTH_PLAN = [
   {
-    market: { en: "UAE supermarkets", ar: "الأسواق المركزية في الإمارات" },
+    market: { en: "UAE", ar: "الإمارات العربية المتحدة" },
+    format: { en: "Supermarket outlets", ar: "فروع سوبرماركت" },
     today: 3,
-    by2030: "25 outlets",
-    by2030Ar: "25 فرعاً",
+    by2030: "25 supermarket outlets",
+    by2030Ar: "25 فرع سوبرماركت",
   },
   {
-    market: { en: "Malaysia supermarkets", ar: "الأسواق المركزية في ماليزيا" },
+    market: { en: "Malaysia", ar: "ماليزيا" },
+    format: { en: "Supermarket outlets", ar: "فروع سوبرماركت" },
     today: 2,
-    by2030: "20 outlets",
-    by2030Ar: "20 فرعاً",
+    by2030: "20 supermarket outlets",
+    by2030Ar: "20 فرع سوبرماركت",
   },
   {
-    market: { en: "Hypermarkets (UAE and other GCC countries)", ar: "الهايبرماركت (الإمارات ودول الخليج)" },
+    market: { en: "UAE and other GCC countries", ar: "الإمارات ودول الخليج الأخرى" },
+    format: { en: "Hypermarkets", ar: "فروع هايبرماركت" },
     today: 0,
-    by2030: "5",
-    by2030Ar: "5 فروع",
+    by2030: "5 hypermarkets",
+    by2030Ar: "5 فروع هايبرماركت",
   },
 ];
 

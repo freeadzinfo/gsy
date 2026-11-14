@@ -1,8 +1,27 @@
 import React from "react";
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { isValidLocale } from "@/lib/i18n";
 import { PageHero } from "@/components/shared/PageHero";
 import { GatedProfileForm } from "@/components/investors/GatedProfileForm";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  return {
+    title:
+      locale === "ar"
+        ? "الملف التعريفي للشركة | مجموعة جي إس واي العالمية"
+        : "Company Profile | GSY International Group",
+    description:
+      locale === "ar"
+        ? "حمّل الملف التعريفي المعتمد للتعرف على مجموعة جي إس واي الدولية، وقطاعات أعمالها، وأسواقها، وتوجهها الاستراتيجي."
+        : "Download the approved company profile to learn about GSY International Group, its business divisions, markets and strategic direction.",
+  };
+}
 
 export default async function CompanyProfilePage({
   params,
@@ -16,21 +35,25 @@ export default async function CompanyProfilePage({
     <div className="bg-gsy-ivory dark:bg-gsy-navy-deep">
       <PageHero
         locale={locale}
-        eyebrow={locale === "ar" ? "المستثمرون • الملف المؤسسي" : "Investors • Company Profile"}
-        title={locale === "ar" ? "الملف التعريفي لمجموعة جي إس واي" : "GSY Company Profile Download"}
+        eyebrow={locale === "ar" ? "الملف التعريفي للشركة" : "Company Profile"}
+        title={
+          locale === "ar"
+            ? "اكتشف مجموعة جي إس واي العالمية"
+            : "Discover GSY International Group"
+        }
         subtitle={
           locale === "ar"
-            ? "ملف تعريفي رسمي محمي بالاسم والبريد الإلكتروني وفق متطلبات الإدارة."
-            : "Downloadable corporate profile gated by name and email per Management Brief v4."
+            ? "حمّل الملف التعريفي المعتمد للتعرف على مجموعة جي إس واي الدولية، وقطاعات أعمالها، وأسواقها، وتوجهها الاستراتيجي."
+            : "Download the approved company profile to learn about GSY International Group, its business divisions, markets and strategic direction."
         }
         backgroundImage="/images/dubai-hq.jpg"
         primaryCta={{
-          label: locale === "ar" ? "افتح نموذج التحميل" : "Unlock Profile PDF",
+          label: locale === "ar" ? "تحميل الملف التعريفي للشركة" : "Download Company Profile",
           href: "#profile-gate",
         }}
         secondaryCta={{
-          label: locale === "ar" ? "تشارك مع جي إس واي" : "Partner with GSY",
-          href: "/investors/partner-with-gsy",
+          label: locale === "ar" ? "تشارك مع جي إس واي" : "Partner With GSY",
+          href: "/investors",
         }}
         breadcrumbs={[
           { label: locale === "ar" ? "المستثمرون" : "Investors", href: "/investors" },
@@ -43,4 +66,3 @@ export default async function CompanyProfilePage({
     </div>
   );
 }
-

@@ -10,105 +10,103 @@ export const BUSINESS_DIVISIONS: BusinessDivision[] = [
       ar: "بيت تداول مستقل على ممر أفريقيا – الخليج – آسيا.",
     },
     summary: {
-      en: "Back-to-back physical trade across five desks: FMCG staples, Fertilizer, Frozen foods, Minerals and Metals.",
-      ar: "تجارة فعلية متقابلة عبر خمسة مكاتب: السلع الاستهلاكية الأساسية، الأسمدة، الأغذية المجمدة، المعادن والفلزات.",
+      en: "Cross-border trading across FMCG staples, fertilizer, frozen foods, minerals and metals. We connect suppliers, sourcing markets and buyers through international trading activities.",
+      ar: "التجارة العابرة للحدود عبر السلع الاستهلاكية الأساسية، الأسمدة، الأغذية المجمدة، المعادن والفلزات. نربط الموردين وأسواق المنشأ والمشترين من خلال أنشطة التداول التجاري الدولي.",
     },
     whatWeDo: [
       {
-        title: { en: "Back-to-back execution", ar: "التنفيذ بعقود متقابلة" },
+        title: { en: "Structured Trading", ar: "التداول المنظم" },
         description: {
-          en: "Every cargo is sold as it is bought, supported by credit-insured buyers and LC-backed sales.",
-          ar: "كل شحنة تُباع فور شرائها، مدعومة بمشترين مؤمنين ائتمانياً ومبيعات باعتمادات مستندية.",
+          en: "We coordinate back-to-back contracts, aligning purchase and sales transactions for each cargo.",
+          ar: "ننسق عقوداً متقابلة (Back-to-back) لتوفيق معاملات الشراء والبيع لكل شحنة.",
         },
       },
       {
-        title: { en: "Direct origin procurement", ar: "التوريد المباشر من المنشأ" },
+        title: { en: "Counterparty Assessment", ar: "تقييم الأطراف المقابلة" },
         description: {
-          en: "Sourcing directly from processors, mines, smelters and origin mills across India, Malaysia, China, Brazil and Africa.",
-          ar: "التوريد المباشر من المصانع والمناجم والمطاحن في الهند وماليزيا والصين والبرازيل وأفريقيا.",
+          en: "We apply due diligence to trading counterparties and relevant supply-chain participants.",
+          ar: "نطبق إجراءات العناية الواجبة على الأطراف التجارية والجهات المشاركة في سلاسل الإمداد.",
         },
       },
       {
-        title: { en: "Bank-grade compliance", ar: "امتثال مصرفي صارم" },
+        title: { en: "Contract & Documentation Coordination", ar: "تنسيق العقود والمستندات" },
         description: {
-          en: "KYC and sanctions screening on every counterparty, origin and vessel, plus OECD due diligence for minerals.",
-          ar: "فحص اعرف عميلك والعقوبات لكل طرف ومنشأ وسفينة، مع العناية الواجبة لمنظمة التعاون الاقتصادي للمعادن.",
+          en: "We coordinate commercial contracts and the documentation required for international commodity transactions.",
+          ar: "ننسق العقود التجارية والمستندات اللازمة لصفقات السلع الدولية.",
         },
       },
       {
-        title: { en: "Integrated chartering", ar: "تأجير بحري متكامل" },
+        title: { en: "Cargo Execution", ar: "تنفيذ الشحنات" },
         description: {
-          en: "Seamless execution with GSY Shipping & Chartering for dry bulk and containerised movements.",
-          ar: "تنفيذ متكامل مع مكتب جي إس واي للشحن والتأجير البحري للشحن السائب والحاويات.",
+          en: "We coordinate the movement of goods from sourcing origins to destination markets through the relevant shipping and logistics arrangements.",
+          ar: "ننسق حركة البضائع من مصادر المنشأ إلى أسواق الوجهة عبر ترتيبات الشحن والخدمات اللوجستية المناسبة.",
         },
       },
     ],
     processSteps: [
       {
         step: "01",
-        title: { en: "Origin Allocation", ar: "تخصيص المنشأ" },
+        title: { en: "Structured Trading", ar: "التداول المنظم" },
         detail: {
-          en: "Grade specification & mill/supplier allocation",
-          ar: "تحديد المواصفات وتخصيص الموردين والمصانع",
+          en: "We coordinate back-to-back contracts, aligning purchase and sales transactions for each cargo.",
+          ar: "ننسق عقوداً متقابلة لتوفيق معاملات الشراء والبيع لكل شحنة.",
         },
       },
       {
         step: "02",
-        title: { en: "KYC & Credit Cover", ar: "الامتثال والتغطية الائتمانية" },
+        title: { en: "Counterparty Assessment", ar: "تقييم الأطراف المقابلة" },
         detail: {
-          en: "Counterparty screening, sanctions check & LC structuring",
-          ar: "فحص الأطراف والعقوبات وهيكلة الاعتماد المستندي",
+          en: "We apply due diligence to trading counterparties and relevant supply-chain participants.",
+          ar: "نطبق إجراءات العناية الواجبة على الأطراف التجارية والجهات المعنية بسلسلة الإمداد.",
         },
       },
       {
         step: "03",
-        title: { en: "Vessel Fixture", ar: "تثبيت الشحن" },
+        title: { en: "Contract & Documentation", ar: "تنسيق العقود والمستندات" },
         detail: {
-          en: "Chartering desk books vessel or volume container slots",
-          ar: "حجز السفينة أو مساحات الحاويات عبر مكتب التأجير",
+          en: "We coordinate commercial contracts and the documentation required for international commodity transactions.",
+          ar: "ننسق العقود التجارية والمستندات اللازمة لإتمام الصفقات الدولية.",
         },
       },
       {
         step: "04",
-        title: { en: "Inspection & Docs", ar: "الفحص والمستندات" },
+        title: { en: "Cargo Execution", ar: "تنفيذ الشحنات" },
         detail: {
-          en: "Pre-shipment SGS/survey verification and trade finance release",
-          ar: "فحص الجودة قبل الشحن وإصدار مستندات التمويل التجاري",
-        },
-      },
-      {
-        step: "05",
-        title: { en: "Port Discharge", ar: "التفريغ والتسليم" },
-        detail: {
-          en: "Arrival clearance and delivery to wholesalers, mills or tenders",
-          ar: "التخليص في ميناء الوصول والتسليم للمشترين",
+          en: "We coordinate the movement of goods from sourcing origins to destination markets through the relevant shipping and logistics arrangements.",
+          ar: "ننسق حركة البضائع من مصادر المنشأ إلى أسواق الوجهة عبر ترتيبات الشحن واللوجستيات.",
         },
       },
     ],
     whoWeServe: {
       en: [
         "Distributors and wholesalers",
-        "Government tenders (food reserves, subsidy fertilizer, steel)",
-        "Refiners, steel mills and smelters",
+        "Government tender requirements",
+        "Refiners",
+        "Mills and smelters",
+        "Manufacturers",
+        "Institutional and commercial buyers",
       ],
       ar: [
         "الموزعون وتجار الجملة",
-        "المناقصات الحكومية (الاحتياطيات الغذائية، الأسمدة، الصلب)",
-        "المصافي ومصانع الصلب والمصاهر",
+        "متطلبات المناقصات الحكومية",
+        "المصافي",
+        "المطاحن والمصاهر",
+        "الشركات المصنعة",
+        "المشترون المؤسسيون والتجاريون",
       ],
     },
     complianceNotes: {
       en: [
-        "Back-to-back contracts: every cargo is sold as it is bought",
-        "Credit-insured buyers and LC-backed sales",
-        "KYC and sanctions screening on every counterparty, origin and vessel",
-        "OECD due diligence for minerals",
+        "KYC and sanctions screening for counterparties, origins and vessels.",
+        "OECD due diligence for mineral-related trading activities.",
+        "Counterparty assessment and commercial due diligence.",
+        "Contract and transaction coordination.",
       ],
       ar: [
-        "عقود متقابلة: كل شحنة تُباع عند شرائها",
-        "مشترون مؤمنون ائتمانياً ومبيعات مدعومة باعتمادات مستندية",
-        "فحص اعرف عميلك والعقوبات على كل طرف ومنشأ وسفينة",
-        "تطبيق معايير العناية الواجبة لمنظمة التعاون الاقتصادي للمعادن",
+        "فحص اعرف عميلك والعقوبات للأطراف المقابلة ومصادر المنشأ والسفن.",
+        "العناية الواجبة وفق معايير منظمة التعاون الاقتصادي (OECD) لأنشطة تجارة المعادن.",
+        "تقييم الأطراف المقابلة والعناية الواجبة التجارية.",
+        "تنسيق العقود والعمليات التجارية.",
       ],
     },
     operatingCountries: ["uae", "india", "malaysia", "singapore", "china", "tanzania", "kenya", "nigeria"],
@@ -123,40 +121,54 @@ export const BUSINESS_DIVISIONS: BusinessDivision[] = [
     name: { en: "Shipping & Chartering", ar: "الشحن والتأجير البحري" },
     shortTitle: { en: "Shipping & Chartering", ar: "الشحن والتأجير" },
     heroPromise: {
-      en: "GSY Shipping & Chartering — the right vessel for every cargo, from origin to discharge.",
-      ar: "جي إس واي للشحن والتأجير — السفينة المناسبة لكل شحنة، من المنشأ حتى التفريغ.",
+      en: "The Right Vessel for Every Cargo • Coordinating cargo movement from origin to discharge.",
+      ar: "السفينة المناسبة لكل شحنة • تنسيق حركة البضائع من المنشأ حتى التفريغ.",
     },
     summary: {
-      en: "Asset-light and fleet-flexible: we charter the right vessel for every cargo, serving group desks and approved third-party cargo owners.",
-      ar: "تشغيل مرن دون أصول ثقيلة: نستأجر السفينة المناسبة لكل شحنة لخدمة مكاتب المجموعة وأصحاب البضائع المعتمدين.",
+      en: "Voyage chartering and freight coordination for bulk, containerised and selected international cargo requirements. We support cargo movement between origin and destination markets.",
+      ar: "تأجير السفن بالرحلة وتنسيق الشحن البحري للبضائع السائبة والحاويات ومتطلبات الشحن الدولية المختارة. ندعم حركة البضائع بين أسواق المنشأ والوجهات النهائية.",
     },
     whatWeDo: [
       {
-        title: { en: "Dry bulk voyage chartering", ar: "تأجير سفن البضائع السائبة" },
+        title: { en: "Dry Bulk Voyage Chartering", ar: "تأجير سفن الصب الجاف بالرحلة" },
         description: {
-          en: "Handysize to Supramax voyage chartering matched precisely to parcel size, draft restrictions and port schedules.",
-          ar: "تأجير سفن البضائع الجافة السائبة (من هانديزايز إلى سوبراماكس) حسب حجم الشحنة وقيود الميناء.",
+          en: "Voyage chartering solutions for dry bulk cargo, with vessel selection based on cargo requirements, route and availability.",
+          ar: "حلول تأجير السفن بالرحلة لبضائع الصب الجافة، مع اختيار السفينة بناءً على متطلبات الشحنة والمسار والجاهزية.",
         },
       },
       {
-        title: { en: "Container freight at volume rates", ar: "الشحن بالحاويات بأسعار الكميات" },
+        title: { en: "Container Freight Coordination", ar: "تنسيق شحن الحاويات" },
         description: {
-          en: "Contracted space across major shipping lines for containerised FMCG, packaged foods and reefer cargo.",
-          ar: "تعاقدات حجمية مع الخطوط الملاحية الكبرى للسلع الاستهلاكية والأغذية المبردة والمجمدة.",
+          en: "Freight coordination for suitable containerised cargo volumes and international shipping requirements.",
+          ar: "تنسيق الشحن لأحجام مناسبة من البضائع المشحونة في حاويات ومتطلبات الشحن الدولي.",
         },
       },
       {
-        title: { en: "Port agency & stevedoring coordination", ar: "تنسيق الوكالات الملاحية والشحن والتفريغ" },
+        title: { en: "Port Agency & Stevedoring Coordination", ar: "تنسيق الوكالات الملاحية والشحن والتفريغ" },
         description: {
-          en: "Coordinated port agency, stevedoring, laytime and demurrage management across East & West Africa, GCC and Asia.",
-          ar: "إدارة شاملة لعمليات الوكالة الملاحية والشحن والتفريغ ووقت الانتظار وغرامات التأخير.",
+          en: "Coordination of port-related services and stevedoring requirements to support cargo handling at relevant ports.",
+          ar: "تنسيق الخدمات المينائية وعمليات الشحن والتفريغ لدعم مناولة البضائع في الموانئ المعنية.",
         },
       },
       {
-        title: { en: "Third-party cargo chartering*", ar: "تأجير السفن لأطراف ثالثة*" },
+        title: { en: "Laytime & Demurrage Management", ar: "إدارة وقت الرسو وغرامات التأخير" },
         description: {
-          en: "Opening group freight volume and port know-how to external cargo owners (*subject to final UAE trade licence scope confirmation).",
-          ar: "إتاحة قدرات التأجير لشحنات الغير (*رهناً بتأكيد نطاق الرخصة التجارية في الإمارات).",
+          en: "Coordination of laytime requirements and demurrage-related matters throughout the cargo operation.",
+          ar: "تنسيق متطلبات وقت الرسو ومسائل غرامات التأخير طوال فترة عمليات الشحن.",
+        },
+      },
+      {
+        title: { en: "Cargo Inspection & Insurance Coordination", ar: "تنسيق فحص البضائع والتأمين" },
+        description: {
+          en: "Coordination of cargo inspection and insurance requirements as applicable to the shipment.",
+          ar: "تنسيق متطلبات فحص البضائع والتأمين البحري بما ينطبق على كل شحنة.",
+        },
+      },
+      {
+        title: { en: "Third-Party Cargo Chartering", ar: "تأجير السفن لأطراف ثالثة" },
+        description: {
+          en: "Chartering support for third-party cargo owners, subject to confirmation of service availability and applicable licensing.",
+          ar: "دعم تأجير السفن لأصحاب البضائع من الأطراف الثالثة، رهناً بتأكيد توفر الخدمة والترخيص المعمول به.",
         },
       },
     ],
@@ -164,53 +176,72 @@ export const BUSINESS_DIVISIONS: BusinessDivision[] = [
       {
         step: "1",
         title: { en: "Enquiry", ar: "الاستفسار" },
-        detail: { en: "Cargo, ports, laycan", ar: "نوع الشحنة والموانئ وفترة التحميل" },
+        detail: {
+          en: "Receive cargo details, quantity, loading and discharge ports, and laycan requirements.",
+          ar: "استلام تفاصيل الشحنة، الكمية، موانئ التحميل والتفريغ، ومتطلبات فترة الجاهزية (Laycan).",
+        },
       },
       {
         step: "2",
         title: { en: "Fixture", ar: "التثبيت" },
-        detail: { en: "Vessel screened and fixed", ar: "فحص السفينة وتثبيت العقد" },
+        detail: {
+          en: "Screen and select a suitable vessel based on cargo and route requirements, subject to availability.",
+          ar: "فحص واختيار السفينة المناسبة بناءً على متطلبات الشحنة والمسار، رهناً بالتوفر.",
+        },
       },
       {
         step: "3",
         title: { en: "Loading", ar: "التحميل" },
-        detail: { en: "Inspection, documents", ar: "الفحص الميداني والمستندات" },
+        detail: {
+          en: "Coordinate loading, inspection and relevant cargo documentation.",
+          ar: "تنسيق عمليات التحميل، الفحص، ومستندات الشحن المعنية.",
+        },
       },
       {
         step: "4",
-        title: { en: "Voyage", ar: "الإبحار" },
-        detail: { en: "Tracking and updates", ar: "تتبع الرحلة والتحديثات" },
+        title: { en: "Voyage", ar: "الرحلة" },
+        detail: {
+          en: "Coordinate voyage progress and provide relevant updates.",
+          ar: "متابعة سير الرحلة وتقديم التحديثات التشغيلية ذات الصلة.",
+        },
       },
       {
         step: "5",
         title: { en: "Discharge", ar: "التفريغ" },
-        detail: { en: "Port agency, demurrage settled", ar: "إجراءات الميناء وتسوية التأخير" },
+        detail: {
+          en: "Coordinate discharge arrangements, port agency requirements and demurrage settlement.",
+          ar: "تنسيق ترتيبات التفريغ، متطلبات الوكالة المينائية، وتسوية غرامات التأخير.",
+        },
       },
     ],
     whoWeServe: {
       en: [
-        "GSY Commodity Trading desks across FMCG, Fertilizer, Frozen, Minerals and Metals",
-        "Noor Al Arab and GSY Supermarket Group import consignments",
-        "Approved third-party commodity and industrial cargo owners (subject to trade licence confirmation)",
+        "Connected Trading Requirements: Cargo requirements from the Group's trading activities help inform vessel and freight coordination.",
+        "Africa Port Knowledge: A focus on relevant African trade corridors and port-related coordination.",
+        "Vessel Screening: Vessel screening and sanctions compliance as part of the fixture process.",
+        "Demurrage Discipline: Attention to laytime, operational coordination and demurrage-related matters.",
       ],
       ar: [
-        "مكاتب تداول السلع في المجموعة عبر القطاعات الخمسة",
-        "شحنات الاستيراد لعلامة نور العرب ومجموعة الأسواق المركزية",
-        "أصحاب البضائع الخارجيين المعتمدين (وفق تأكيد الترخيص)",
+        "متطلبات التداول المترابطة: تساهم متطلبات الشحن الناتجة عن أنشطة التداول التابعة للمجموعة في توجيه عمليات تنسيق السفن والشحن.",
+        "معرفة بالموانئ الأفريقية: تركيز على الممرات التجارية الأفريقية والتنسيق المينائي ذي الصلة.",
+        "فحص السفن والامتثال: فحص دقيق للسفن والامتثال للعقوبات كجزء أساسي من عملية تثبيت الشحن.",
+        "انضباط غرامات التأخير: اهتمام دقيق بوقت الرسو والتنسيق التشغيلي وإدارة مسائل غرامات التأخير.",
       ],
     },
     complianceNotes: {
       en: [
-        "Fleet-flexible and asset-light: we charter the right vessel for every cargo (no owned vessels claimed)",
-        "Vessel screening and sanctions compliance on every fixture",
+        "Asset-light & voyage-based: vessels chartered per cargo requirements (no owned vessels claimed)",
+        "Strict vessel screening and sanctions compliance on every fixture",
         "Cargo inspection and marine insurance coordination",
         "Strict laytime and demurrage discipline",
+        "Third-party cargo chartering subject to service availability and applicable licensing",
       ],
       ar: [
-        "تشغيل مرن وخفيف الأصول: نستأجر السفينة المناسبة لكل شحنة",
-        "فحص شامل للسفن والامتثال للعقوبات في كل عقد شحن",
+        "نموذج خفيف الأصول وقائم على الرحلات: استئجار السفن حسب متطلبات الشحنة (دون ادعاء ملكية سفن)",
+        "فحص صارم للسفن والامتثال للعقوبات في كل عقد تثبيت",
         "تنسيق فحص البضائع والتأمين البحري",
-        "انضباط صارم في حساب وقت الانتظار وغرامات التأخير",
+        "انضباط تشغيلي في إدارة وقت الرسو وغرامات التأخير",
+        "تأجير السفن لأطراف ثالثة مشروط بتأكيد توفر الخدمة والتراخيص اللازمة",
       ],
     },
     operatingCountries: ["uae", "kenya", "tanzania", "nigeria", "india", "malaysia"],
@@ -230,87 +261,103 @@ export const BUSINESS_DIVISIONS: BusinessDivision[] = [
       ar: "نور العرب — غذاء موثوق للمنازل والمطابخ وشركات التموين.",
     },
     summary: {
-      en: "Growing from a heritage rice brand into the group's integrated food distribution business, targeting AED 1 billion before 2030.",
-      ar: "تتوسع من علامة أرز عريقة إلى ذراع التوزيع الغذائي المتكامل للمجموعة بهدف الوصول إلى مليار درهم قبل 2030.",
+      en: "Noor Al Arab is GSY International Group’s food brand and distribution business. Building on its rice brand foundation, Noor Al Arab is expanding its product range and distribution channels to serve customers across wholesale, retail, catering and HORECA markets. Our focus is to connect food products with business customers through a growing distribution network across the UAE and selected international markets.",
+      ar: "نور العرب هي العلامة التجارية للأغذية وذراع التوزيع التابع لمجموعة جي إس واي الدولية. انطلاقاً من مكانتها الراسخة كعلامة تجارية متخصصة في الأرز، تعمل نور العرب على توسيع نطاق منتجاتها وقنوات توزيعها لخدمة العملاء في أسواق الجملة والتجزئة والتموين وقطاع الضيافة. وينصب تركيزنا على ربط المنتجات الغذائية بعملاء الأعمال من خلال شبكة توزيع متنامية في دولة الإمارات العربية المتحدة وأسواق دولية مختارة.",
     },
     whatWeDo: [
       {
-        title: { en: "1,000-SKU Food Portfolio", ar: "محفظة من 1,000 صنف غذائي" },
+        title: { en: "Rice & Staple Foods", ar: "الأرز والأغذية الأساسية" },
         description: {
-          en: "Basmati and parboiled rice, spices, pulses, edible oils, pasta, tomato paste, milk powder and specialty HORECA packs.",
-          ar: "الأرز البسمتي والمسلوق، التوابل، البقوليات، زيوت الطعام، المعكرونة، معجون الطماطم، الحليب المجفف وعبوات الضيافة.",
+          en: "Extra-long basmati, parboiled rice, edible oils, flour and pulses connecting origins with wholesale and retail buyers.",
+          ar: "أرز بسمتي طويل الحبة، أرز مسلوق، زيوت طعام، دقيق وبقوليات تربط مصادر المنشأ بالمشترين في الجملة والتجزئة.",
         },
       },
       {
-        title: { en: "Packing & Private Label", ar: "التعبئة والعلامات الخاصة" },
+        title: { en: "Spices & Packaged Goods", ar: "التوابل والأغذية المعبأة" },
         description: {
-          en: "Origin-packed consumer retail SKUs alongside bulk foodservice formats tailored to distributors and supermarkets.",
-          ar: "تعبئة للمستهلك النهائي من المنشأ إلى جانب عبوات التموين للموزعين والأسواق المركزية.",
+          en: "Whole and ground spices, tomato paste, pasta, milk powder and pantry staples in consumer and catering formats.",
+          ar: "توابل وبهارات كاملة ومطحونة، معجون طماطم، معكرونة، حليب مجفف ومؤن غذائية بعبوات استهلاكية وأحجام تموين.",
         },
       },
       {
-        title: { en: "Origin-Linked Sourcing", ar: "توريد مرتبط بمصادر المجموعة" },
+        title: { en: "HORECA & Foodservice", ar: "قطاع الضيافة والتموين" },
         description: {
-          en: "Supplied by GSY Export (India) for rice and spices and Malaysia operations for palm oil and halal food ranges.",
-          ar: "مدعومة بشركة التصدير في الهند للأرز والتوابل وعمليات ماليزيا لزيت النخيل والأغذية الحلال.",
+          en: "Tailored bulk packaging and dependable commercial supply for hotels, restaurants, cafes and institutional caterers.",
+          ar: "عبوات تموينية مخصصة وتوريد تجاري منتظم للفنادق والمطاعم والمقاهي وشركات التموين والإعاشة.",
         },
       },
       {
-        title: { en: "Retail Shelf Integration", ar: "التكامل مع رفوف متاجرنا" },
+        title: { en: "Retail & Distribution", ar: "التجزئة والتوزيع" },
         description: {
-          en: "Featured across Elite Baskets, GSY Supermarket and Supermarket Malaysia as well as third-party retail.",
-          ar: "حاضرة على رفوف متاجر إيليت باسكتس وسوبرماركت جي إس واي وماليزيا إضافةً إلى الأسواق الخارجية.",
+          en: "Consumer retail shelf integration across supermarket channels, independent grocers and regional distributors.",
+          ar: "حضور على رفوف المتاجر وسلاسل السوبرماركت ومتاجر البقالة المستقلة والموزعين الإقليميين.",
         },
       },
     ],
     processSteps: [
       {
         step: "01",
-        title: { en: "Origin Harvest", ar: "الاختيار من المنشأ" },
-        detail: { en: "India, Malaysia & global certified mills", ar: "مطاحن ومصانع معتمدة في الهند وماليزيا" },
+        title: { en: "Product Sourcing", ar: "توريد المنتجات" },
+        detail: {
+          en: "Sourcing staple and packaged food products from established producers and certified mills.",
+          ar: "توريد الأغذية الأساسية والمعلبة من منتجين ومطاحن معتمدة.",
+        },
       },
       {
         step: "02",
-        title: { en: "Quality & Halal QA", ar: "الجودة وشهادات الحلال" },
-        detail: { en: "HACCP, ISO & Halal batch testing", ar: "فحوصات الجودة وفق معايير الهاسب والأيزو والحلال" },
+        title: { en: "Quality Verification", ar: "التحقق من الجودة" },
+        detail: {
+          en: "Food safety evaluation and quality assurance across all product categories.",
+          ar: "تقييم سلامة الأغذية وضمان الجودة عبر مختلف فئات المنتجات.",
+        },
       },
       {
         step: "03",
-        title: { en: "Packing & Private Label", ar: "التعبئة والتغليف" },
-        detail: { en: "Consumer packs & bulk HORECA sacks", ar: "عبوات التجزئة وأكياس التموين والضيافة" },
+        title: { en: "Packaging & Formats", ar: "التعبئة والتغليف" },
+        detail: {
+          en: "Consumer retail shelf packaging and bulk foodservice formats tailored to business clients.",
+          ar: "عبوات لرفوف التجزئة وأحجام تموين للعملاء التجاريين.",
+        },
       },
       {
         step: "04",
-        title: { en: "HORECA & Wholesale", ar: "التوزيع والضيافة" },
-        detail: { en: "Direct delivery to kitchens, hotels & distributors", ar: "توصيل مباشر للفنادق والمطاعم والموزعين" },
+        title: { en: "Channel Distribution", ar: "التوزيع عبر القنوات" },
+        detail: {
+          en: "Coordinated distribution to HORECA, caterers, wholesalers, supermarkets and retailers.",
+          ar: "توزيع منسق لقطاع الضيافة والتموين وتجار الجملة والأسواق المركزية والتجزئة.",
+        },
       },
     ],
     whoWeServe: {
       en: [
-        "Hotels, restaurants and cafes (HORECA)",
-        "Catering companies and labour/staff camps",
-        "Regional wholesalers and cash-and-carry",
-        "Supermarkets (including GSY Supermarket Group)",
-        "Public and private institutions",
+        "Hotels, Restaurants and Cafés: Food products for commercial kitchens and hospitality operations.",
+        "Caterers: Product supply for catering and food-service requirements.",
+        "Wholesalers: Food products for wholesale distribution and resale.",
+        "Supermarkets: Product distribution for retail shelves and supermarket channels.",
+        "Retailers: Food products for retail businesses.",
+        "Institutions: Supply opportunities for eligible institutional buyers.",
       ],
       ar: [
-        "الفنادق والمطاعم والمقاهي",
-        "شركات التموين والإعاشة",
-        "تجار الجملة الإقليميون",
-        "الأسواق المركزية (بما فيها متاجر المجموعة)",
-        "المؤسسات العامة والخاصة",
+        "الفنادق والمطاعم والمقاهي: منتجات غذائية للمطابخ التجارية وعمليات الضيافة.",
+        "شركات التموين: توريد المنتجات لمتطلبات التموين وخدمات الأغذية.",
+        "تجار الجملة: منتجات غذائية للتوزيع بالجملة وإعادة البيع.",
+        "الأسواق المركزية (السوبرماركت): توزيع المنتجات لرفوف التجزئة وقنوات المتاجر الكبرى.",
+        "متاجر التجزئة: منتجات غذائية للأعمال التجارية في قطاع التجزئة.",
+        "المؤسسات: فرص توريد للمشترين المؤسسيين المؤهلين.",
       ],
     },
     complianceNotes: {
       en: [
-        "AED 1 billion brand revenue target before 2030 (2030 target, not claimed as achieved)",
-        "HACCP, ISO and Halal quality assurance standards",
-        "Direct traceability back to group origin companies",
+        "Brand Growth Target: Ambitious target of AED 1 billion before 2030 (future brand target, not an achieved group figure)",
+        "Food safety standards and quality compliance across all distribution categories",
+        "Due diligence and verified partner onboarding for trade and institutional accounts",
+        "Trade account enquiries routed to designated UAE, India and Malaysia commercial teams",
       ],
       ar: [
-        "هدف علامة نور العرب: مليار درهم قبل 2030 (هدف مستقبلي وليس رقماً محققاً حالياً)",
-        "معايير الجودة والسلامة الغذائية: الهاسب والأيزو والحلال",
-        "تتبع كامل للمنتجات حتى شركات المنشأ التابعة للمجموعة",
+        "هدف نمو العلامة: استهداف مليار درهم إماراتي قبل عام 2030 (هدف مستقبلي للعلامة وليس رقماً محققاً حالياً)",
+        "الالتزام بمعايير سلامة الأغذية والرقابة على الجودة عبر مختلف فئات المنتجات",
+        "إجراءات العناية الواجبة واعتماد الشركاء التجاريين لحسابات الجملة والمؤسسات",
+        "توجيه استفسارات الحسابات التجارية إلى فرق المبيعات المختصة في الإمارات والهند وماليزيا",
       ],
     },
     operatingCountries: ["uae", "india", "malaysia", "saudi-arabia", "oman", "qatar"],
@@ -322,43 +369,43 @@ export const BUSINESS_DIVISIONS: BusinessDivision[] = [
   },
   {
     slug: "government-tenders",
-    name: { en: "Government & Tenders", ar: "الحكومات والمناقصات" },
-    shortTitle: { en: "Government & Tenders", ar: "الحكومات والمناقصات" },
+    name: { en: "Government & Tenders", ar: "المناقصات الحكومية والمؤسسية" },
+    shortTitle: { en: "Government & Tenders", ar: "المناقصات الحكومية والمؤسسية" },
     heroPromise: {
-      en: "Reliable supply for governments and institutions.",
-      ar: "إمدادات موثوقة للحكومات والمؤسسات والهيئات الدولية.",
+      en: "Reliable Supply for Governments and Institutions",
+      ar: "إمدادات موثوقة للحكومات والمؤسسات",
     },
     summary: {
-      en: "Structured public-sector procurement across strategic food reserves, agricultural fertilizer subsidies, construction steel and institutional catering.",
-      ar: "توريد منظم لمناقصات القطاع العام في الاحتياطيات الغذائية، وبرامج دعم الأسمدة، وحديد البناء، والإعاشة المؤسسية.",
+      en: "GSY International Group supports government and institutional procurement requirements through the sourcing and supply of selected commodities and products. All supply arrangements are subject to tender specifications, product requirements, regulatory conditions and confirmed operating capability.",
+      ar: "تدعم مجموعة جي إس واي الدولية متطلبات المشتريات الحكومية والمؤسسية من خلال توريد سلع ومنتجات مختارة. وتخضع كافة ترتيبات التوريد لمواصفات المناقصة، ومتطلبات المنتج، والشروط التنظيمية، والقدرة التشغيلية المؤكدة.",
     },
     whatWeDo: [
       {
-        title: { en: "Food reserves & staples", ar: "الاحتياطيات الغذائية والسلع الأساسية" },
+        title: { en: "Food Reserves & Staples", ar: "الاحتياطيات الغذائية والسلع الأساسية" },
         description: {
-          en: "Bulk rice, sugar, cooking oils, flour and pulses delivered under sovereign reserve schedules.",
-          ar: "توريد الأرز والسكر والزيوت والدقيق والبقوليات لخطط المخزون الاستراتيجي.",
+          en: "Selected food commodities and essential staples for food procurement and institutional supply requirements.",
+          ar: "سلع غذائية مختارة ومواد أساسية لمتطلبات المشتريات الغذائية والتوريد المؤسسي.",
         },
       },
       {
-        title: { en: "Fertilizer for subsidy programmes", ar: "الأسمدة لبرامج الدعم الزراعي" },
+        title: { en: "Fertilizer", ar: "الأسمدة" },
         description: {
-          en: "Urea, DAP, MAP, TSP, NPK blends and potash timed precisely to national planting seasons.",
-          ar: "اليوريا والفوسفات والأسمدة المركبة المنسقة بدقة مع مواسم الزراعة الوطنية.",
+          en: "Fertilizer products for relevant agricultural and subsidy programmes, subject to product specifications and procurement requirements.",
+          ar: "منتجات الأسمدة للبرامج الزراعية وبرامج الدعم ذات الصلة، رهناً بمواصفات المنتج ومتطلبات المشتريات.",
         },
       },
       {
-        title: { en: "Construction steel", ar: "حديد وصلب البناء" },
+        title: { en: "Construction Steel", ar: "حديد البناء والصلب الإنشائي" },
         description: {
-          en: "Billets, rebar and HRC supporting national infrastructure and public works agencies.",
-          ar: "القضبان والصلب الإنشائي لمشاريع البنية التحتية والأشغال العامة.",
+          en: "Selected steel products for construction and infrastructure-related procurement requirements.",
+          ar: "منتجات صلب مختارة لمتطلبات المشتريات المتعلقة بالبناء والبنية التحتية.",
         },
       },
       {
-        title: { en: "Institutional catering supply", ar: "التموين الغذائي المؤسسي" },
+        title: { en: "Institutional Catering", ar: "التموين المؤسسي" },
         description: {
-          en: "Consistent bulk food rations for defence, hospitals, education and humanitarian aid agencies.",
-          ar: "توفير الحصص الغذائية المنتظمة لجهات الدفاع والمستشفيات والمنظمات الإغاثية.",
+          en: "Food supply solutions for institutional catering requirements, subject to confirmed service scope and operating capability.",
+          ar: "حلول إمداد غذائي لمتطلبات التموين المؤسسي، رهناً بنطاق الخدمة المؤكد والقدرة التشغيلية المعتمدة.",
         },
       },
     ],
@@ -366,46 +413,66 @@ export const BUSINESS_DIVISIONS: BusinessDivision[] = [
       {
         step: "01",
         title: { en: "Tender Review", ar: "دراسة المناقصة" },
-        detail: { en: "Specs, bond terms & delivery windows", ar: "مراجعة المواصفات الفنية والكفالات وجداول التسليم" },
+        detail: {
+          en: "Understanding procurement specifications, regulatory criteria and product requirements.",
+          ar: "فهم المواصفات الفنية للمناقصة والمعايير التنظيمية ومتطلبات المنتج.",
+        },
       },
       {
         step: "02",
-        title: { en: "Origin & Freight Lock", ar: "تثبيت المنشأ والشحن" },
-        detail: { en: "Back-to-back allocation & vessel scheduling", ar: "تخصيص المنشأ وجدولة السفن" },
+        title: { en: "Supply Coordination", ar: "تنسيق التوريد" },
+        detail: {
+          en: "Coordinating suitable supply allocations, logistics alignment and delivery schedules.",
+          ar: "تنسيق مخصصات التوريد المناسبة، الترتيبات اللوجستية، وجداول التسليم.",
+        },
       },
       {
         step: "03",
-        title: { en: "Compliance & Guarantees", ar: "الامتثال والضمانات" },
-        detail: { en: "Performance bonds, KYC & pre-shipment inspection", ar: "ضمانات حسن التنفيذ والفحص المسبق" },
+        title: { en: "Due Diligence & Compliance", ar: "العناية الواجبة والامتثال" },
+        detail: {
+          en: "Verification of documentation, tender guarantees and counterparty due diligence.",
+          ar: "التحقق من الوثائق، كفالات المناقصة، وإجراءات العناية الواجبة بالأطراف.",
+        },
       },
       {
         step: "04",
-        title: { en: "In-Country Handover", ar: "التسليم الميداني" },
-        detail: { en: "Port discharge, customs & ministry depot delivery", ar: "التفريغ والتخليص والتسليم في مستودعات الجهة" },
+        title: { en: "Fulfilment & Delivery", ar: "التنفيذ والتسليم" },
+        detail: {
+          en: "Executing cargo movement, inspection and formal handover to designated authorities.",
+          ar: "تنفيذ حركة الشحن، الفحص، والتسليم الرسمي للجهات المعنية.",
+        },
       },
     ],
     whoWeServe: {
       en: [
-        "National food reserve agencies",
-        "Ministries of agriculture and farm co-ops",
-        "UN and international NGO relief programmes",
-        "Defence and institutional catering buyers",
+        "Government procurement agencies",
+        "Ministries of Agriculture",
+        "Food reserve agencies",
+        "United Nations and eligible NGO programmes",
+        "Defence procurement departments",
+        "Institutional buyers",
       ],
       ar: [
-        "هيئات المخزون الغذائي الاستراتيجي",
-        "وزارات الزراعة والجمعيات التعاونية",
-        "برامج الأمم المتحدة والمنظمات غير الحكومية",
-        "جهات الدفاع ومشتري التموين المؤسسي",
+        "وكالات وهيئات المشتريات الحكومية",
+        "وزارات الزراعة",
+        "هيئات المخزون الغذائي والاحتياطي الاستراتيجي",
+        "برامج الأمم المتحدة والمنظمات غير الحكومية المؤهلة",
+        "إدارات المشتريات الدفاعية",
+        "المشترون والمؤسسات المؤهلة",
       ],
     },
     complianceNotes: {
       en: [
-        "Procurement pack available with trade licences, certifications (HACCP, ISO, Halal), bank reference and corporate profile",
-        "Full sanctions and origin compliance per international tender standards",
+        "All supply arrangements subject to tender specifications and confirmed operating capability",
+        "Approved procurement information pack available to support buyer evaluation and due diligence",
+        "Strict regulatory, origin and sanctions compliance across all corridors",
+        "Enquiries reviewed by the dedicated GSY Government & Tenders desk",
       ],
       ar: [
-        "ملف تأهيل المشتريات يشمل الرخص التجارية والشهادات (الهاسب والأيزو والحلال) والمرجع البنكي",
-        "امتثال كامل لمعايير العقوبات وقواعد المنشأ في المناقصات الدولية",
+        "تخضع كافة ترتيبات التوريد لمواصفات المناقصة والقدرة التشغيلية المؤكدة",
+        "تتوفر حزمة معلومات المشتريات المعتمدة لدعم تقييم المشتري والعناية الواجبة",
+        "امتثال صارم للأنظمة وقواعد المنشأ والعقوبات عبر كافة المسارات",
+        "تتم مراجعة الاستفسارات من قِبل مكتب المناقصات الحكومية والمؤسسية المختص",
       ],
     },
     operatingCountries: ["uae", "kenya", "tanzania", "nigeria", "bangladesh", "sri-lanka"],
@@ -420,33 +487,33 @@ export const BUSINESS_DIVISIONS: BusinessDivision[] = [
     name: { en: "Distribution & HORECA", ar: "التوزيع والضيافة" },
     shortTitle: { en: "Distribution & HORECA", ar: "التوزيع والضيافة" },
     heroPromise: {
-      en: "Multi-channel wholesale, cash-and-carry and HORECA supply across key corridors.",
-      ar: "شبكات توزيع متعددة القنوات لقطاع الجملة والفنادق والمطاعم والتموين.",
+      en: "Distribution Solutions for Retail and HORECA",
+      ar: "حلول التوزيع لقطاعي التجزئة والضيافة",
     },
     summary: {
-      en: "Connecting imported staples, Noor Al Arab lines and frozen ranges directly into local wholesalers, hotels, restaurants and catering kitchens.",
-      ar: "ربط السلع المستوردة ومنتجات نور العرب والمجمدات مباشرة بتجار الجملة والفنادق والمطاعم ومطابخ الإعاشة.",
+      en: "Connecting food and FMCG products with hotels, restaurants, cafés, caterers, retailers and institutional customers through wholesale and distribution channels.",
+      ar: "ربط المنتجات الغذائية والاستهلاكية بالفنادق والمطاعم والمقاهي وشركات التموين وتجار التجزئة والعملاء المؤسسيين عبر قنوات الجملة والتوزيع.",
     },
     whatWeDo: [
       {
-        title: { en: "Regional Wholesale Networks", ar: "شبكات الجملة الإقليمية" },
+        title: { en: "Wholesale & Bulk Supply", ar: "إمدادات الجملة والتوريد التجاري" },
         description: {
-          en: "Structured importer-to-wholesaler delivery across UAE, Malaysia and expanding African country companies.",
-          ar: "توزيع منظم من المستورد إلى تاجر الجملة في الإمارات وماليزيا والأسواق الأفريقية.",
+          en: "Connecting food staples and FMCG products with wholesalers, sub-distributors and commercial buyers across our key markets.",
+          ar: "ربط السلع الغذائية الأساسية والمنتجات الاستهلاكية بتجار الجملة والموزعين الفرعيين والمشترين التجاريين في أسواقنا الرئيسية.",
         },
       },
       {
         title: { en: "HORECA & Foodservice", ar: "خدمة الفنادق والمطاعم والمقاهي" },
         description: {
-          en: "Dedicated account management and kitchen-pack SKUs for hotels, central kitchens and caterers.",
-          ar: "إدارة حسابات متخصصة وعبوات مناسبة للمطابخ المركزية والفنادق.",
+          en: "Dedicated commercial supply and foodservice pack sizes for hotels, restaurants, cafes and institutional kitchens.",
+          ar: "حلول توريد تجاري مخصصة وعبوات بأحجام تموينية مناسبة للفنادق والمطاعم والمقاهي والمطابخ المؤسسية.",
         },
       },
       {
-        title: { en: "Country Company Engine", ar: "نموذج الشركات القُطرية" },
+        title: { en: "Retail & Resale Distribution", ar: "قنوات التجزئة وإعادة البيع" },
         description: {
-          en: "Each new GSY market builds local wholesale and distribution channels before scaling into processing and retail.",
-          ar: "تبني كل شركة قُطرية شبكة توزيع وجملة محلية قبل التوسع نحو التصنيع والتجزئة.",
+          en: "Supplying supermarkets, independent grocers and retail operators with dependable food and consumer products.",
+          ar: "تزويد الأسواق المركزية ومتاجر البقالة المستقلة ومشغلي التجزئة بالمنتجات الغذائية والاستهلاكية الموثوقة.",
         },
       },
     ],
@@ -454,44 +521,60 @@ export const BUSINESS_DIVISIONS: BusinessDivision[] = [
       {
         step: "01",
         title: { en: "Demand Planning", ar: "تخطيط الطلب" },
-        detail: { en: "Monthly SKU forecasting with buyers", ar: "تقدير الطلب الشهري مع المشترين" },
+        detail: {
+          en: "Product and volume alignment with business customers based on operational requirements.",
+          ar: "تنسيق متطلبات المنتجات والكميات مع عملاء الأعمال بناءً على الاحتياجات التشغيلية.",
+        },
       },
       {
         step: "02",
-        title: { en: "Consolidation", ar: "التجميع" },
-        detail: { en: "Multi-origin stock staged at hub warehouses", ar: "تجميع المخزون في مستودعات المراكز" },
+        title: { en: "Consolidation", ar: "التجميع والتجهيز" },
+        detail: {
+          en: "Sourcing and staging approved food and FMCG products across distribution channels.",
+          ar: "توريد وتجهيز المنتجات الغذائية والاستهلاكية المعتمدة عبر قنوات التوزيع.",
+        },
       },
       {
         step: "03",
-        title: { en: "Last-Mile Dispatch", ar: "التوصيل النهائي" },
-        detail: { en: "Ambient & cold-chain fleet delivery", ar: "أسطول توصيل جاف ومبرد" },
+        title: { en: "Order Fulfilment", ar: "تنفيذ الطلبات" },
+        detail: {
+          en: "Coordinated dispatch and supply handover to client premises or designated handover points.",
+          ar: "تنسيق إرسال وتسليم الشحنات إلى مقرات العملاء أو نقاط التسليم المحددة.",
+        },
       },
       {
         step: "04",
         title: { en: "Account Support", ar: "دعم الحسابات" },
-        detail: { en: "Replenishment & promotional alignment", ar: "إعادة التزويد وتنسيق العروض" },
+        detail: {
+          en: "Ongoing replenishment coordination, commercial responsiveness and customer support.",
+          ar: "متابعة دورية لإعادة التزويد، استجابة تجارية سريعة، ودعم مستمر للعملاء.",
+        },
       },
     ],
     whoWeServe: {
       en: [
-        "Regional food wholesalers and sub-distributors",
-        "Hospitality groups, restaurants and catering kitchens",
-        "Independent grocers and cooperative societies",
+        "Hotels, Restaurants and Cafés: Food and FMCG supply requirements for businesses operating across the hospitality and food-service sectors.",
+        "Caterers: Product supply requirements for catering businesses serving different customer groups and occasions.",
+        "Retailers and Wholesalers: Wholesale and distribution opportunities for businesses sourcing products for resale and onward supply.",
+        "Institutional Customers: Food and FMCG requirements for eligible institutional buyers, subject to product availability and agreed supply arrangements.",
       ],
       ar: [
-        "تجار الجملة والموزعون الفرعيون",
-        "مجموعات الضيافة والمطاعم ومطابخ التموين",
-        "البقالات المستقلة والجمعيات التعاونية",
+        "الفنادق والمطاعم والمقاهي: متطلبات توريد الأغذية والسلع الاستهلاكية للشركات العاملة في قطاعي الضيافة وخدمات الطعام.",
+        "شركات التموين: متطلبات توريد المنتجات لشركات التموين التي تخدم مجموعات ومناسبات متنوعة.",
+        "تجار التجزئة والجملة: فرص الجملة والتوزيع للشركات التي تشتري المنتجات لإعادة البيع والتوريد الإضافي.",
+        "العملاء المؤسسيون: متطلبات الأغذية والسلع الاستهلاكية للمشترين المؤسسيين المؤهلين، رهناً بتوفر المنتجات وترتيبات التوريد المتفق عليها.",
       ],
     },
     complianceNotes: {
       en: [
-        "Distribution is our core competitive moat across each market",
-        "Temperature-controlled handling and batch traceability",
+        "All distribution arrangements subject to confirmed operating capability and agreed supply scope",
+        "Product quality, food safety compliance and dependable counterparty due diligence",
+        "Enquiries reviewed and managed by the dedicated Distribution & HORECA team",
       ],
       ar: [
-        "التوزيع هو الميزة التنافسية الأساسية في كل سوق نعمل به",
-        "مناولة مبردة ومضبوطة الحرارة مع تتبع كامل للتشغيلات",
+        "تخضع كافة ترتيبات التوزيع للقدرة التشغيلية المؤكدة ونطاق التوريد المتفق عليه",
+        "الالتزام بجودة المنتجات ومعايير السلامة الغذائية وإجراءات العناية الواجبة",
+        "تتم مراجعة وإدارة الاستفسارات من قِبل فريق التوزيع والضيافة المختص",
       ],
     },
     operatingCountries: ["uae", "malaysia", "india", "tanzania", "kenya", "uk"],
@@ -506,76 +589,103 @@ export const BUSINESS_DIVISIONS: BusinessDivision[] = [
     name: { en: "Logistics & Supply Chain", ar: "اللوجستيات وسلاسل الإمداد" },
     shortTitle: { en: "Logistics & Supply Chain", ar: "اللوجستيات والإمداد" },
     heroPromise: {
-      en: "Port clearance, cold-chain storage and cross-border supply execution.",
-      ar: "التخليص المينائي والتخزين المبرد وتنفيذ سلاسل الإمداد العابرة للحدود.",
+      en: "Coordinated Logistics and Supply Chain Support",
+      ar: "دعم لوجستي منسق وسلاسل إمداد متكاملة",
     },
     summary: {
-      en: "Coordinating port operations, customs documentation, bonded warehousing and ambient/frozen inventory movement across key trade gateways.",
-      ar: "تنسيق عمليات الموانئ والمستندات الجمركية والمستودعات المبردة والجافة عبر الممرات التجارية الرئيسية.",
+      en: "Connecting sourcing, trade and cargo movement through coordinated supply-chain activities across GSY’s business network.",
+      ar: "ربط التوريد والتجارة وحركة البضائع من خلال أنشطة منسقة لسلاسل الإمداد عبر شبكة أعمال جي إس واي.",
     },
     whatWeDo: [
       {
-        title: { en: "Customs & Port Clearance", ar: "التخليص الجمركي والمينائي" },
+        title: { en: "Cargo Coordination", ar: "تنسيق حركة البضائع" },
         description: {
-          en: "Streamlined release through Jebel Ali, Port Klang, Chennai, Mombasa, Dar es Salaam and West African gateways.",
-          ar: "تخليص سريع عبر موانئ جبل علي، بورت كلانج، تشيناي، مومباسا، دار السلام ولاغوس.",
+          en: "Coordination of cargo movement in line with relevant trade and shipment requirements.",
+          ar: "تنسيق حركة البضائع بما يتماشى مع متطلبات التجارة والشحن ذات الصلة.",
         },
       },
       {
-        title: { en: "Ambient & Cold Storage", ar: "التخزين الجاف والمبرد" },
+        title: { en: "Documentation Support", ar: "دعم المستندات والوثائق" },
         description: {
-          en: "Hub storage capacity for dry staples, frozen meats/seafood and retail replenishment.",
-          ar: "سعات تخزين للسلع الجافة واللحوم والمأكولات البحرية المجمدة وتزويد المتاجر.",
+          en: "Coordination of relevant shipment and trade documentation to support cargo movement.",
+          ar: "تنسيق مستندات الشحن والتجارة المعنية لدعم حركة البضائع بسلاسة.",
         },
       },
       {
-        title: { en: "Quality & Inventory Control", ar: "مراقبة الجودة والمخزون" },
+        title: { en: "Port and Freight Coordination", ar: "تنسيق الموانئ والشحن" },
         description: {
-          en: "FIFO stock management, moisture monitoring and halal segregation across distribution nodes.",
-          ar: "إدارة المخزون وضبط الرطوبة والفصل الحلال عبر مراكز التوزيع.",
+          en: "Coordination of port-related activities and freight requirements, as applicable to the shipment.",
+          ar: "تنسيق الأنشطة المينائية ومتطلبات الشحن، وفق ما ينطبق على كل شحنة.",
+        },
+      },
+      {
+        title: { en: "Shipment Updates", ar: "متابعة وتحديثات الشحنات" },
+        description: {
+          en: "Communication and coordination of shipment-related updates throughout the relevant movement process.",
+          ar: "التواصل وتنسيق التحديثات المتعلقة بالشحنة طوال مراحل عملية النقل المعنية.",
         },
       },
     ],
     processSteps: [
       {
         step: "01",
-        title: { en: "Port Arrival", ar: "وصول الميناء" },
-        detail: { en: "Pre-arrival customs filing", ar: "إيداع البيانات الجمركية مسبقاً" },
+        title: { en: "Requirement Scoping", ar: "تحديد نطاق المتطلبات" },
+        detail: {
+          en: "Understanding cargo specifications, trade terms and agreed transaction scope.",
+          ar: "فهم مواصفات الشحنة وشروط التجارة ونطاق المعاملة المتفق عليه.",
+        },
       },
       {
         step: "02",
-        title: { en: "Gate Release", ar: "الفسح والإفراج" },
-        detail: { en: "Inspection & port haulage", ar: "الفحص والنقل من الميناء" },
+        title: { en: "Logistics Alignment", ar: "المواءمة اللوجستية" },
+        detail: {
+          en: "Aligning relevant cargo handlers, freight requirements and operating partners.",
+          ar: "مواءمة مسؤولي مناولة البضائع ومتطلبات الشحن وشركاء الخدمة المناسبين.",
+        },
       },
       {
         step: "03",
-        title: { en: "Hub Storage", ar: "التخزين المركزي" },
-        detail: { en: "Ambient, chilled or -18°C frozen", ar: "تخزين جاف أو مبرد أو مجمد -18°م" },
+        title: { en: "Documentation & Port Flow", ar: "مسار الوثائق والموانئ" },
+        detail: {
+          en: "Coordinating trade documentation, port-related activities and shipment milestones.",
+          ar: "تنسيق المستندات التجارية والأنشطة المينائية ومراحل سير الشحنة.",
+        },
       },
       {
         step: "04",
-        title: { en: "Dispatch", ar: "التوزيع" },
-        detail: { en: "Scheduled order fulfillment", ar: "تنفيذ الطلبات المجدولة" },
+        title: { en: "Journey Tracking & Handover", ar: "متابعة المسار والتسليم" },
+        detail: {
+          en: "Providing ongoing shipment updates through to destination arrival and formal handover.",
+          ar: "تقديم تحديثات مستمرة عن مسار الشحنة حتى الوصول إلى الوجهة والتسليم الرسمي.",
+        },
       },
     ],
     whoWeServe: {
       en: [
-        "GSY Family trading, food distribution and supermarket companies",
-        "Institutional and cross-border wholesale clients",
+        "GSY Family trading, food distribution and retail business operations",
+        "Third-party commercial buyers and international trading counterparties",
+        "Institutional procurement programmes requiring coordinated cargo movement",
+        "Suppliers and producers moving products to regional destination markets",
       ],
       ar: [
-        "شركات التداول والغذاء والأسواق المركزية في عائلة جي إس واي",
-        "العملاء المؤسسيون وشركاء الجملة العابرون للحدود",
+        "عمليات شركات التداول وتوزيع الأغذية والتجزئة ضمن عائلة جي إس واي",
+        "المشترون التجاريون والأطراف التجارية الدولية من خارج المجموعة",
+        "برامج المشتريات المؤسسية التي تتطلب تنسيق حركة البضائع",
+        "الموردون والمنتجون لنقل البضائع إلى أسواق الوجهة الإقليمية",
       ],
     },
     complianceNotes: {
       en: [
-        "Strict cold-chain integrity and customs documentation accuracy",
-        "Seamless handoff from GSY Shipping & Chartering",
+        "Asset-light coordination model: services performed directly or arranged through approved partners",
+        "No unverified claims of owned warehouses, fleets, trucks, vessels or container assets",
+        "Service scope strictly governed by agreed transaction terms and applicable regulatory requirements",
+        "Enquiries reviewed and managed by the dedicated GSY Logistics & Supply Chain team",
       ],
       ar: [
-        "الحفاظ الصارم على سلسلة التبريد ودقة المستندات الجمركية",
-        "تكامل سلس مع عمليات مكتب الشحن والتأجير البحري",
+        "نموذج تنسيق خفيف الأصول: تُنفذ الخدمات مباشرة أو عبر شركاء خدمة معتمدين",
+        "لا ادعاءات غير موثقة بملكية مستودعات أو أساطيل أو شاحنات أو سفن أو حاويات",
+        "يخضع نطاق الخدمة بدقة لشروط المعاملة المتفق عليها والمتطلبات التنظيمية المعمول بها",
+        "تتم مراجعة وإدارة الاستفسارات من قِبل فريق اللوجستيات وسلاسل الإمداد المختص",
       ],
     },
     operatingCountries: ["uae", "india", "malaysia", "singapore", "tanzania", "kenya"],
@@ -583,6 +693,118 @@ export const BUSINESS_DIVISIONS: BusinessDivision[] = [
     enquiryRouteLabel: {
       en: "Routed to Logistics & Supply Chain Operations",
       ar: "يُوجَّه إلى عمليات اللوجستيات وسلاسل الإمداد",
+    },
+  },
+  {
+    slug: "pets-pantry",
+    name: { en: "Pets Pantry", ar: "بيتس بانتري" },
+    shortTitle: { en: "Pets Pantry", ar: "بيتس بانتري" },
+    isFamilyBrand: true,
+    heroPromise: {
+      en: "Everyday essentials for companion animals across the UAE.",
+      ar: "الاحتياجات اليومية للحيوانات الأليفة في دولة الإمارات.",
+    },
+    summary: {
+      en: "Pet food and supplies for companion animals in the UAE.",
+      ar: "أغذية ومستلزمات الحيوانات الأليفة في الإمارات.",
+    },
+    whatWeDo: [
+      {
+        title: { en: "Dog & Cat Essentials", ar: "مستلزمات الكلاب والقطط" },
+        description: {
+          en: "Dry foods, wholesome recipes and everyday essentials supporting canine and feline wellness across all life stages.",
+          ar: "أطعمة جافة ووصفات متوازنة واحتياجات يومية تدعم صحة الكلاب والقطط في كافة المراحل العمرية.",
+        },
+      },
+      {
+        title: { en: "Fish & Bird Care", ar: "رعاية الأسماك والطيور" },
+        description: {
+          en: "Nutritious fish flakes, pellets, bird seeds, feeders and daily habitat care supplies for domestic companions.",
+          ar: "رقائق وحبيبات مغذية للأسماك، وبذور طيور ومغذيات ومستلزمات العناية بالبيئة المنزلية للطيور.",
+        },
+      },
+      {
+        title: { en: "Pet Food & Wholesome Treats", ar: "أغذية ومكافآت صحية" },
+        description: {
+          en: "Everyday nutrition, specialty treats, chews and training rewards curated for pet happiness and vitality.",
+          ar: "تغذية يومية ومكافآت تدريب ومضغات منتقاة لتعزيز حيوية وسعادة الحيوانات الأليفة.",
+        },
+      },
+      {
+        title: { en: "Accessories & Grooming", ar: "المستلزمات والعناية" },
+        description: {
+          en: "Everyday pet collars, leashes, harnesses, bowls, hygiene products, brushes and essential grooming accessories.",
+          ar: "أطواق ومقود وأوعية طعام ومنتجات نظافة وفرش وأدوات عناية أساسية للاستخدام اليومي.",
+        },
+      },
+    ],
+    processSteps: [
+      {
+        step: "01",
+        title: { en: "Curated Product Sourcing", ar: "انتقاء المنتجات الموثوقة" },
+        detail: {
+          en: "Selecting reliable pet nutrition, everyday care essentials and proven accessory lines.",
+          ar: "اختيار أغذية حيوانات موثوقة ومستلزمات رعاية يومية مجربة وعالية الجودة.",
+        },
+      },
+      {
+        step: "02",
+        title: { en: "Wholesome Nutrition Focus", ar: "التركيز على الجودة والتغذية" },
+        detail: {
+          en: "Prioritizing verified ingredients, companion animal safety and balanced everyday nutrition.",
+          ar: "إعطاء الأولوية لمكونات معتمدة وسلامة الحيوانات الأليفة والتغذية المتوازنة.",
+        },
+      },
+      {
+        step: "03",
+        title: { en: "Convenient Digital & UAE Access", ar: "قنوات تسوق ملائمة بالإمارات" },
+        detail: {
+          en: "Serving UAE pet parents through dedicated e-commerce (petspantry.ae) and group retail networks.",
+          ar: "خدمة أصحاب الحيوانات في الإمارات عبر المتجر الإلكتروني (petspantry.ae) ومنافذ التجزئة التابعة للمجموعة.",
+        },
+      },
+      {
+        step: "04",
+        title: { en: "Responsive Customer Care", ar: "خدمة عملاء متفانية" },
+        detail: {
+          en: "Providing supportive customer care to help pet parents choose the right everyday supplies.",
+          ar: "تقديم دعم متجاوب لمساعدة مربي الحيوانات في اختيار المستلزمات اليومية المناسبة.",
+        },
+      },
+    ],
+    whoWeServe: {
+      en: [
+        "Pet parents and companion animal owners across the UAE",
+        "Dog and cat owners seeking wholesome nutrition and everyday essentials",
+        "Aquarium hobbyists and pet bird owners",
+        "Pet care communities and companion animal enthusiasts",
+      ],
+      ar: [
+        "أصحاب ومربو الحيوانات الأليفة في مختلف إمارات الدولة",
+        "مربو الكلاب والقطط الباحثون عن تغذية متوازنة ومستلزمات يومية موثوقة",
+        "هواة أحواض الأسماك ومربو طيور الزينة",
+        "مجتمعات رعاية الحيوانات الأليفة ومحبو الحيوانات المنزلية",
+      ],
+    },
+    complianceNotes: {
+      en: [
+        "Compliant with UAE Ministry of Climate Change and Environment (MOCCAE) guidelines for pet food and pet supplies.",
+        "Sourced from established and verified companion animal nutrition brands.",
+        "Quality storage, packaging safety and product authenticity standards maintained throughout handling.",
+        "Enquiries and customer support managed directly by the Pets Pantry UAE operations team.",
+      ],
+      ar: [
+        "متوافقة مع إرشادات وزارة التغير المناخي والبيئة بدولة الإمارات بشأن أغذية ومستلزمات الحيوانات الأليفة.",
+        "توريد من علامات تغذية حيوانات أليفة معتمدة وموثوقة.",
+        "معايير جودة في التخزين وسلامة التغليف وأصالة المنتجات عبر كافة مراحل التداول.",
+        "إدارة الاستفسارات وخدمة العملاء مباشرة عبر فريق عمليات بيتس بانتري في الإمارات.",
+      ],
+    },
+    operatingCountries: ["uae"],
+    image: "/images/brands/pets-pantry.jpg",
+    enquiryRouteLabel: {
+      en: "Routed to Pets Pantry UAE Team",
+      ar: "يُوجَّه إلى فريق بيتس بانتري في الإمارات",
     },
   },
 ];
@@ -593,14 +815,14 @@ export const BUSINESS_DIVISIONS: BusinessDivision[] = [
 export const COMMODITY_DESKS: CommodityDesk[] = [
   {
     id: "fmcg",
-    name: { en: "FMCG staples", ar: "السلع الاستهلاكية الأساسية" },
+    name: { en: "FMCG Staples", ar: "السلع الاستهلاكية الأساسية" },
     summary: {
-      en: "Core agricultural and packaged food staples traded in bulk and containerised formats.",
-      ar: "السلع الزراعية والغذائية الأساسية المتداولة بكميات سائبة وحاويات.",
+      en: "We trade essential food and fast-moving consumer goods, connecting suppliers with wholesale and distribution markets.",
+      ar: "نتداول الأغذية الأساسية والسلع الاستهلاكية سريعة الدوران، ونربط الموردين بأسواق الجملة والتوزيع.",
     },
     products: {
-      en: "Rice, sugar, edible oils, packaged foods (pasta, milk powder, tomato paste, flour)",
-      ar: "الأرز، السكر، زيوت الطعام، الأغذية المعبأة (المعكرونة، الحليب المجفف، معجون الطماطم، الدقيق)",
+      en: "Rice, Sugar, Edible oils, Packaged foods, Pasta, Milk powder, Tomato paste, Flour",
+      ar: "الأرز، السكر، زيوت الطعام، الأغذية المعبأة، المعكرونة، الحليب المجفف، معجون الطماطم، الدقيق",
     },
     buyFrom: [
       "India",
@@ -615,12 +837,12 @@ export const COMMODITY_DESKS: CommodityDesk[] = [
     ],
     sellTo: ["East Africa", "West Africa", "GCC", "South Asia"],
     buyFromLabel: {
-      en: "India, Pakistan, Thailand, Vietnam, Brazil, Malaysia, Indonesia, Turkey, Egypt",
-      ar: "الهند، باكستان، تايلاند، فيتنام، البرازيل، ماليزيا، إندونيسيا، تركيا، مصر",
+      en: "India, Pakistan, Thailand, Vietnam, Brazil, Malaysia, Indonesia, Turkey and Egypt.",
+      ar: "الهند، باكستان، تايلاند، فيتنام، البرازيل، ماليزيا، إندونيسيا، تركيا، مصر.",
     },
     sellToLabel: {
-      en: "East and West Africa, GCC, South Asia",
-      ar: "شرق وغرب أفريقيا، دول الخليج، جنوب آسيا",
+      en: "East and West Africa, GCC and South Asia.",
+      ar: "شرق وغرب أفريقيا، دول الخليج، جنوب آسيا.",
     },
     keySpecs: {
       en: ["Breakbulk 12,500–50,000 MT parcels & 20ft/40ft FCL", "SGS/Intertek weight & quality certification"],
@@ -631,22 +853,22 @@ export const COMMODITY_DESKS: CommodityDesk[] = [
     id: "fertilizer",
     name: { en: "Fertilizer", ar: "الأسمدة" },
     summary: {
-      en: "Crop nutrients and raw sulphur sourced from Gulf and North African producers for agricultural corridors.",
-      ar: "الأسمدة الزراعية والكبريت المورّدة من منتجي الخليج وشمال أفريقيا للأسواق الزراعية.",
+      en: "We connect fertilizer suppliers with agricultural and distribution markets through international trading activities.",
+      ar: "نربط موردي الأسمدة بالأسواق الزراعية وأسواق التوزيع من خلال أنشطة التداول التجاري الدولي.",
     },
     products: {
-      en: "Urea, phosphates (DAP, MAP, TSP), NPK blends, sulphur, potash",
-      ar: "اليوريا، الفوسفات (DAP, MAP, TSP)، خلائط NPK، الكبريت، البوتاس",
+      en: "Urea, Phosphates – DAP, MAP and TSP, NPK blends, Sulphur, Potash",
+      ar: "اليوريا، الفوسفات – DAP و MAP و TSP، أسمدة NPK المركبة، الكبريت، البوتاس",
     },
     buyFrom: ["Saudi Arabia", "Qatar", "Oman", "Egypt", "Morocco", "Jordan"],
     sellTo: ["East Africa", "West Africa", "Bangladesh", "Sri Lanka", "India"],
     buyFromLabel: {
-      en: "Saudi Arabia, Qatar, Oman, Egypt, Morocco, Jordan",
-      ar: "السعودية، قطر، عُمان، مصر، المغرب، الأردن",
+      en: "Saudi Arabia, Qatar, Oman, Egypt, Morocco and Jordan.",
+      ar: "المملكة العربية السعودية، قطر، عُمان، مصر، المغرب، الأردن.",
     },
     sellToLabel: {
-      en: "East and West Africa, Bangladesh, Sri Lanka, India",
-      ar: "شرق وغرب أفريقيا، بنغلاديش، سريلانكا، الهند",
+      en: "East and West Africa, Bangladesh, Sri Lanka and India.",
+      ar: "شرق وغرب أفريقيا، بنغلاديش، سريلانكا، الهند.",
     },
     keySpecs: {
       en: ["Bulk and 50kg PP bagged shipments", "Timed to seasonal ministry tenders & co-op planting cycles"],
@@ -655,24 +877,24 @@ export const COMMODITY_DESKS: CommodityDesk[] = [
   },
   {
     id: "frozen-foods",
-    name: { en: "Frozen foods", ar: "الأغذية المجمدة" },
+    name: { en: "Frozen Foods", ar: "الأغذية المجمدة" },
     summary: {
-      en: "Temperature-controlled reefer protein, seafood and frozen produce serving Gulf, African and group retail buyers.",
-      ar: "البروتينات والمأكولات البحرية والخضروات المجمدة بالحاويات المبردة لأسواق الخليج وأفريقيا ومتاجرنا.",
+      en: "Our frozen foods desk covers selected food categories for wholesale, distribution and retail supply requirements.",
+      ar: "يغطي مكتب الأغذية المجمدة لدينا فئات غذائية مختارة لتلبية متطلبات التوريد لتجار الجملة والتوزيع والتجزئة.",
     },
     products: {
-      en: "Poultry, seafood, frozen vegetables, halal meat, ready foods",
+      en: "Poultry, Seafood, Frozen vegetables, Halal meat, Ready foods",
       ar: "الدواجن، المأكولات البحرية، الخضروات المجمدة، اللحوم الحلال، الأغذية الجاهزة",
     },
     buyFrom: ["China", "Brazil", "India", "Vietnam", "Thailand"],
     sellTo: ["GCC", "Africa", "Malaysia", "GSY Supermarkets"],
     buyFromLabel: {
-      en: "China, Brazil, India, Vietnam, Thailand",
-      ar: "الصين، البرازيل، الهند، فيتنام، تايلاند",
+      en: "China, Brazil, India, Vietnam and Thailand.",
+      ar: "الصين، البرازيل، الهند، فيتنام، تايلاند.",
     },
     sellToLabel: {
-      en: "GCC, Africa, Malaysia, our own supermarkets",
-      ar: "دول الخليج، أفريقيا، ماليزيا، أسواقنا المركزية",
+      en: "GCC, Africa, Malaysia and GSY supermarket businesses.",
+      ar: "دول الخليج، أفريقيا، ماليزيا، أعمال السوبرماركت لمجموعة جي إس واي.",
     },
     keySpecs: {
       en: ["Verified Halal abattoirs & -18°C unbroken reefer chain", "HORECA and retail pack formats"],
@@ -681,24 +903,24 @@ export const COMMODITY_DESKS: CommodityDesk[] = [
   },
   {
     id: "minerals",
-    name: { en: "Minerals", ar: "المعادن والخامات" },
+    name: { en: "Minerals", ar: "المعادن" },
     summary: {
-      en: "Industrial and steelmaking ores originated across Africa and Oman under OECD due diligence.",
-      ar: "خامات التعدين وصناعة الصلب من أفريقيا وعُمان وفق معايير العناية الواجبة لمنظمة التعاون الاقتصادي.",
+      en: "We connect mineral sourcing opportunities with industrial buyers and processing markets.",
+      ar: "نربط فرص توريد المعادن بالمشترين الصناعيين وأسواق المعالجة.",
     },
     products: {
-      en: "Manganese, chrome, iron ore, gypsum, limestone; critical minerals from 2028",
-      ar: "المنغنيز، الكروم، خام الحديد، الجبس، الحجر الجيري؛ والمعادن الحرجة اعتباراً من 2028",
+      en: "Manganese, Chrome, Iron ore, Gypsum, Limestone",
+      ar: "المنغنيز، الكروم، خام الحديد، الجبس، الحجر الجيري",
     },
     buyFrom: ["South Africa", "Gabon", "Ghana", "Zimbabwe", "Oman"],
     sellTo: ["China", "India", "GCC steel mills"],
     buyFromLabel: {
-      en: "South Africa, Gabon, Ghana, Zimbabwe, Oman",
-      ar: "جنوب أفريقيا، الغابون، غانا، زيمبابوي، عُمان",
+      en: "South Africa, Gabon, Ghana, Zimbabwe and Oman.",
+      ar: "جنوب أفريقيا، الغابون، غانا، زيمبابوي، عُمان.",
     },
     sellToLabel: {
-      en: "China, India, GCC steel mills",
-      ar: "الصين، الهند، مصانع الصلب في الخليج",
+      en: "China, India and GCC steel mills.",
+      ar: "الصين، الهند، مصانع الصلب في دول الخليج.",
     },
     keySpecs: {
       en: ["OECD Due Diligence Guidance compliance", "Handysize/Supramax bulk fixtures from African & Omani ports"],
@@ -709,22 +931,22 @@ export const COMMODITY_DESKS: CommodityDesk[] = [
     id: "metals",
     name: { en: "Metals", ar: "الفلزات" },
     summary: {
-      en: "Primary non-ferrous metals, semi-finished steel and recycled scrap for mills and smelters.",
-      ar: "المعادن غير الحديدية الأولية والصلب نصف المصنع والخردة المعدنية للمصانع والمصاهر.",
+      en: "Our metals desk covers selected non-ferrous and ferrous metal products for industrial and manufacturing requirements.",
+      ar: "يغطي مكتب الفلزات لدينا منتجات مختارة من المعادن غير الحديدية والحديدية لتلبية الاحتياجات الصناعية والتصنيعية.",
     },
     products: {
-      en: "Aluminium, copper cathode, steel (billets, rebar, HRC), ferrous and non-ferrous scrap",
-      ar: "الألمنيوم، كاثود النحاس، الصلب (القوالب، حديد التسليح، اللفائف المدرفلة)، الخردة الحديدية وغير الحديدية",
+      en: "Aluminium, Copper cathode, Steel billets, Steel rebar, Hot-rolled coil (HRC), Ferrous scrap, Non-ferrous scrap",
+      ar: "الألمنيوم، كاثود النحاس، كتل الصلب (البلت)، حديد التسليح، لفائف الصلب المدرفلة على الساخن (HRC)، الخردة الحديدية، الخردة غير الحديدية",
     },
     buyFrom: ["GCC smelters", "China", "Zambia", "Turkey", "Egypt", "India"],
     sellTo: ["China", "Turkey", "India", "Pakistan", "Bangladesh", "Africa"],
     buyFromLabel: {
-      en: "GCC smelters, China, Zambia, Turkey, Egypt, India",
-      ar: "مصاهر الخليج، الصين، زامبيا، تركيا، مصر، الهند",
+      en: "GCC smelters, China, Zambia, Turkey, Egypt and India.",
+      ar: "مصاهر الخليج، الصين، زامبيا، تركيا، مصر، الهند.",
     },
     sellToLabel: {
-      en: "China, Turkey, India, Pakistan, Bangladesh, Africa",
-      ar: "الصين، تركيا، الهند، باكستان، بنغلاديش، أفريقيا",
+      en: "China, Turkey, India, Pakistan, Bangladesh and Africa.",
+      ar: "الصين، تركيا، الهند، باكستان، بنغلاديش، أفريقيا.",
     },
     keySpecs: {
       en: ["LME-grade copper & primary aluminium sourcing", "Back-to-back LC structures with steel mills & infrastructure buyers"],
@@ -737,34 +959,34 @@ export const NOOR_AL_ARAB_PLAN = [
   {
     market: { en: "UAE", ar: "الإمارات" },
     plan: {
-      en: "Distribution of 1,000 SKUs through a HORECA network, wholesale, catering supply and retail",
-      ar: "توزيع 1,000 صنف عبر شبكة الضيافة والجملة والتموين والتجزئة",
+      en: "Expanding product distribution through HORECA, wholesale, catering and retail channels.",
+      ar: "توسيع توزيع المنتجات عبر قنوات الضيافة (HORECA) والجملة والتموين والتجزئة.",
     },
-    target: { en: "Part of AED 1B brand target", ar: "جزء من هدف مليار درهم للعلامة" },
+    target: { en: "Part of AED 1B future brand target", ar: "ضمن الهدف المستقبلي للعلامة (مليار درهم)" },
   },
   {
     market: { en: "GCC", ar: "دول الخليج" },
     plan: {
-      en: "Expanding Noor Al Arab products and distribution into other GCC countries",
-      ar: "توسيع منتجات وتوزيع نور العرب إلى باقي دول مجلس التعاون الخليجي",
+      en: "Growing Noor Al Arab products and distribution into additional GCC markets.",
+      ar: "تنمية منتجات وتوزيع نور العرب في أسواق خليجية إضافية.",
     },
-    target: { en: "Part of AED 1B brand target", ar: "جزء من هدف مليار درهم للعلامة" },
+    target: { en: "Regional distribution expansion", ar: "توسع التوزيع في الأسواق الإقليمية" },
   },
   {
     market: { en: "India", ar: "الهند" },
     plan: {
-      en: "Noor Al Arab distribution, supplied by our own India export company",
-      ar: "توزيع نور العرب مدعوماً بشركة التصدير التابعة للمجموعة في الهند",
+      en: "Developing distribution supported by GSY’s India export operations.",
+      ar: "تطوير التوزيع بدعم من عمليات التصدير التابعة لـ جي إس واي في الهند.",
     },
-    target: { en: "₹200 crore turnover a year", ar: "200 كرور روبية مبيعات سنوية" },
+    target: { en: "Export operations integration", ar: "تكامل عمليات التصدير والتوريد" },
   },
   {
     market: { en: "Malaysia", ar: "ماليزيا" },
     plan: {
-      en: "Noor Al Arab distribution, linked to Supermarket Malaysia and palm-oil sourcing",
-      ar: "توزيع نور العرب المرتبط بسوبرماركت ماليزيا وتوريد زيت النخيل",
+      en: "Expanding distribution connections with supermarket operations and sourcing opportunities.",
+      ar: "توسيع روابط التوزيع مع عمليات الأسواق المركزية وفرص التوريد.",
     },
-    target: { en: "US$100M distribution", ar: "توزيع بقيمة 100 مليون دولار" },
+    target: { en: "Retail & sourcing connections", ar: "روابط التجزئة والتوريد" },
   },
 ];
 

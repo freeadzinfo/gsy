@@ -82,18 +82,18 @@ export function GatedProfileForm({ locale }: { locale: Locale }) {
       <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-gsy-gold dark:text-gsy-gold-light">
         <Lock className="h-4 w-4" />
         <span>
-          {locale === "ar" ? "تحميل محمي بالاسم والبريد الإلكتروني" : "Gated PDF Download"}
+          {locale === "ar" ? "تحميل الملف التعريفي المعتمد" : "Approved Company Profile"}
         </span>
       </div>
       <h2 className="mt-2 text-xl font-extrabold text-gsy-navy dark:text-white">
         {locale === "ar"
-          ? "أدخل اسمك وبريدك الإلكتروني لفتح ملف الشركة"
-          : "Enter your Name and Email to access the Company Profile"}
+          ? "اكتشف مجموعة جي إس واي العالمية"
+          : "Discover GSY International Group"}
       </h2>
       <p className="mt-1.5 text-sm text-gsy-slate dark:text-white/75">
         {locale === "ar"
-          ? "يشمل لمحة المجموعة منذ 1974، والقطاعات الستة، وعائلة جي إس واي، وخارطة 2030 (دون أرقام مالية سرية)."
-          : "Includes group overview since 1974, business divisions, GSY Family structure and Vision 2030 summary."}
+          ? "حمّل الملف التعريفي المعتمد للتعرف على مجموعة جي إس واي الدولية، وقطاعات أعمالها، وأسواقها، وتوجهها الاستراتيجي."
+          : "Download the approved company profile to learn about GSY International Group, its business divisions, markets and strategic direction."}
       </p>
 
       <div className="mt-6 grid gap-4 sm:grid-cols-2">
@@ -119,7 +119,7 @@ export function GatedProfileForm({ locale }: { locale: Locale }) {
             htmlFor="profile-email"
             className="block text-xs font-bold text-gsy-navy dark:text-white"
           >
-            {locale === "ar" ? "البريد الإلكتروني للعمل" : "Work Email"} *
+            {locale === "ar" ? "البريد الإلكتروني للعمل" : "Business Email"} *
           </label>
           <input
             id="profile-email"
@@ -139,7 +139,7 @@ export function GatedProfileForm({ locale }: { locale: Locale }) {
       >
         <Download className="h-4 w-4" />
         <span>
-          {locale === "ar" ? "فتح وتحميل الملف التعريفي" : "Unlock & Download Profile"}
+          {locale === "ar" ? "تحميل الملف التعريفي للشركة" : "Download Company Profile"}
         </span>
       </button>
     </form>

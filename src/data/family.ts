@@ -8,10 +8,10 @@ export const GROUP_MODEL_STEPS: GroupModelStep[] = [
   {
     id: "source",
     stepNumber: 1,
-    title: { en: "Source & export", ar: "التوريد والتصدير" },
+    title: { en: "Source & Export", ar: "التوريد والتصدير" },
     subtitle: {
-      en: "India, Malaysia, Asia and Africa origins",
-      ar: "مصادر الهند وماليزيا وآسيا وأفريقيا",
+      en: "Connect with origin markets and suppliers to source products for international trade.",
+      ar: "التواصل مع أسواق المنشأ والموردين لتوريد المنتجات للتجارة الدولية.",
     },
     href: "/businesses/commodity-trading",
     iconName: "sprout",
@@ -19,10 +19,10 @@ export const GROUP_MODEL_STEPS: GroupModelStep[] = [
   {
     id: "ship",
     stepNumber: 2,
-    title: { en: "Ship & move", ar: "الشحن والنقل البحري" },
+    title: { en: "Ship & Move", ar: "الشحن والنقل" },
     subtitle: {
-      en: "Voyage chartering, containers, ports",
-      ar: "تأجير السفن بالرحلة والحاويات والموانئ",
+      en: "Coordinate voyage chartering, freight and cargo movement between origins and destinations.",
+      ar: "تنسيق تأجير السفن بالرحلة وحركة الشحن والبضائع بين المنشأ والوجهات.",
     },
     href: "/businesses/shipping-chartering",
     iconName: "ship",
@@ -30,10 +30,10 @@ export const GROUP_MODEL_STEPS: GroupModelStep[] = [
   {
     id: "process",
     stepNumber: 3,
-    title: { en: "Process & brand", ar: "التصنيع والعلامة التجارية" },
+    title: { en: "Process & Brand", ar: "المعالجة والعلامات التجارية" },
     subtitle: {
-      en: "Noor Al Arab packing and private label",
-      ar: "تعبئة نور العرب والعلامات الخاصة",
+      en: "Develop food brands, packing and private-label opportunities through relevant business activities.",
+      ar: "تطوير العلامات الغذائية وفرص التعبئة والتغليف والعلامات الخاصة عبر أنشطة الأعمال المعنية.",
     },
     href: "/businesses/noor-al-arab",
     iconName: "factory",
@@ -41,10 +41,10 @@ export const GROUP_MODEL_STEPS: GroupModelStep[] = [
   {
     id: "distribute",
     stepNumber: 4,
-    title: { en: "Trade & distribute", ar: "التجارة والتوزيع" },
+    title: { en: "Trade & Distribute", ar: "التجارة والتوزيع" },
     subtitle: {
-      en: "Bulk trade, wholesale, HORECA",
-      ar: "التجارة بالجملة وقطاع الفنادق والمطاعم",
+      en: "Supply wholesalers, retailers, HORECA customers and institutional buyers.",
+      ar: "توريد المنتجات لتجار الجملة والتجزئة وقطاع الضيافة والمشترين المؤسسيين.",
     },
     href: "/businesses/distribution",
     iconName: "handshake",
@@ -54,8 +54,8 @@ export const GROUP_MODEL_STEPS: GroupModelStep[] = [
     stepNumber: 5,
     title: { en: "Retail", ar: "التجزئة" },
     subtitle: {
-      en: "Supermarkets and hypermarkets",
-      ar: "الأسواق المركزية والهايبرماركت",
+      en: "Connect products with customers through the Group's supermarket businesses.",
+      ar: "ربط المنتجات بالمستهلكين من خلال أعمال السوبرماركت التابعة للمجموعة.",
     },
     href: "/supermarkets",
     iconName: "shopping-basket",
@@ -63,7 +63,7 @@ export const GROUP_MODEL_STEPS: GroupModelStep[] = [
 ];
 
 /**
- * 8 GSY Family members (Brief page 4) with coordinates for interactive SVG network diagram
+ * 7 GSY Family members with coordinates for interactive SVG network diagram
  */
 export const GSY_FAMILY_MEMBERS: FamilyMember[] = [
   {
@@ -90,8 +90,8 @@ export const GSY_FAMILY_MEMBERS: FamilyMember[] = [
     },
     where: { en: "Chennai", ar: "تشيناي" },
     href: "/presence/india",
-    nodeX: 14,
-    nodeY: 46,
+    nodeX: 18,
+    nodeY: 66,
     roleTag: { en: "Origin Export", ar: "منشأ التصدير" },
   },
   {
@@ -104,8 +104,8 @@ export const GSY_FAMILY_MEMBERS: FamilyMember[] = [
     },
     where: { en: "UAE, Singapore, Africa offices", ar: "الإمارات، سنغافورة، مكاتب أفريقيا" },
     href: "/businesses/commodity-trading",
-    nodeX: 27,
-    nodeY: 15,
+    nodeX: 22,
+    nodeY: 20,
     roleTag: { en: "Trading House", ar: "بيت التداول" },
   },
   {
@@ -118,9 +118,23 @@ export const GSY_FAMILY_MEMBERS: FamilyMember[] = [
     },
     where: { en: "Dubai", ar: "دبي" },
     href: "/businesses/shipping-chartering",
-    nodeX: 56,
+    nodeX: 52,
     nodeY: 15,
     roleTag: { en: "Freight Desk", ar: "مكتب الشحن" },
+  },
+  {
+    id: "pets-pantry",
+    name: { en: "Pets Pantry", ar: "بيتس بانتري" },
+    isRegisteredBrand: true,
+    whatItDoes: {
+      en: "Pet food and supplies",
+      ar: "أغذية ومستلزمات الحيوانات الأليفة",
+    },
+    where: { en: "UAE", ar: "الإمارات" },
+    href: "/businesses/pets-pantry",
+    nodeX: 84,
+    nodeY: 18,
+    roleTag: { en: "Pet Supplies", ar: "مستلزمات الحيوانات الأليفة" },
   },
   {
     id: "noor-al-arab",
@@ -133,22 +147,8 @@ export const GSY_FAMILY_MEMBERS: FamilyMember[] = [
     where: { en: "UAE, GCC, India, Malaysia", ar: "الإمارات، الخليج، الهند، ماليزيا" },
     href: "/businesses/noor-al-arab",
     nodeX: 86,
-    nodeY: 50,
+    nodeY: 52,
     roleTag: { en: "Food Brand", ar: "العلامة الغذائية" },
-  },
-  {
-    id: "country-companies",
-    name: { en: "Country companies", ar: "الشركات القُطرية" },
-    isRegisteredBrand: false,
-    whatItDoes: {
-      en: "Import, wholesale and distribution in each new market",
-      ar: "الاستيراد والبيع بالجملة والتوزيع في كل سوق جديد",
-    },
-    where: { en: "25+ countries", ar: "أكثر من 25 دولة" },
-    href: "/presence",
-    nodeX: 18,
-    nodeY: 82,
-    roleTag: { en: "Market Hubs", ar: "أسواق التوزيع" },
   },
   {
     id: "gsy-supermarkets",
@@ -160,23 +160,9 @@ export const GSY_FAMILY_MEMBERS: FamilyMember[] = [
     },
     where: { en: "UAE, Malaysia, GCC", ar: "الإمارات، ماليزيا، الخليج" },
     href: "/supermarkets",
-    nodeX: 78,
-    nodeY: 84,
+    nodeX: 68,
+    nodeY: 82,
     roleTag: { en: "Retail Group", ar: "مجموعة التجزئة" },
-  },
-  {
-    id: "pets-pantry",
-    name: { en: "Pets Pantry", ar: "بيتس بانتري" },
-    isRegisteredBrand: true,
-    whatItDoes: {
-      en: "Online e-commerce store for pets (petspantry.ae): wholesome pet nutrition, premium dry foods, treats and pet accessories",
-      ar: "متجر إلكتروني لمنتجات الحيوانات الأليفة (petspantry.ae): أغذية متوازنة وأطعمة جافة ومكافآت ومستلزمات",
-    },
-    where: { en: "UAE (Online E-Commerce)", ar: "الإمارات (متجر إلكتروني)" },
-    href: "/products?category=Noor+Al+Arab",
-    nodeX: 87,
-    nodeY: 16,
-    roleTag: { en: "Pet E-Commerce", ar: "متجر إلكتروني للحيوانات" },
   },
 ];
 
@@ -186,7 +172,7 @@ export const GSY_FAMILY_FLOWS: FamilyFlow[] = [
     fromId: "gsy-export-india",
     toId: "gsy-trading",
     label: { en: "Rice, spices & pulses", ar: "الأرز والتوابل والبقوليات" },
-    curveOffset: { x: -36, y: -24 },
+    curveOffset: { x: -30, y: 0 },
   },
   {
     id: "flow-trading-shipping",
@@ -200,14 +186,7 @@ export const GSY_FAMILY_FLOWS: FamilyFlow[] = [
     fromId: "gsy-shipping",
     toId: "noor-al-arab",
     label: { en: "Origin freight delivery", ar: "شحن بضائع المنشأ" },
-    curveOffset: { x: -20, y: 28 },
-  },
-  {
-    id: "flow-shipping-countries",
-    fromId: "gsy-shipping",
-    toId: "country-companies",
-    label: { en: "Bulk & container imports", ar: "واردات الجملة والحاويات" },
-    curveOffset: { x: -92, y: -30 },
+    curveOffset: { x: 20, y: -15 },
   },
   {
     id: "flow-noor-supermarkets",
@@ -217,21 +196,14 @@ export const GSY_FAMILY_FLOWS: FamilyFlow[] = [
       en: "Noor Al Arab products stocked in group supermarkets",
       ar: "منتجات نور العرب معروضة في أسواق المجموعة",
     },
-    curveOffset: { x: 40, y: 12 },
+    curveOffset: { x: 28, y: 10 },
   },
   {
-    id: "flow-trading-countries",
-    fromId: "gsy-trading",
-    toId: "country-companies",
-    label: { en: "Cross-border sourcing", ar: "توريد السلع العابرة للحدود" },
-    curveOffset: { x: 46, y: 0 },
-  },
-  {
-    id: "flow-countries-trading",
-    fromId: "country-companies",
-    toId: "gsy-trading",
-    label: { en: "Local origin products back", ar: "إعادة توريد المنتجات المحلية" },
-    curveOffset: { x: 94, y: 0 },
+    id: "flow-india-noor",
+    fromId: "gsy-export-india",
+    toId: "noor-al-arab",
+    label: { en: "Packed rice & spices", ar: "الأرز والتوابل المعبأة" },
+    curveOffset: { x: 0, y: 80 },
   },
   {
     id: "flow-group-oversight",
@@ -252,7 +224,7 @@ export const GSY_FAMILY_FLOWS: FamilyFlow[] = [
     fromId: "gsy-group",
     toId: "gsy-export-india",
     label: { en: "Origin strategy & finance", ar: "استراتيجية المنشأ والتمويل" },
-    curveOffset: { x: 0, y: -18 },
+    curveOffset: { x: -10, y: 15 },
   },
   {
     id: "flow-group-noor",
@@ -260,16 +232,6 @@ export const GSY_FAMILY_FLOWS: FamilyFlow[] = [
     toId: "noor-al-arab",
     label: { en: "Brand stewardship", ar: "رعاية العلامة التجارية" },
     curveOffset: { x: 0, y: -18 },
-  },
-  {
-    id: "flow-group-countries",
-    fromId: "gsy-group",
-    toId: "country-companies",
-    label: {
-      en: "Direct market oversight & 25+ country expansion",
-      ar: "الإشراف المباشر والتوسع في أكثر من 25 سوقاً",
-    },
-    curveOffset: { x: 12, y: 12 },
   },
   {
     id: "flow-group-supermarkets",
@@ -286,38 +248,10 @@ export const GSY_FAMILY_FLOWS: FamilyFlow[] = [
     fromId: "gsy-group",
     toId: "pets-pantry",
     label: {
-      en: "Direct group ownership & e-commerce subsidiary",
-      ar: "شركة تجارة إلكترونية تابعة مباشرة للمجموعة",
+      en: "Direct group ownership & pet supplies subsidiary",
+      ar: "شركة مستلزمات حيوانات أليفة تابعة مباشرة للمجموعة",
     },
     curveOffset: { x: -10, y: -20 },
-  },
-  {
-    id: "flow-india-noor",
-    fromId: "gsy-export-india",
-    toId: "noor-al-arab",
-    label: { en: "Packed rice & spices", ar: "الأرز والتوابل المعبأة" },
-    curveOffset: { x: 0, y: 146 },
-  },
-  {
-    id: "flow-india-countries",
-    fromId: "gsy-export-india",
-    toId: "country-companies",
-    label: { en: "Direct Indian exports", ar: "الصادرات الهندية المباشرة" },
-    curveOffset: { x: -44, y: 0 },
-  },
-  {
-    id: "flow-noor-countries",
-    fromId: "noor-al-arab",
-    toId: "country-companies",
-    label: { en: "Regional brand wholesale", ar: "توزيع الجملة الإقليمي" },
-    curveOffset: { x: 0, y: 56 },
-  },
-  {
-    id: "flow-countries-supermarkets",
-    fromId: "country-companies",
-    toId: "gsy-supermarkets",
-    label: { en: "Local market supply", ar: "التوريد للأسواق المحلية" },
-    curveOffset: { x: 0, y: 24 },
   },
 ];
 
