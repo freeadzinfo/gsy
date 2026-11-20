@@ -5,7 +5,7 @@ import { Locale } from "@/types/cms";
 import { SITE_SETTINGS } from "@/data/site-settings";
 import { getUiCopy } from "@/data/dictionary";
 import { localePath, t } from "@/lib/i18n";
-import { Mail, MapPin, Phone, ShieldCheck } from "lucide-react";
+import { Mail, MapPin, Phone, ShieldCheck, Linkedin, Instagram, Facebook } from "lucide-react";
 
 export function SiteFooter({ locale }: { locale: Locale }) {
   const copy = getUiCopy(locale);
@@ -32,6 +32,27 @@ export function SiteFooter({ locale }: { locale: Locale }) {
     { label: { en: "Blog & Events", ar: "المدونة والفعاليات" }, href: "/blog" },
     { label: { en: "Careers", ar: "الوظائف" }, href: "/careers" },
     { label: { en: "Contact", ar: "اتصل بنا" }, href: "/contact" },
+  ];
+
+  const socialLinks = [
+    {
+      name: "LinkedIn",
+      href: "https://www.linkedin.com/company/gsy-international-groups",
+      icon: Linkedin,
+      label: { en: "Follow GSY on LinkedIn", ar: "تابع جي إس واي على لينكد إن" },
+    },
+    {
+      name: "Instagram",
+      href: "https://www.instagram.com/gsy_groups/",
+      icon: Instagram,
+      label: { en: "Follow GSY on Instagram", ar: "تابع جي إس واي على إنستغرام" },
+    },
+    {
+      name: "Facebook",
+      href: "https://www.facebook.com/profile.php?id=61579747550514",
+      icon: Facebook,
+      label: { en: "Follow GSY on Facebook", ar: "تابع جي إس واي على فيسبوك" },
+    },
   ];
 
   return (
@@ -71,6 +92,31 @@ export function SiteFooter({ locale }: { locale: Locale }) {
                   ? `الهدف الاستراتيجي 2030: ${SITE_SETTINGS.groupGoal2030}`
                   : `2030 Group Goal: ${SITE_SETTINGS.groupGoal2030} (${SITE_SETTINGS.groupGoalAedApprox})`}
               </span>
+            </div>
+
+            {/* Social Channels */}
+            <div className="mt-6">
+              <p className="text-[11px] font-bold uppercase tracking-widest text-gsy-gold-light">
+                {locale === "ar" ? "وسائل التواصل الاجتماعي" : "Connect With Us"}
+              </p>
+              <div className="mt-2.5 flex items-center gap-2.5">
+                {socialLinks.map((social) => {
+                  const Icon = social.icon;
+                  return (
+                    <a
+                      key={social.name}
+                      href={social.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={t(social.label, locale)}
+                      title={social.name}
+                      className="flex h-9 w-9 items-center justify-center rounded-lg border border-white/15 bg-white/5 text-white/80 transition-all hover:border-gsy-gold-light hover:bg-gsy-gold-light hover:text-gsy-navy hover:scale-105"
+                    >
+                      <Icon className="h-4 w-4" />
+                    </a>
+                  );
+                })}
+              </div>
             </div>
           </div>
 

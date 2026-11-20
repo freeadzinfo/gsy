@@ -42,6 +42,22 @@ export const SITE_SETTINGS: SiteSettings = {
   hqPhone: "+971 4 000 0000 (Demo)",
 };
 
+export const SOCIAL_LINKS = [
+  {
+    name: "LinkedIn",
+    href: "https://www.linkedin.com/company/gsy-international-groups",
+  },
+  {
+    name: "Instagram",
+    href: "https://www.instagram.com/gsy_groups/",
+  },
+  {
+    name: "Facebook",
+    href: "https://www.facebook.com/profile.php?id=61579747550514",
+  },
+] as const;
+
+
 export const WHY_GSY_POINTS = [
   {
     id: "heritage",
